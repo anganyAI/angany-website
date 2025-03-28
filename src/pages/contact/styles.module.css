@@ -1,0 +1,159 @@
+.header {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.contactBox {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contactBox h2 {
+  color: var(--ifm-color-primary);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.contactIntro {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contactForm {
+  max-width: 100%;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.formControl {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #f9fafb;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formControl:focus {
+  border-color: var(--ifm-color-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+}
+
+.checkboxGroup input {
+  margin-right: 0.75rem;
+}
+
+.submitButton {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  background-color: var(--ifm-color-primary);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: var(--ifm-color-primary-darker);
+}
+
+.privacyNote {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.contactInfo {
+  background-color: #f0f4ff;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.contactInfo h2 {
+  color: var(--ifm-color-primary);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.contactMethod {
+  margin-bottom: 1.5rem;
+}
+
+.contactMethod h3 {
+  color: var(--ifm-color-primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.contactMethod p {
+  margin-bottom: 0.5rem;
+}
+
+.contactMethod a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contactMethod a:hover {
+  text-decoration: underline;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.socialLink:hover {
+  opacity: 0.8;
+  text-decoration: none;
+} 

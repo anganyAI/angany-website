@@ -1,0 +1,198 @@
+.header {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.intro {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin: 3rem 0 2rem;
+  color: var(--ifm-color-primary);
+}
+
+.timeline {
+  position: relative;
+  margin: 3rem 0;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #e5e7eb;
+}
+
+.timelineItem {
+  position: relative;
+  padding-left: 5rem;
+  margin-bottom: 3rem;
+}
+
+.timelineMarker {
+  position: absolute;
+  left: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.timelineMarker:before {
+  content: '';
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: white;
+}
+
+.timelineMarker.completed {
+  background: var(--ifm-color-secondary);
+}
+
+.timelineMarker.completed:before {
+  background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23059669" width="24px" height="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') center/contain no-repeat;
+}
+
+.timelineMarker.current {
+  background: var(--ifm-color-primary);
+}
+
+.timelineContent {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.timelineContent h2 {
+  margin-top: 0;
+  color: var(--ifm-color-primary);
+  font-size: 1.5rem;
+}
+
+.timelineDate {
+  display: inline-block;
+  background: #e5e7eb;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.completedItem {
+  color: var(--ifm-color-secondary);
+}
+
+.completedItem:before {
+  content: '✓';
+  margin-right: 0.5rem;
+}
+
+.prioritiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.priorityCard {
+  background: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  height: 100%;
+  border-top: 4px solid var(--ifm-color-primary);
+}
+
+.priorityCard h3 {
+  color: var(--ifm-color-primary);
+  margin-top: 0;
+}
+
+.financialBox {
+  background-color: #f0fdf4;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+  border-left: 4px solid var(--ifm-color-secondary);
+}
+
+.financialBox h2 {
+  margin-top: 0;
+}
+
+.joinBox {
+  background-color: #f0f4ff;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 3rem 0;
+  border-left: 4px solid var(--ifm-color-accent);
+  text-align: center;
+}
+
+.joinBox h2 {
+  margin-top: 0;
+}
+
+.joinBox ul {
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.joinCta {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .timeline:before {
+    left: 50%;
+    margin-left: -2px;
+  }
+  
+  .timelineItem {
+    padding-left: 0;
+    margin-bottom: 6rem;
+  }
+  
+  .timelineItem:nth-child(odd) {
+    padding-right: 50%;
+    padding-left: 3rem;
+  }
+  
+  .timelineItem:nth-child(even) {
+    padding-left: 50%;
+    padding-right: 3rem;
+  }
+  
+  .timelineMarker {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+} 
