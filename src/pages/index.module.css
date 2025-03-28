@@ -1,0 +1,149 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.heroDescription {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.problemSolutionSection {
+  padding: 4rem 0;
+  background-color: #f9fafb;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--ifm-color-primary-darkest);
+}
+
+.sectionSubtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.problemBlock, .solutionBlock {
+  padding: 2rem;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.problemBlock {
+  background-color: #f3f4f6;
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+.solutionBlock {
+  background-color: #f0fdf4;
+  border-left: 4px solid var(--ifm-color-secondary);
+}
+
+.problemBlock h3, .solutionBlock h3 {
+  margin-bottom: 1.5rem;
+}
+
+.timelineSection {
+  padding: 4rem 0;
+  background-color: white;
+}
+
+.timelineCard {
+  background-color: #f9fafb;
+  padding: 2rem;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.timelineCard:hover {
+  transform: translateY(-5px);
+}
+
+.timelineCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.timelineCard ul {
+  padding-left: 1.5rem;
+}
+
+.completed {
+  color: var(--ifm-color-secondary);
+  position: relative;
+}
+
+.completed::before {
+  content: '✓';
+  position: absolute;
+  left: -1.5rem;
+  color: var(--ifm-color-secondary);
+}
+
+.subscriptionSection {
+  padding: 4rem 0;
+  background-color: #f0f4ff;
+}
+
+.subscriptionForm {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.subscriptionInput {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.checkboxContainer input {
+  margin-right: 0.5rem;
+}
+
+.privacyNote {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 1rem;
+}
