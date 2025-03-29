@@ -135,7 +135,10 @@ function FounderJourneySection() {
             
             <div className={`${styles.comparisonCard} ${styles.angany}`}>
               <div className={styles.cardHeader}>
-                <h4>Angany.ai</h4>
+                <div className={styles.logoHeader}>
+                  <h4>Angany.ai</h4>
+                  <img src="/img/logo/logo-without-text.png" alt="Angany.ai Logo" className={styles.cardLogo} />
+                </div>
                 <span className={styles.approachLabel}>AI-Driven Democratization</span>
               </div>
               <ul className={styles.approachList}>

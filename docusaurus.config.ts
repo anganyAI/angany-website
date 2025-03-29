@@ -67,7 +67,7 @@ const config: Config = {
       title: 'Angany.ai',
       logo: {
         alt: 'Angany.ai Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo/logo-without-text.png',
       },
       items: [
         {
@@ -105,6 +105,11 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
+      logo: {
+        alt: 'Angany.ai Logo',
+        src: 'img/logo/logo-full-white.png',
+        width: 160,
+      },
       links: [
         {
           title: 'About',
