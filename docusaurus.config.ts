@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Angany.ai',
   tagline: 'Reimagining telecommunications with AI at its core — speak your vision, let AI build it.',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
 
   // Set the production url of your site here
   url: 'https://angany.ai',
