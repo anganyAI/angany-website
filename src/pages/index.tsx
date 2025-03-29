@@ -227,8 +227,23 @@ function SubscriptionSection() {
         </div>
         <div className="row">
           <div className="col col--6 col--offset-3">
-            <form className={styles.subscriptionForm}>
-              <input type="email" placeholder="Email Address" className={styles.subscriptionInput} />
+            <form className={styles.subscriptionForm} onSubmit={(e) => {
+              e.preventDefault();
+              const emailInput = e.currentTarget.querySelector('input[type="email"]') as HTMLInputElement;
+              const interestSelect = e.currentTarget.querySelector('select') as HTMLSelectElement;
+              
+              if (emailInput && emailInput.value) {
+                const subject = encodeURIComponent('Subscription to Angany.ai Updates');
+                const body = encodeURIComponent(
+                  `Email: ${emailInput.value}\n` +
+                  `Interest: ${interestSelect && interestSelect.selectedIndex > 0 ? 
+                    interestSelect.options[interestSelect.selectedIndex].text : 'Not specified'}\n\n` +
+                  `I would like to join the Angany.ai waitlist and receive updates.`
+                );
+                window.location.href = `mailto:contact@angany.ai?subject=${subject}&body=${body}`;
+              }
+            }}>
+              <input type="email" placeholder="Email Address" className={styles.subscriptionInput} required />
               <select className={styles.subscriptionInput}>
                 <option value="" disabled selected>Interest</option>
                 <option value="user">Potential User</option>

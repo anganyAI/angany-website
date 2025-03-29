@@ -23,7 +23,26 @@ export default function Contact(): ReactNode {
                 updates, early access opportunities, and insights into the future of AI-powered telecommunications.
               </p>
               
-              <form className={styles.contactForm}>
+              <form className={styles.contactForm} onSubmit={(e) => {
+                e.preventDefault();
+                const email = document.getElementById('email') as HTMLInputElement;
+                const name = document.getElementById('name') as HTMLInputElement;
+                const company = document.getElementById('company') as HTMLInputElement;
+                const interest = document.getElementById('interest') as HTMLSelectElement;
+                const message = document.getElementById('message') as HTMLTextAreaElement;
+                
+                if (email && email.value) {
+                  const subject = encodeURIComponent('Contact from Angany.ai Website');
+                  const body = encodeURIComponent(
+                    `Name: ${name ? name.value : 'Not provided'}\n` +
+                    `Email: ${email.value}\n` +
+                    `Company: ${company ? company.value : 'Not provided'}\n` +
+                    `Interest: ${interest ? interest.options[interest.selectedIndex].text : 'Not provided'}\n\n` +
+                    `Message:\n${message ? message.value : 'No message provided'}`
+                  );
+                  window.location.href = `mailto:contact@angany.ai?subject=${subject}&body=${body}`;
+                }
+              }}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name">Your Name</label>
                   <input type="text" id="name" className={styles.formControl} placeholder="Enter your name" />
