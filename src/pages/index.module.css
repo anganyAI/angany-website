@@ -147,3 +147,147 @@
   text-align: center;
   margin-top: 1rem;
 }
+
+/* Founder's Journey Section Styles */
+.founderJourneySection {
+  background-color: var(--ifm-background-color);
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.journeyContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.founderImage {
+  position: relative;
+}
+
+.founderImage img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.founderImage::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(124, 58, 237, 0.1);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.founderStory p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+.highlightText {
+  font-size: 1.25rem;
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+  line-height: 1.5;
+  border-left: 4px solid var(--ifm-color-primary-dark);
+  padding-left: 1rem;
+}
+
+.comparisonContainer {
+  margin-top: 4rem;
+}
+
+.comparisonContainer h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.comparisonCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.comparisonCard {
+  background-color: var(--ifm-background-surface-color);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: var(--ifm-global-shadow-md);
+  transition: all 0.3s ease;
+}
+
+.comparisonCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.comparisonCard.wazo {
+  border-top: 5px solid #3B82F6; /* Blue */
+}
+
+.comparisonCard.angany {
+  border-top: 5px solid #7C3AED; /* Purple */
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader h4 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.approachLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ifm-color-gray-700);
+}
+
+.approachList {
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.approachList li {
+  margin-bottom: 1rem;
+}
+
+.approachList li:last-child {
+  margin-bottom: 0;
+}
+
+.keyInsight {
+  background-color: var(--ifm-background-surface-color);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: var(--ifm-global-shadow-md);
+  margin-top: 2rem;
+}
+
+/* Responsive styles */
+@media (max-width: 996px) {
+  .journeyContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparisonCards {
+    grid-template-columns: 1fr;
+  }
+}
