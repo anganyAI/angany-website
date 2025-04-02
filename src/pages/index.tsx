@@ -240,7 +240,7 @@ function SubscriptionSection() {
                     interestSelect.options[interestSelect.selectedIndex].text : 'Not specified'}\n\n` +
                   `I would like to join the Angany.ai waitlist and receive updates.`
                 );
-                window.location.href = `mailto:contact@angany.ai?subject=${subject}&body=${body}`;
+                window.location.href = `mailto:sylvainboilydroid@gmail.com?subject=${subject}&body=${body}`;
               }
             }}>
               <input type="email" placeholder="Email Address" className={styles.subscriptionInput} required />

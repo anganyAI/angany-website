@@ -40,7 +40,7 @@ export default function Contact(): ReactNode {
                     `Interest: ${interest ? interest.options[interest.selectedIndex].text : 'Not provided'}\n\n` +
                     `Message:\n${message ? message.value : 'No message provided'}`
                   );
-                  window.location.href = `mailto:contact@angany.ai?subject=${subject}&body=${body}`;
+                  window.location.href = `mailto:sylvainboilydroid@gmail.com?subject=${subject}&body=${body}`;
                 }
               }}>
                 <div className={styles.formGroup}>
@@ -97,7 +97,7 @@ export default function Contact(): ReactNode {
               
               <div className={styles.contactMethod}>
                 <h3>Email</h3>
-                <p>For general inquiries: <a href="mailto:contact@angany.ai">contact@angany.ai</a></p>
+                <p>For general inquiries: <a href="mailto:sylvainboilydroid@gmail.com">sylvainboilydroid@gmail.com</a></p>
               </div>
               
               <div className={styles.contactMethod}>
