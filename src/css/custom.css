@@ -40,3 +40,16 @@
   /* Accent color */
   --ifm-color-accent: #8B5CF6;
 }
+
+.hero {
+  background-image: url('/img/header.jpeg');
+  background-size: cover; /* Assure que l'image couvre toute la zone */
+  background-position: center; /* Centre l'image */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+}
+
+/* Optionnel: Supprimer la couleur de fond par défaut si elle existe */
+.hero--primary {
+  --ifm-hero-background-color: transparent; /* Surcharge la variable Infima si utilisée */
+  background-color: transparent; /* Surcharge directe */
+}

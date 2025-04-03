@@ -5,14 +5,14 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  icon: string;
+  icon: string | React.ReactNode;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Natural Language Programming',
-    icon: '💬',
+    icon: <img src="/img/talk.jpeg" alt="Talk icon" className={styles.featureImage} />,
     description: (
       <>
         Forget complex configuration interfaces. With Angany.ai, simply explain what you want in conversational language, and the AI handles the technical implementation.
@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Unlimited Adaptability',
-    icon: '🔄',
+    icon: <img src="/img/open.jpeg" alt="Open icon" className={styles.featureImage} />,
     description: (
       <>
         Our platform grows with your needs. As requirements change, the AI adapts without requiring new development or expensive upgrades.
@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Seamless Integration',
-    icon: '🔌',
+    icon: <img src="/img/plug.jpeg" alt="Plug icon" className={styles.featureImage} />,
     description: (
       <>
         Angany.ai connects effortlessly with your existing business systems, enhancing them with AI capabilities rather than replacing them.
@@ -39,7 +39,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Intelligent Call Management',
-    icon: '📞',
+    icon: <img src="/img/phone.jpeg" alt="Phone icon" className={styles.featureImage} />,
     description: (
       <>
         From basic routing to complex interactive experiences, the AI manages calls with natural conversation flow, eliminating the frustration of traditional IVR systems.
