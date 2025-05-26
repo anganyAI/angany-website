@@ -24,7 +24,7 @@ export default function Roadmap(): ReactNode {
               
               <div className={styles.timeline}>
                 <div className={styles.timelineItem}>
-                  <div className={styles.timelineMarker + ' ' + styles.completed}></div>
+                  <div className={`${styles.timelineMarker} ${styles.completed}`} />
                   <div className={styles.timelineContent}>
                     <h2>Phase 1: Concept Validation</h2>
                     <p className={styles.timelineDate}>Completed</p>
@@ -39,25 +39,25 @@ export default function Roadmap(): ReactNode {
                 </div>
                 
                 <div className={styles.timelineItem}>
-                  <div className={styles.timelineMarker + ' ' + styles.current}></div>
+                  <div className={`${styles.timelineMarker} ${styles.completed}`} />
                   <div className={styles.timelineContent}>
                     <h2>Phase 2: First Prototype</h2>
-                    <p className={styles.timelineDate}>Current Phase</p>
+                    <p className={styles.timelineDate}>Completed</p>
                     <ul>
-                      <li>Development of core voice agent</li>
-                      <li>Integration of basic telephony primitives</li>
-                      <li>Implementation of first use case: intelligent call answering</li>
-                      <li>Limited testing with controlled scenarios</li>
-                      <li>Feedback incorporation and iteration</li>
+                      <li className={styles.completedItem}>Development of core voice agent</li>
+                      <li className={styles.completedItem}>Integration of basic telephony primitives</li>
+                      <li className={styles.completedItem}>Implementation of first use case: intelligent call answering</li>
+                      <li className={styles.completedItem}>Limited testing with controlled scenarios</li>
+                      <li className={styles.completedItem}>Feedback incorporation and iteration</li>
                     </ul>
                   </div>
                 </div>
                 
                 <div className={styles.timelineItem}>
-                  <div className={styles.timelineMarker}></div>
+                  <div className={`${styles.timelineMarker} ${styles.current}`} />
                   <div className={styles.timelineContent}>
                     <h2>Phase 3: Alpha Release</h2>
-                    <p className={styles.timelineDate}>Next Few Months</p>
+                    <p className={styles.timelineDate}>Current Phase</p>
                     <ul>
                       <li>Onboarding first client partners</li>
                       <li>Implementation of basic CRM integrations</li>
@@ -69,7 +69,7 @@ export default function Roadmap(): ReactNode {
                 </div>
                 
                 <div className={styles.timelineItem}>
-                  <div className={styles.timelineMarker}></div>
+                  <div className={styles.timelineMarker} />
                   <div className={styles.timelineContent}>
                     <h2>Phase 4: Beta Expansion</h2>
                     <p className={styles.timelineDate}>12-18 Months</p>
@@ -84,7 +84,7 @@ export default function Roadmap(): ReactNode {
                 </div>
                 
                 <div className={styles.timelineItem}>
-                  <div className={styles.timelineMarker}></div>
+                  <div className={styles.timelineMarker} />
                   <div className={styles.timelineContent}>
                     <h2>Phase 5: Full Market Release</h2>
                     <p className={styles.timelineDate}>18-24 Months</p>

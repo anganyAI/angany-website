@@ -41,6 +41,65 @@
   --ifm-color-accent: #8B5CF6;
 }
 
+/* SaaS-style navbar buttons - actual HTML buttons */
+.navbar__button-element {
+  background: #ffffff !important;
+  color: #374151 !important;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin-right: 8px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.navbar__button-element:hover {
+  background: #f9fafb !important;
+  border-color: #d1d5db;
+  color: #111827 !important;
+}
+
+.navbar__signup-element {
+  background: #111827 !important;
+  color: #ffffff !important;
+  border: 1px solid #111827;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.navbar__signup-element:hover {
+  background: #000000 !important;
+  border-color: #000000;
+  color: #ffffff !important;
+}
+
+/* Better mobile styling */
+@media (max-width: 996px) {
+  .navbar__button-element,
+  .navbar__signup-element {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 12px;
+    margin: 2px;
+    display: block;
+  }
+}
+
+/* Ensure proper spacing in navbar */
+.navbar__items--right > .navbar__item:last-child {
+  margin-right: 0;
+}
+
 .hero {
   background-image: url('/img/header.jpeg');
   background-size: cover; /* Assure que l'image couvre toute la zone */

@@ -63,6 +63,11 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/angany-social-card.jpg',
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
       title: 'Angany.ai',
       logo: {
@@ -97,9 +102,9 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          href: 'https://github.com/anganyAI',
-          label: 'GitHub',
+          type: 'html',
           position: 'right',
+          value: '<button class="navbar__button-element" onclick="window.open(\'https://beta.angany.ai\', \'_blank\')">Sign In</button><button class="navbar__signup-element" onclick="window.open(\'https://beta.angany.ai/sign-up\', \'_blank\')">Start for free</button>',
         },
       ],
     },

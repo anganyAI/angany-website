@@ -184,8 +184,8 @@ function TimelineSection() {
             <div className={styles.timelineCard}>
               <h3>Phase 2: First Client Implementation</h3>
               <ul>
-                <li>Targeted for Q2 2025</li>
-                <li>Limited release to select partners</li>
+                <li className={styles.completed}>Successfully implemented with initial clients</li>
+                <li className={styles.completed}>Limited release to select partners completed</li>
               </ul>
             </div>
           </div>
