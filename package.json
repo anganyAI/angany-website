@@ -16,8 +16,8 @@
     "clean-api-docs": "rimraf docs/api/angany-auth/*.api.mdx docs/api/angany-auth/*.info.mdx docs/api/angany-auth/sidebar.ts docs/api/angany-configuration/*.api.mdx docs/api/angany-configuration/*.info.mdx docs/api/angany-configuration/sidebar.ts docs/api/angany-app-data/*.api.mdx docs/api/angany-app-data/*.info.mdx docs/api/angany-app-data/sidebar.ts",
     "update-specs": "node scripts/update-openapi-specs.js",
     "gen-api-docs": "docusaurus gen-api-docs all",
-    "generate-api-docs": "pnpm clean-api-docs && pnpm update-specs && pnpm gen-api-docs",
-    "docs:build": "pnpm generate-api-docs && pnpm build"
+    "generate-api-docs": "npm clean-api-docs && npm update-specs && npm gen-api-docs",
+    "docs:build": "npm generate-api-docs && npm build"
   },
   "dependencies": {
     "@docusaurus/core": "3.8.0",
