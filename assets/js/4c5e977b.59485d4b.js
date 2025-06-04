@@ -1,0 +1,1 @@
+(self.webpackChunkangany_website=self.webpackChunkangany_website||[]).push([[6473],{16403:()=>{},20217:()=>{},42634:()=>{},49730:()=>{},50477:()=>{},96452:()=>{}}]);
