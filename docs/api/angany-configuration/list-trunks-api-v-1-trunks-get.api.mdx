@@ -1,0 +1,63 @@
+---
+id: list-trunks-api-v-1-trunks-get
+title: "List Trunks"
+description: "List all SIP trunks for the organization."
+sidebar_label: "List Trunks"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVtmO2zYU/RXiPtPrODOJ3tI0aA2kzSB2ngzDoKVrmbFEMiTljiro34tLyusYSWM/2FoOD8/dDt2AF7mDZAFzW6mdgyWHDF1qpfFSK0jgk3SeiaJgs+kz8wHENtoyv0WmbS6U/FcQtA8ctEEbbqYZJFBI51dxxUoYudqPDnerHD1wsOiMVg4dJA2Mh0P6udx8VqUpOrepCvalAwOHVCuPyhNcGFPINOw5+OZoTQMu3WIp6MpYUuRl3CFuTlfSY+leA2QWYLVBSMB5K1UOHDbalsJDAlUlM+DgpS8IMM2g5aBEibdWHVB/0/uWw3mqVr+20eezpSzuKpxHK91uJTNUXm4k2h+JeN/B2fQEbzk4aVYO7T4uFqr+vIFkcU3T8uMTVRUFtMsT8UwaNosMHV/l0B5yci/j1wNH29X6xd9L96FbHpgyTN39RGF1y8FboZzR9m5N8yNBywGVWBe4sphL5+Pw3ORda12gUD8k/hi42JdzrpZD1yP1Spp7JXd9U7OpCYzuKPh26/wftVN3VGqhpcRGoF5/wzTaw/dKWszIncJAhJ54PUq3x+Ei4ZXaTdVGw7W50UMaOpossdaVZ4I5qfICo9UFpyMfkypncNIorBU1XO3gfhqFP3rsxUKy2DN7u5R4eHEhJYqjfDgmVMamvzsGHPBFlKbAc7NbNLfNAsq6Z6zeywxtL4B7o/ED8GCCMBo/4OTN41MP375b90bj7KEnJm8ee5Px4+NoMnqaDIfDQ0ES+Ktmzx0VCwHdKFICT2/f/ZyzXbbhw8FhWlnp6xDCn/P5828oLClfLKmLSvRbTbTxKDHCbyGBgTBysB8NYvQDONHM6FCINn9OdmzPrfeG4AFGHRwBpERS5xDy4KYqF6pmH7TayLyKc8beP09fle4SUQolcixR+VDK8wQ5ziw6XdkUHQ8F9Vhgqkvm0FPBHXDYo3WRd9Qf9in9L71C50FaZQuKXpb5gB6Fr94/0m915XtkgH0TDgRR+Hlw0y6IvpDsE3FQnEY7X4pgP11hw9nf9fZVcM3pFP6lvwhduknTwBRCBocK8puuiAsQRlK8I4IfNqeh2Wrn6X3TrIXDr7ZoW3r8vUJLbbLksBdWkgeGLuGwRZGFlmlghzVFnaZoqF/2oqjCIF//f7jorT8+zilpFck6eVvsDH64OLM9oeoz7qaJiLneoWpb4J0IT/ex0/8DcuQ+lQ==
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Trunks"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/trunks/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List all SIP trunks for the organization.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"trunks":{"items":{"properties":{"id":{"type":"string","format":"uuid","title":"Id"},"name":{"type":"string","title":"Name"},"organization_id":{"type":"string","format":"uuid","title":"Organization Id"},"asterisk_identifier":{"type":"string","title":"Asterisk Identifier"},"sip_server":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Sip Server"},"sip_username":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Sip Username"},"context":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Context"},"codecs":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Codecs"},"transport":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Transport"},"enable_registration":{"anyOf":[{"type":"boolean"},{"type":"null"}],"title":"Enable Registration"},"identify_ip":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Identify Ip"},"is_registrar":{"anyOf":[{"type":"boolean"},{"type":"null"}],"title":"Is Registrar"}},"type":"object","required":["id","name","organization_id","asterisk_identifier"],"title":"TrunkInfo","description":"Information about a single trunk for listing "},"type":"array","title":"Trunks"}},"type":"object","required":["trunks"],"title":"TrunkListResponse","description":"Response for listing trunk names and IDs ","example":{"trunks":[{"asterisk_identifier":"my-provider-trunk-123","id":"123e4567-e89b-12d3-a456-426614174000","name":"My Provider Trunk","organization_id":"789e4567-e89b-12d3-a456-426614174000"}]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,78 @@
+---
+id: delete-api-key-api-v-1-api-keys-api-key-id-delete
+title: "Delete Api Key"
+description: "Delete an API key."
+sidebar_label: "Delete Api Key"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVU1v2zgQ/SvEnLoAY8fBnnRz4QANmkWDxOnFMYyxNJbZSKRKjtyogv57Mfqw7LpZYE97MUXycebNmw/XwJgGiFYwf7hTn6kKsNaQUIi9Kdg4CxEsKCMmhVYJ5pWqyYt9sXOfhujFKqUUFmbzStXGJNEAUc/Pd4vuNtlGaoGMWwykAoVgnO1uXuwjcentYOepjGMKQeUUAqYEGlxBHoXGXQIRJC2RzeBO1sNs2IbNZuSx2XRY0BAoLr3hCqJVDZ+Wy4ePhJ48RKt1s9ZQoMecmHxoARZzgghGS6DBiAgF8h40ePpeGk8JROxL0hDiPeUIUQ1cFfIysDc2BQ0753NkiKAsWytsOBPAvDCis7pLoBECnkLhbKAgRm6ur2U517+XZVdm6rEHg4bYWSbLAseiyEzc6jT9FuRNfUnMbb9RzKABk8QIFLMHL/qy6XyfB9CMjAenqi+EIQJZv86GbVBqDE31WGiaptHw983NZVhfMTNJS1rdeu/8f4mpOGOeEKPJ5Msw5eESkLn47BZt9WXX5vv3oI8nxjKl5KFZixLdGXqP1Ukq711HUMTKQ/qnKhig//QlfTT2PrQVQy3lthl9H9M3VuCqjatz3ePWo5lR3k7d98NYdPL9ydkAkb65MNjlNifeu7E7QXetEsEUCzM9zGS5kv6c1mNXNSeN+SRZ7fJ02p5HgfbMBfSdJvttBxDfxu5cixx6y6ZoKzUvea+eyB9MLHzOy04uyXJfWwptorDkvfPmZ3cSuodBFe4HeUrUtlJffKU+e2QX2gefqsQjaDiQD53V68lscg0a3q4yl7acSp+JCCZPp3LU/lz9MLx3JV8xvfGkaNOOGS/pjY/sJ2jUvdiQAAsXOMe2+PvJdN6Dv0dXjy30f47tPnMS5bTI0LQd0gpS99WxkhErCs5Egr5CQEN0MnnXGvYusIDrWmg8+6xp5Ph7SV4G+lrDAb3BrWR/VUNignwnEO0wC/Qv4nx47NvoL/Ue36FbrKh8wKyUHWh4per8H6IdEXvCpP1XqXvAPI6p4JOnFxNNpv+xexa397fLWxGjFH2O1d9Xux4+TobWObO67hBL90q2aY5EWfbCsWl+AZTisFw=
+sidebar_class_name: "delete api-method"
+info_path: docs/api/angany-auth/angany-auth-service
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Api Key"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1/api-keys/{api_key_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete an API key.
+
+Args:
+    api_key_id: API key UUID
+    db: Database session
+    
+Returns:
+    Success message
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"api_key_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Api Key Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"type":"object","additionalProperties":{"type":"string"},"title":"Response Delete Api Key Api V1 Api Keys  Api Key Id  Delete"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

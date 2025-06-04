@@ -1,6 +1,6 @@
 {
-  "name": "angany-temp",
-  "version": "0.0.0",
+  "name": "angany-website",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -12,21 +12,30 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "clean-api-docs": "rimraf docs/api/angany-auth/*.api.mdx docs/api/angany-auth/*.info.mdx docs/api/angany-auth/sidebar.ts docs/api/angany-configuration/*.api.mdx docs/api/angany-configuration/*.info.mdx docs/api/angany-configuration/sidebar.ts docs/api/angany-app-data/*.api.mdx docs/api/angany-app-data/*.info.mdx docs/api/angany-app-data/sidebar.ts",
+    "update-specs": "node scripts/update-openapi-specs.js",
+    "gen-api-docs": "docusaurus gen-api-docs all",
+    "generate-api-docs": "pnpm clean-api-docs && pnpm update-specs && pnpm gen-api-docs",
+    "docs:build": "pnpm generate-api-docs && pnpm build"
   },
   "dependencies": {
-    "@docusaurus/core": "3.7.0",
-    "@docusaurus/preset-classic": "3.7.0",
+    "@docusaurus/core": "3.8.0",
+    "@docusaurus/preset-classic": "3.8.0",
+    "@docusaurus/theme-common": "3.8.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "docusaurus-plugin-openapi-docs": "4.4.0",
+    "docusaurus-theme-openapi-docs": "4.4.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.7.0",
-    "@docusaurus/tsconfig": "3.7.0",
-    "@docusaurus/types": "3.7.0",
+    "@docusaurus/module-type-aliases": "3.8.0",
+    "@docusaurus/tsconfig": "3.8.0",
+    "@docusaurus/types": "3.8.0",
+    "rimraf": "^6.0.1",
     "typescript": "~5.6.2"
   },
   "browserslist": {
@@ -42,6 +51,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.0"
   }
 }

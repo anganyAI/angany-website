@@ -1,0 +1,71 @@
+---
+id: get-provider-api-v-1-providers-provider-id-get
+title: "Get Provider"
+description: "Get a specific provider configuration."
+sidebar_label: "Get Provider"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVtty2zgM/RUOXtLOML5kd1/05l6mm2l2k0ncvng8HkaCZbYSqZKQG1ejf98BdbEcx267L7YoHQIHByDACkilHqIFzK7FnbNbnaDzsJSQoI+dLkhbAxF8QBJK+AJjvdaxKFqkiK1Z67R0inEjkGALbBbXCUSQIq067EoVerWd9mu/2n/SyWqVIoEEj3HpNO0gWlTw93x+9waVQwfRYlkvJRTKqRyJOTLAqBwhgoEdkKCZcKFoAxIcfiu1wwQiciVK8PEGcwVRBbQreKsnp00KEtbW5YoggrIMVkhTxoBOFHGdQM0UHPrCGo+erVxNJvx3KNZDGcfo/brMxH0LBgmxNYSGGK6KItNxkGn8xfOeasCscCwi6cZDE+Ix31w93aBJaQPRdDKRkGvTrf/Ys/+Xdz9PJr8Udi1ogyczWT/bVIEyu9t1UP0Mlb8mk1r2CFNmGbBmHZ13A5PPWd2GB5WJwWuxtu5nNB+dMsnqK+5eUqlz/IZB4iPujtx+xN2RFsGkeIWjdCTFhS3QKH0hxYX6UTq8eB3c6uR3qoiLR4J1qTL6R+C++j0Dt4OtorHmMXZIK4drdGhiPJekc0l5CHbEfW/nuUT9F0FWfN+gwyBX419oLzxZh71gn1WZkeAD2CgVO1SEyUrR2YATRXhJOtRrR+1ts1XMiA2VRTIwdLoeXzB5Lv5PjdngpJYdzD5+wZgOWsiiOYzDkgt1cJzYg6CXx83kHhV3E3b359XVcQf5rDKdNLl+75x1/799JEhKZ/ykCXN/DMhsfPD1FypIG8IUHdTLvVzKObUbZO7GNgQ5b7lPz53Nf9B7lXKOWshpaBBDzPnrz1LFcTWuW9wgDXt5G3VPh/Guke8lZx2Eh9SRwSa3OdLGtnMQZDOTIhirQo+303E/CMfVYIDVgyH4wElt0jQchb0+G6IC2qHG68cGwK61WduAbFnOTKrMTrwdtk8xu7s+OuyHiFwZlWKOhkIrHta5l8Kht6WL0UvBDZMww9jmwiORNqkHCVt0vrE7HU1GE5DwdJnZNFArXcZq6Dwd86vwc/ld08aWdEn4RKMiJF9lNMcn6oMYKS1u2AbHWVhPuTL7SRmuKt05ex5dtT9Gv36lacVmRuMiUzrUdCBftSldgCo0RzvlLPe3KAnR8GaylLCxnhheVY/K4yeX1TW//lai4xvPUsJWOa0eOWWLChLt+TmBaK0yj2eCeXXflv5rcYpxV+GG63urspJXICFMzoMrVDjXG1RJuHdVLWIWx1jQYO9RG+Km2pf8h/dzzl3J+vQF2xao7B4GbeaQV1U1iLn9iqaue5rEayZY1/8Bn9Ku7A==
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Provider"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/providers/{provider_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a specific provider configuration.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"provider_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Provider Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"name":{"type":"string","maxLength":100,"minLength":3,"title":"Name","description":"Name of the provider configuration."},"description":{"anyOf":[{"type":"string","maxLength":500},{"type":"null"}],"title":"Description","description":"Optional description for the provider configuration."},"brand_key":{"type":"string","title":"Brand Key","description":"Key of the provider brand (e.g., 'openai', 'azure')."},"id":{"type":"string","format":"uuid","title":"Id"},"organization_id":{"type":"string","format":"uuid","title":"Organization Id"},"secret_reference":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Secret Reference","description":"Reference to where the secret is stored (e.g., Vault path)."},"created_at":{"type":"string","format":"date-time","title":"Created At"},"updated_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Updated At"}},"type":"object","required":["name","brand_key","id","organization_id","created_at"],"title":"ProviderRead"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

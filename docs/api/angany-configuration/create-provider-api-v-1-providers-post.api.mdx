@@ -1,0 +1,71 @@
+---
+id: create-provider-api-v-1-providers-post
+title: "Create Provider"
+description: "Create a new provider configuration."
+sidebar_label: "Create Provider"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV01z2zYQ/SuYvbidofXhthfebCcz9cStPbaSHjQazZpckUhIgAFAywqH/72zACVRkiUnOfXQiw2Ai8Xbt/tWQAMOMwvxFC5vxL3RzzIlY2EWQUo2MbJyUiuI4doQOhIoFC1F1dmJRKuFzGqDbDWACHRFYXKTQgyJ3zRfm8+xkvPn8WZu5/NKWwcRWEpqI90K4mkDf04m91eEhgzE01k7i8DQ15qsu9LpCuLGT6WhFGJnaoog0cqRcvwJq6qQiUcw/GwZeQM2yalEHlWG8TlJtpt5GDzeDXaSk0i0oW2gKTrk+HY9KCyJ/7tVRRCDdUaqDCIo8eWWVOZyiMejUQSlVOv5bxE46Qo2/5t37/PMi0IvhMvpKM3t3qYGUK3uFp68E1D+GI3aaGOh6qIAJncN513P5T6qOz/AQvSWxUKbt2A+GVTp/AutXmNpffAVG4kPtDo49gOtDrjwLsUvNMgGkTjTFSmUZ5E4w2+1obNfB9C20foo/fSZEq6vbcVMQ9L60HocrAUQqp0jsJQYcnZe4arQmO6SjWkqAzH3O3WxH+lCmxIdxFChtUttUohgaaSjO1WsQhUfgD6VqscAStx3oI6nSyZ+ZDyPXSzCaWEdl7dU4hPWhXubtI1WjpL1j3R5hwvalv0ZspVWNlByMRof6uyxThKydlEX4qEzhp+W8/9i/C+KMQKZnpREXcu0d/5Nynu0yVDJbx77/Mcc3PW2iuAt1P3c0IIMqYROJelt2YmHjZ99ijZfWGLLnAx5usL5Qtoguw1hXnuiQpcHpsLPZTpHdzLgFB2dO+nrdQ0taDAVl9w4oK7SnqPj9fiKy1Pxfwxu/SE/2mR9HRwmdifoV3rLA2HatZPfLy4OO8gnLGQacv3eGG1+vn2k5FAWPJKOSntoUOhk5+t3VJBUjjIy0M62dKExuOpl7lYHgJy30mantPkXWYuZ/1kKJsdNPRliwl/fShXHFY7u7Hpp2NIb2D0exrtA32uHrU34XnfgMOS2JJdrvjF290HWBMQwxEoOn8fDzYVx2LsrPnIiQ2r6N8YNJ7lzFZt7M4jhKRjwcVwLD9s75fsXLKuC9u+E4Qdly+1u5W2We211WwKv3Bv4YKkW2kPsKLlUGaqVuO73anF5f3Nw2q5FiQozKkk53/f7orKRMGR1bRKykeDu7KigRJfCknNSZRYieCZjg9/xYDQYQQQv54XOPLTaFMy8LLMhL/k/50vpcl27c0cvblD5sLFwE3pxmyAGKMUt++A4OY0lqh6L3fthrev9AJutbL/3qdGlmSENqwKlV5BH33T1MwWsJIc7Djf37m0TAZd4zpUWT6FpntDSR1O0LS9/rcnwM2QWwTMaiU+cpynrNyf0hTFtICT7OiA+9ypj86L2ythvOtwQwo7LJKHKnbSd9cRwf/c44QLrnj2lTnmPwSUrGJcQg39x+bT7dxGvNVCgymruEzEEn5wRrJmRjTg6MUTrQa+NoVr1EDZNsJjoL6TaFqIuFMdzbmxt+y9h5ewj
+sidebar_class_name: "post api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Provider"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/v1/providers/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a new provider configuration.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"properties":{"provider":{"description":"The core provider data.","properties":{"name":{"type":"string","maxLength":100,"minLength":3,"title":"Name","description":"Name of the provider configuration."},"description":{"anyOf":[{"type":"string","maxLength":500},{"type":"null"}],"title":"Description","description":"Optional description for the provider configuration."},"brand_key":{"type":"string","title":"Brand Key","description":"Key of the provider brand (e.g., 'openai', 'azure')."}},"type":"object","required":["name","brand_key"],"title":"ProviderCreate"},"secrets_payload":{"anyOf":[{"additionalProperties":{"type":"string","format":"password","writeOnly":true},"type":"object"},{"type":"null"}],"title":"Secrets Payload","description":"Optional dictionary of secrets to store in Vault."}},"type":"object","required":["provider"],"title":"ProviderCreateWithSecrets"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"name":{"type":"string","maxLength":100,"minLength":3,"title":"Name","description":"Name of the provider configuration."},"description":{"anyOf":[{"type":"string","maxLength":500},{"type":"null"}],"title":"Description","description":"Optional description for the provider configuration."},"brand_key":{"type":"string","title":"Brand Key","description":"Key of the provider brand (e.g., 'openai', 'azure')."},"id":{"type":"string","format":"uuid","title":"Id"},"organization_id":{"type":"string","format":"uuid","title":"Organization Id"},"secret_reference":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Secret Reference","description":"Reference to where the secret is stored (e.g., Vault path)."},"created_at":{"type":"string","format":"date-time","title":"Created At"},"updated_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Updated At"}},"type":"object","required":["name","brand_key","id","organization_id","created_at"],"title":"ProviderRead"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

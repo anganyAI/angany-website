@@ -1,0 +1,71 @@
+---
+id: delete-trunk-api-v-1-trunks-trunk-id-delete
+title: "Delete Trunk"
+description: "Delete a specific SIP trunk."
+sidebar_label: "Delete Trunk"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVE1v4zYQ/SvCnFqAsZNgT7qlmxQNkGKDjduLYRgTaSRzQ5FacuSNK+i/F0NKtrxJsD7IEudx5s3X64GxDpCvYeU7+xJgo6CkUHjdsnYWcrglQ0wZZqGlQle6yJ7uHzMW9AIUuJY8CvS+hBzKCN5G6xZbvd1fpY+wHQ91ud0mFCgIVHRe8wHydQ9/rVaPfxB68pCvN8NGQYseG2LyIQIsNgQ5TH5AgRaCLfIOFHj63mlPJeTsO1IQih01CHkPfGjlXmCvbQ0KKucbZMih66IX1mwEECuQ3ZcwDOoYrXK+oCnU94784SxWhSa8F+zZOUNoQapZYWf4CJ2i/RkdD5Knp9A6GyiIg+vLT/J33oSnrigohKoz2dcRDIOCT9fXb7H/otFlbEl2573zoKBwlsmyYLFtjS6iefktyIV+xr710k/WiUpJjNrIm2ZqwluAccWZFe3hSxV7dV5zqed4oi1TTR6GzaCmM/QeD7NGPLhEUFJsQv1eDyfo3xQC1rEYCfIxNBYjW4l1OMV2z9+o4LOermNeKfSI25zcnMqbqvtxGrepfO8FmyAy828cyk9BQ7xzp50ClQY9hyW2erm/Wqa9WvbTPgyzhXqSjqYezdfqWJwdcwvj2MZxTQCJq23lInKkeGNrtIfss7OVrru069nN4z38LBTniAYt1tSQ5axyPnO+Rqv/i7agMk/Bdb6goDK0ZcZkqHBNFohZ2zqAgj35kPxeLS4Xl6Dg9cK4OlLrvJE66KZeylF8XPzQvHMdXzC98qKNnUfDK3rlYxIL1NmD+JA8Wxe4wTj/46qPShdl4Ofs+tMO/UoRxxILj2VrUMcxjpT7sYVrwFZLjlcCT7qrom4lYdso2LnAAuz7Zwz0jzfDIMdJgGTBSh3w2cwk6IUOM7nao+mEBYi+7NFrAb9/8cM8f/s6rsTv2UdpTZNvD/OYE5ljQnHZd4Rl1PZ+NN8UBbU8u/hGm4T8cQ9u7x7uVnfS1k6KeJLaNLtqepnJzzmvvk+IlXshOwwnmvItHIfhf/6uaJs=
+sidebar_class_name: "delete api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Trunk"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1/trunks/{trunk_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a specific SIP trunk.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"trunk_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Trunk Id"}},{"name":"force","in":"query","required":false,"schema":{"type":"boolean","default":false,"title":"Force"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Successful Response"},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

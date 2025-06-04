@@ -1,0 +1,71 @@
+---
+id: get-synthesizer-api-v-1-synthesizer-configurations-config-id-get
+title: "Get Synthesizer"
+description: "Retrieve a specific synthesizer configuration."
+sidebar_label: "Get Synthesizer"
+hide_title: true
+hide_table_of_contents: true
+api: eJydV9tu2zgQ/RWCL20B+tYtWsBvaZttA3S3QezsSxAYjDSS2EqkSo7cOob+fTGkrrbj3fQlscSZ4ZmZMxftOcrU8eUdX+00ZuDUI1h+L3gMLrKqRGU0X/IbQKtgC0wyV0KkEhUx1yuwyOhEpZWVJD/lgpsSwsNVzJc8BdwMxDeyVJvtYvRqZMFtmueNijebFJAL7iCqrMIdX97t+ef1+vo9SAuWL+/u63vBS2llAQjWeQEtC+BL3lnhgitypJSYccEt/KiUhZgv0VYguIsyKCRf7jnuSlJ0aJVOueCJsYVEvuRV5a2gwpwEPnjL7CrmNV1vwZVGO3Bk4/V8Tv/GIVxVUQTOJVXObhphLggggkYSl2WZq8j7P/vmSGc/wFVaCimqcENw7xhti+5vOj9M4gWrtPpRASNtlhjLMFPu6TyynwozpRlmwIxNpVaPTX5rQXi2KgZLsX1G2K4bNQrcIb51Bqw9v4giU2lkVx8ZGla5Ad4DrtWCg06Vho2KQaNKFJHi6dBcemF21Qsf4uiPmEm89yc5H25liTWFF2ojwl7CNJ0K9sKUoKWaILrJ4sUrjzSXOq1kejZ3X1qZQ1zvP1xP3rxjrQ0WmRjay0BPbleCJXby582rqVdNZJVTBvwRXS6rWJkN6MjEdCNRTu++Jr5exmBq0b3RVZ5zYngL74KssMvWyhHJ/HF7CQs8aFHmSoO0i7eCFeUfPqOmwrJCphLW0P8hhwP8rRK54GRR5kqnGysRTnqgNEIK9qwLq8YKuyErpz1ob2J0E1OafX4cwVq8nc/nPfdahjR9awxNxrEi4zK/HlRx6DwNRvPwDSI8i7oh7qrlYuhAR/DbCpoFZJOOu+Pa7vul8CfGFuQtGs/loPvCsdCAPHefV+gn6vs2dJ++TJuahnOjpBZ82Hue2W6+DlRPtZzjUh9exsxP7YNyuu1EFiRCvJF4FlIsESaofEPupkdQZRd43AVVAQ5lUbKfGYTme9CVpWPN1R5GVcYDGE+V9ElA5+h2G8z+NsRcOmQNNo8zk27jILKA3bCHYTIfjMlB6kGUPkvHVl6jIbvXGBRhInMHdX1YRcP5fhdm5XhgnRoZnuDHZBuledhDesp+GPp+A5JWAgL15vXr4zXgH5mrOETp0lpjf38HiAGlyumXQijcsUBuotHp/+j2Xfe874MqrZW74XwyASDltHDpuVH2FzhHk6wzdmYsUzDYmk7/K6HkV7i6kRukpQ9viO7TbnwM4Tt1Wce/9fr6yGDIbQGYmWa1JXLRWrnkM1mq2XYxG/SzyXixne27lbQeLLUrynHI2nC17cKVIZa8WVN9rQQBQqJ0YrxkO591KvWOjUjJLq6vjqp4LFFILVMoQGOYy4MycIJZcKayETjBpI4ZQg6RKZgDRKVTxwXfgnXB7mI6n8654L8muUk9tMrmFBxVpDN65f9MaLk0FU4QfuG09FyQOa7hF3ZOTKViX8gG+Vkah4XU/fbLPwGy4VfLgYP7vrCe//3SxJ3AzcpcKs9278e+SfYdl6UixxeUmCcTzgVf9l8h94JnxiFp7/cP0sGtzeuaXv+owNK3zb3gW2kV7UG+VGPl6HfcNLszPr68aWrkFXvKgbYUNBXCVuYVPXHBv8Nu9LHkyz8DGfvvq31zfhFFUOJA86hb0fzoKuPT5ZpyWlGw+iYfiCvaH4NuNEa13weJtfkOuq47kEjPBLCu/wUVISEb
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Synthesizer"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/synthesizer-configurations/{config_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve a specific synthesizer configuration.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"config_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Config Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"name":{"type":"string","title":"Name","description":"A unique name for this synthesizer configuration within the organization."},"provider_id":{"type":"string","format":"uuid","title":"Provider Id","description":"The ProviderAccount ID to use for this configuration."},"engine_identifier":{"type":"string","title":"Engine Identifier","description":"Identifier of the specific synthesizer engine from the provider (e.g., 'openai-tts-1')."},"language":{"type":"string","title":"Language","description":"BCP-47 language code (e.g., en-US, fr-FR).","default":"en-US"},"audio_encoding":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Audio Encoding","description":"Audio encoding format (e.g., linear16, mp3 for output if applicable).","default":"linear16"},"sampling_rate":{"anyOf":[{"type":"integer"},{"type":"null"}],"title":"Sampling Rate","description":"Audio sampling rate in Hz.","default":16000},"engine_specific_config":{"anyOf":[{"additionalProperties":true,"type":"object"},{"type":"null"}],"title":"Engine Specific Config","description":"Provider/engine-specific configuration parameters, conforming to the engine's schema."},"id":{"type":"string","format":"uuid","title":"Id","description":"Unique identifier for the synthesizer configuration."},"organization_id":{"type":"string","format":"uuid","title":"Organization Id","description":"Identifier of the organization owning this configuration."},"created_at":{"type":"string","format":"date-time","title":"Created At","description":"Timestamp when the configuration was created."},"updated_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Updated At","description":"Timestamp when the configuration was last updated."},"has_secret_configured":{"type":"boolean","title":"Has Secret Configured","default":false}},"type":"object","required":["name","provider_id","engine_identifier","id","organization_id","created_at"],"title":"SynthesizerConfigurationRead"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

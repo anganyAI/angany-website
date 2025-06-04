@@ -1,0 +1,71 @@
+---
+id: delete-provider-api-v-1-providers-provider-id-delete
+title: "Delete Provider"
+description: "Delete Provider"
+sidebar_label: "Delete Provider"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1VMFu2zAM/RWDpw1Qm6boybduLbAAHVa02S5BELA246i1JVWis2aG/32g7DhO0+bgWNIz9fj4yAYYiwDpAq5nyb23W52TD7BUYB15ZG3NLIcUciqJaeV6xAqdXm2nwzqsDkc6X606OCgIlNVe8w7SRQM/5vP7b4SePKSLZbtU4NBjRSxXCsBgRZDCKBQo0Ea2kDegwNNrrT3lkLKvSUHINlQhpA3wzsmngb02BShYW18hQwp1HaOw5lIA+xyTWQ6tUPAUnDWBgkS5vLiSv5xC5rWT7CGFxzrLKIR1XSYPPRhaBVeXl6fYP1jqPMqW3HpvPSjIrGEyLFh0rtRZPJ48B/mgGaXgvGjOuqOSE6Mu5U0zVeEUUNrs6BTN7tc6ynisRauGHW2YCvLQLlu130PvcTcS6M52BCXFKhQfabuH/qQQsIhidJDPoVGMZC6n7eFu+/RMGR/VdRHz6q7ucctDmIO8nbqfp3HTyffRZXuI2PEkoPzUu6LeRDcP7SHsiDf20BegOoOmMEGnJ9vpZGiMSTNyczvqiEepe1fJcV8MEm6YHfQOl/VTBxB22qxtRPaJXJsCzS75bs1aF3XXtcn1/QzeJ3KMqNBgQRUZTtbWJ9YXaPS/eBZU4inY2mcUVIImT5hKymyVBGLWpgigYEs+dHGn5xfnF6Dg7ay0RaRW+1LU0FUxka34OPureWNrPmN643MX/YElz+mNhyTOUSd3EkPydDZwhbFL+slwWomjBAfx5IaJK1FHG0cyTV+iBaDTwn4qVRsmnoJ0PHaWCjY2sMCb5gkD/fZl28r2a01extlSwRa9xicpwaKBXAd5zyFdYxnohNkwBuDLQ+/2rwmojxnvTW3E0lssa1mBghfavZuPsZU3hHkcqk2PuM4ycjz69mTyyOgbXHxze3c7v5Vy1CLRIGPvObV/GQ2XY2pN0yHm9oVM2w5MWdbCsW3/AwlBNF0=
+sidebar_class_name: "delete api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Provider"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1/providers/{provider_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete Provider
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"provider_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Provider Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Successful Response"},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

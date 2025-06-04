@@ -1,0 +1,78 @@
+---
+id: get-api-key-api-v-1-api-keys-api-key-id-get
+title: "Get Api Key"
+description: "Get details of a specific API key."
+sidebar_label: "Get Api Key"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVktv20YQ/iuLOcUAZdlGc+FNqYPEjRMbfrQH2xBG5IjahNpldoeOWYH/vZhdUqKk2EmKHnoRRe48vvnmsbMCxsJDegeTyzP1gRoPDwnk5DOnK9bWQArviFVOjLr0ys4VKl9Rpuc6U6LzhZrDe3NvJq7w6b1RSims9PQLNVOdp72Iur09O42n+SxVp8g4Q0/Kk/famnhyb66Ia2d6O71u5xwSsBU5FFhnOaRQEE97X/J8PO5f/XS6ATGdFsSQgKesdpobSO9W8P7m5vINoSMH6d1D+5BAhQ6XxOR8EDC4JEhhYwYS0EJHhbyABBx9rbWjHFJ2NSXgswUtEdIVcFOJpmenTQEJzK1bIkMKdR2ssOZSBCaVFsbVWQ6tAHDkK2s8eTFycnQkj+1MXNdZRt7P61JddcKQQGYNk2ERx6oqdRYYGn/2orMaAKuc8Mc6eogB7sNd4tM5mYIXkJ68fp3AUpv+/XgD/pNo71bKrSc3mjtNJi8bJQ7U3DrFC+pzCa0wZasIQTMt/T6GNuk/oHPYQMBwFmUHEK6jnV0Q59qz1GlFbqlDdflx57JNgJ4q7chPMfJlmot5SPezScuRacR6SdAmazFTlyVIznosb6NZNeE9PBfhD5YquA65UWI0omGH0yUx5sj4EqKXnbND9bG3sgtgkue6g/DH9cUntXbXJqDzX6lYqdQErCvQ6L9DJNNfM3AxUFXRWtdc3zHSK3U9shvWZT0rdRYGhM7JsJ5rcuqVxzkptirXviqxORAfmSNkyqez5lfA/h611JtmaCMWzk+Uy76hCYuhEj1Pa7829Z/V4Dl6Vrd+7Uj7KWasH4ddPrO2JDTDnHo1iVJRJaeSmPIf6Zx2YrtZ+WtBvKDY8yE1Xnk751E+kJ9jXTKkcyw9tZtmt7PPlPHWaL2LU2o9M0LB7lfguoq2Ur2Vsx3eh+wMKJxcnn2g5opwP7DrMEbDPHOEuTbF+n569U3zwtasPBmvxaY0OB4cQttKfL+dnOzP8j+x1HlshLfOWffvB3m8Hrfm6bZAabOt05+YMdowFeSgfdgfxut6sxGgFM7SFy+18EfyHgvaTPbnRQMZ6kZOf1QbEld03ckNMrmhN7L7fBinkb7vOetFZFnYMxhzuyRe2G4ZgSQuBymMsdLjx2N5jGQdGa82e0Q7WEVCUcUkDReSNTsL5gq63SK0YhQQx9rMbZDsS9cUaBo1qXmhrsk96mz/fpZDmZQxbwpNrrDmhXX9SPZR0avKfiNHuZo16sI16oNDtj4ovG9yJ3fMIzkfrR4dHh8eQQJPo9IWAVPtSiFBL4uxfAo/o65JRkxPfFiFnGPJN/TEa/SHqNW52JAAK+t5iWazqoRFtFuadkNbbZrn/7SvdmmUkMdViTr0SmBn1ZXKnWyYQuex8NGVCySQDhbPhwQW1rMIr1YC49aVbSufv9bkZJ99SOARncaZlMLdCnLt5X/eDdkXyHp11TXUgXoOb983Rlh/xLKWtzhztxfkMCwWhHlYqledwCTLqOKB6t5sk0ts3Ufv3t4IE7WQs7mCYt0n/Z/B7NqGtVpFiRv7hUzbrlGyvAvAtv0HDvpleg==
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-auth/angany-auth-service
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Api Key"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/api-keys/{api_key_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get details of a specific API key.
+
+Args:
+    api_key_id: API key UUID
+    db: Database session
+    
+Returns:
+    API key details
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"api_key_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Api Key Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"name":{"type":"string","maxLength":255,"minLength":1,"title":"Name","description":"User-friendly name for the API key"},"scopes":{"items":{"type":"string"},"type":"array","minItems":1,"title":"Scopes","description":"List of permissions/scopes"},"expires_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Expires At","description":"Optional expiration date"},"extra_metadata":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Extra Metadata","description":"Additional JSON metadata"},"id":{"type":"string","format":"uuid","title":"Id"},"organization_id":{"type":"string","format":"uuid","title":"Organization Id"},"key_id":{"type":"string","title":"Key Id","description":"Public key identifier (safe to display)"},"created_by":{"type":"string","format":"uuid","title":"Created By"},"created_at":{"type":"string","format":"date-time","title":"Created At"},"last_used_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Last Used At"},"is_active":{"type":"boolean","title":"Is Active"},"is_deleted":{"type":"boolean","title":"Is Deleted","description":"Whether the key is soft-deleted","default":false}},"type":"object","required":["name","scopes","id","organization_id","key_id","created_by","created_at","last_used_at","is_active"],"title":"APIKeyRead","description":"Schema for reading API key (without sensitive data)."}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

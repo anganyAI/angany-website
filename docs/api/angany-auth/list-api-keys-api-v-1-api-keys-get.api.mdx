@@ -1,0 +1,71 @@
+---
+id: list-api-keys-api-v-1-api-keys-get
+title: "List Api Keys"
+description: "List API keys for an organization."
+sidebar_label: "List Api Keys"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1v2zgQ/SsETwkg20mBXnxzt8U2m2wTxAn2EBvGWBpZbChSJUdOtIb++2JIy5bttN0Ce9wcYkl88/1mhhtJsPJy/CQnd1fiGhsv54nM0KdOVaSskWN5ozwJPn7GxovcOgFGWLcCo/4GxgxnZlrYFy9Aa2GsGWSokTCLAmdLS4WAlNQaBZhMKBNfzocz8+jReZGCER7jaQkGViiowK3MqMMLT0C1FzbnU+WC+uHMzMzErfx4ZoQQIluOxUcgWIJH4dF7ZU08mZl7pNqZDhnCsvk+sjN8TXWdoRfe5nQQxLlMpK3QhXCvMjmWWnlaQKUWfBwe1pf798UKSSbSoa+s8ejleCPfXVzwz2Fup3Waovd5rcX9FiwTmVpDaIjhUFVapcHu6KtnmY30aYEl8FPl2CtS0UJnnp8VYelPIQZK5F9qKpRj6ckps5KJLOH1Bs2KCjl+9/59IktluvfLRJIizfAvLH1MDy7hIHcKTaYbwQYCR7iA29TKNpE+tRUeenboQ5t0H8A5aGTw4Spiey5Mo543OWpzUaErVSi6H21NtonE10o59AuIKTXNbS7HT6dZyK0rGSMzIByQKlG2yQ5maq1lO9/78imqFRM68ec2PIAWwXQon2Cl0RtysCiRIAOCH3n0Y+PkQPzZaTl2YJJlauvCH9PbL2Jnrk2kyt6iwC74ulaZ3Bu6ylim3++LX1Nw2xMVUdszNt9R0gldY8PY47Du6qVWKZNKqAwNqVyhE2cechRkRaZ8paE5ZxupQyDMFsvmV5z9LUqJD01fRyTOv6DLqaIJsSINnha136n6zzh4A57Eo98ZUn4Rp2XP4aW1GsH0a+rFJKKiyHbW/Uzm4xZ2XJW/CqQCY8+H0hyO0IDPodYkxzloj+2+2e3yK6ZxVn6rlWMfnuKU2s2MQNhTBu5YdFDqg5od5b2fnV4KJ3dX19jcI5wGNg2TNswzh5Aps+pmmjh7UVTYmoRH41XYT9xf58M3JtnOUqXijmWIJdC9hCtDuELXQz8ExM9ytRv6ncqTyHg29pbLdyPsIuPVJrrVNZQt/yXSY1o7RU0g7eeHh7sPCA6dHD/NmY8lUmF5McbNVwGvDjmCSo3Wl/wzYCdHcq8oWI4roa9ul5CCqAokYBgzMgLYF2VyG5BdnGYFphGTmgoxRbdW6WmgfMgDI+7ScNWAmgrrusnko6AXlX1Bh5lYNuLWNeLaAVkfBD43meNRu0bno9aL4eXwQibydaDtKvhUO82Bq3I14k/h32DLlQHhKw2r0Oeg6QFfaef9EJS4YR0cYGU9lWD2G3t7Cev4cxTcZn9j+P+2Fm9rWxJxwkeVBmW450JtNltyhtbhYl5yNbYElYnkBiqsJ0ZsNuzZo9Nty5+/1ei4AeaJXINTsGT2Pc3bRBYIWWiGDU8lLmqaYsWdsAZdh1lwfJE76JrfPz2wFzU7tp/BkfFJ99BbF2Canu7NJiIe7DOato2jkaPnd9nO27b9B198FI0=
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-auth/angany-auth-service
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Api Keys"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/api-keys/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List API keys for an organization.
+Shows all non-deleted keys (both active and inactive).
+Users can see and manage the active/inactive status of their keys.
+
+Args:
+    db: Database session
+    
+Returns:
+    List of API keys (excludes soft-deleted keys)
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"api_keys":{"items":{"properties":{"name":{"type":"string","maxLength":255,"minLength":1,"title":"Name","description":"User-friendly name for the API key"},"scopes":{"items":{"type":"string"},"type":"array","minItems":1,"title":"Scopes","description":"List of permissions/scopes"},"expires_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Expires At","description":"Optional expiration date"},"extra_metadata":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Extra Metadata","description":"Additional JSON metadata"},"id":{"type":"string","format":"uuid","title":"Id"},"organization_id":{"type":"string","format":"uuid","title":"Organization Id"},"key_id":{"type":"string","title":"Key Id","description":"Public key identifier (safe to display)"},"created_by":{"type":"string","format":"uuid","title":"Created By"},"created_at":{"type":"string","format":"date-time","title":"Created At"},"last_used_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Last Used At"},"is_active":{"type":"boolean","title":"Is Active"},"is_deleted":{"type":"boolean","title":"Is Deleted","description":"Whether the key is soft-deleted","default":false}},"type":"object","required":["name","scopes","id","organization_id","key_id","created_by","created_at","last_used_at","is_active"],"title":"APIKeyRead","description":"Schema for reading API key (without sensitive data)."},"type":"array","title":"Api Keys"},"total":{"type":"integer","title":"Total"}},"type":"object","required":["api_keys","total"],"title":"APIKeyListResponse","description":"Schema for API key list response."}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

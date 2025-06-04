@@ -1,0 +1,71 @@
+---
+id: delete-conversation-api-v-1-conversation-configurations-config-id-delete
+title: "Delete Conversation"
+description: "Delete a conversation configuration."
+sidebar_label: "Delete Conversation"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v2zAM/SsGTxugJm3Rk29dW2AFOqzosl2CIGBsxlFrS6pEZ80M//eBspPY/RiWgyNKTxTf40cDjEWAdA5X1mzJB2RtDSwU5BQyr100U7imkpgSTLIBTIy1LmofrQkosI464zaHFPJ4aTm8skSnl9uz8d7ITVj29lLny2XnAhQEymqveQfpvIGvs9n9F0JPHtL5ol0ocOixIiYfIsBgRZDCwREo0ELDIW9AgafnWnvKIWVfk4KQbahCSBvgnZOLgb02BShYW18hQwp1Hb2w5lIAV9FzcptDK897Cs6aQEF8nJ9eyN9YwB91llEI67pMHnowtAouzs/fYn9hqfNO4RvvrQclTJgMCxadK3UWj6ePQS40AwLOSw5Yd6HkxKhLWWmmKrwFlDYbnaLZfV9HCcdKtOqwow1TQR7aRav2e+g97gby3NkuQKFYheI9ZffQbxQCFlGMDvIxNIqRzOS0Pb5tV4+U8Sir88ire7rHLY5ujvJ26n5M47qT773H9hApxTcO5aegIt7YYx+A6sovhSk6Pd2eTYdNcDJugmlzqN12UP0/JM9d5oY9cJBsw+ygr2exVx1AotFmbSOyD/zSFGh2ydXw2eTy/hZet/4YUaHBgioynKytT6wv0Og/XdAq8RRs7TMKKkGTJ0wlZbZKAjFrUwRQIIQ7v2eT08kpKHg5KW0RQ6t9KeroqpjKVvyc/Na8sTWfML3wxMV6wJJn9MIHEhPUyZ34EJ7OBq4wdkU/BfrZNRpwr0g2xwb731HXKy5hTV2JOtZ6ZND0eZ4DOi2Uz7oG/ijXoCA9TqqFgo0NLNebZoWBfvqybWX7uSYv82+hYIte40ryOG8g10HWOaRrLAP9g9qnh75FPicfMdh3gpE+2GJZiwUKnmg3Gqix+zeEeZzBTX9+mWXkeHDzzbCSaXlojOubu5vZjWS0FsEOZdyXrdovBvNoHFjTdIiZfSLTtoc4WWyJsW3/ArKCYpg=
+sidebar_class_name: "delete api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Conversation"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1/conversation-configurations/{config_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a conversation configuration.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"config_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Config Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Successful Response"},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

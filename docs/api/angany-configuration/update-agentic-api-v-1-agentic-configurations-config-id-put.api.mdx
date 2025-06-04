@@ -1,0 +1,71 @@
+---
+id: update-agentic-api-v-1-agentic-configurations-config-id-put
+title: "Update Agentic"
+description: "Update an existing agentic configuration."
+sidebar_label: "Update Agentic"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNV99v2zgM/lcEvmwDnKQd9pS3bitwBXa3okvvpQgC1WYcbbakSXTbnOH//UDJ8Y8kza29e7iXNrJI6iP5kaJqIJl7mN/BRY6aVArLBDL0qVOWlNEwh1ubSUIhtcAn5UnpXMgoK1Kj1yqvnGTRKSRgLMbFVQZzqILmqpVeSatWD+fdcqTsV+16pbLVylYECXhMK6doC/O7Gn5bLK4/onToYH63bJYJWOlkiYTOBwEtS4Q5dFYgAcXwraQNJODwZ6UcZjAnV2ECPt1gKWFeA20tK3pySueQwNq4UhLDr4IVUlSwwKdgWVxl0PDxbBA9fTTZlq3s20+NJtTEW9LaQqXBzdl3zzGtB8dbx0EjhZ5X0YsapN5+XQe/xvCapPuiq6IARrID+AfrNnvpe52pzwMTTQKoc6Vx5S2mat2lbmxcZplieVlcDzyKwWiPMfffMaWTB1+Gk8S39iQRgw7HOZkJ68yDytDNIsLJDuGYmaKnyhSaZh9Pf3pbA5+GyvEoaBpWdOit0T7m6v3ZGf8bI/tWpSl6v64KcdMKw79mwz5FRxnfj82FqLT6WaFgbbE2TtBG+eM1Kx4VbZQWtEFhXC61+qut5f+eR/s4v9pIFzH43MLF5zpMk8Au5VziL6je61aN63cfyWKDYrd/kaam0iSuPgsyovKDCB5iaetCZQx2rbg3PZ+sltpXvfA+jn5LmHUIQ8fnXTziiWLtTBkEdtEQb3GaTxPxJrc0+fDm3fR/WbbXLy3XJOwYV/KtQya4HHXfeBGrJnj6Mi4cocBtLJk+k7/AxGHBvJCNXweqxxh5yIThYcI86hCQ46xMHXJzXEk6CYnb2oRU6CDdHRdVxQUdFokq0ZMsrXjcYOwYe61EetEeHWDE238H47nucRTQKartWv9rIRbSk2ixHb8N+qv8LnbgcdM5VvaBgYeMGOViefqeuUGZtbfMh/fvDy+WP2WhsujGpXPGvf5WyZCkKviXIiz9oUBh0tHuL3R+pQlzdNAs+4BK5+R2QK4vJgJkcpQ+P9Urf0fvZR6mmShyoq1yMMSCd/8pmexXPLqVG6SkD2+M7vNufI7hOzVH8LB6YDDmtkTaGB6O44wbptM5zKRVs4fzWdtsJuPZeFZ3U20zmIu/cX5jxobTcReqDZGFdtLl9X0UYBRMkZt+gL18kqUtsB85+jCPSdh9fvZqYetKr03AsaO7zqXeihHdxcX11YH5sUQptcyxRE2hGQ+LyyfCoTeVS9EnQupMEBaYmlJ4JH6ieEjgAZ2Pds+nZ9MzSOBpUpg8QKtcwWFXZT7jT+HPhIchU9GE8ImmNvgpC1rgE3VOTKUSX9gG+2mNp1LqQdjat9LuLXUwQ3UV+6JXVZtPhjWzhVShgoIHdUugO5BWscvnjPkoiSCBef84WiawMZ5Ys67vpcdbVzQNf/5ZoeMn1zKBB+mUvOcU3tWQKc+/M5ivZeHxhGtvb9qaeyeeA78rLc2F9SCLileQwA/cjt5woZ1sUGbh2Ve3+5/iUZNQ9L3+QQ/k/hQ1LtIULZ2UXQ5q8/p2AQnct0+70mSs4uQj9xP5GKEaG8PKbz/+VkMhdV5x15pDNMkckRXnp6vJtgaT3Y9BUx0Ho66jxML8QN00XWyI1xyXpvkbrRKAsw==
+sidebar_class_name: "put api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update Agentic"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/api/v1/agentic-configurations/{config_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update an existing agentic configuration.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"config_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Config Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"properties":{"name":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Name"},"description":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Description"},"engine_specific_config":{"anyOf":[{"additionalProperties":true,"type":"object"},{"type":"null"}],"title":"Engine Specific Config","description":"Updated provider/engine-specific configuration parameters."}},"type":"object","title":"AgenticConfigurationUpdate"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"name":{"type":"string","title":"Name","description":"A unique name for this agentic configuration within the organization."},"description":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Description","description":"Optional description for the agentic configuration."},"provider_id":{"type":"string","format":"uuid","title":"Provider Id","description":"The ProviderAccount ID to use for this configuration."},"engine_identifier":{"type":"string","title":"Engine Identifier","description":"Identifier of the specific agentic engine from the provider (e.g., 'gpt-4')."},"engine_specific_config":{"anyOf":[{"additionalProperties":true,"type":"object"},{"type":"null"}],"title":"Engine Specific Config","description":"Provider/engine-specific configuration parameters, conforming to the engine's schema."},"id":{"type":"string","format":"uuid","title":"Id","description":"Unique identifier for the agentic configuration."},"organization_id":{"type":"string","format":"uuid","title":"Organization Id","description":"Identifier of the organization owning this configuration."},"created_at":{"type":"string","format":"date-time","title":"Created At","description":"Timestamp when the configuration was created."},"updated_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Updated At","description":"Timestamp when the configuration was last updated."}},"type":"object","required":["name","provider_id","engine_identifier","id","organization_id","created_at"],"title":"AgenticConfigurationRead"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

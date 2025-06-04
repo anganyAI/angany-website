@@ -1,0 +1,71 @@
+---
+id: delete-synthesizer-api-v-1-synthesizer-configurations-config-id-delete
+title: "Delete Synthesizer"
+description: "Delete a synthesizer configuration."
+sidebar_label: "Delete Synthesizer"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v2zAM/SsCTxugJm2xk2/dWmAFOmxYs12CIGBtxtFqS6pEZ80M//eBspPY6zosB0cfjxT5yMcWGMsI2RLu95a3FM0vCrDSUFDMg/FsnIUMrqkiJoUqnlAqd3ZjyiaggGagwXnqN7cFZFAkm/XIYo3erHcXk6OJk7ge9mtTrNe9A9AQKW+C4T1kyxY+LhZf3hMGCpAtV91Kg8eANTGFmAAWa4IMjo5Ag5EcPPIWNAR6akygAjIODWmI+ZZqhKwF3nsxjByMLUHDxoUaGTJomuSFDVcC+JA8q9sCOnk+UPTORori4/L8nfxN2btv8pxi3DSV+jqAodPw7vLyJfY7VqZIZKibEFwALZkwWRYsel+ZPF3Pf0QxaEcJ+CAVYNOHUhCjqWRlmOr4ElC5fHKLdv95kyicMtHp44mxTCUF6FadPpxhCLgf0XPn+gAlxTqWf2P2AP1EMWKZyOghr0MTGWoht93pbffwg3KeVHWZ8uqfHnCrk5sTvT27r6dx3dP3t8cOEGnFFw7lp6Em3rqTCkD37ZfBHL2Z7y7mIw2cTTUwb4+t242a/17K3BduLIEjY1tmD0M7y/6hB0gwxm5cQg5xX9kS7V59GD+rrr7cwp+ynyJqtFhSTZbVxgXlQonW/OqD1ipQdE3IKWqFtlBMFeWuVpGYjS0jaNhRiL3fi9n57Bw0PJ9VrkyhNaESckxdzuUofc5+Gt66hs+YnnnmUztgxQt65mMSMzTqTnxInt5FrjGJYhgCw9waz7Y/cmxP8vrPKTfwLUHNfYUmNXqKvx2KvAT0RhK+kIK8WmjQkJ2m1ErD1kUW67Z9wEjfQtV1cvzUUJDZt9Kww2DwQYq4bKEwUdYFZBusIv0jsTdfB3m8Va8lcFCBFQ3ssGpkBxoeaT8Zpkn5W8Iizd92uL/Kc/I8snwxqGRSHkVxfXN3s7iRcjbC17GHh57Vh8VoFk0Da9sesXCPZLvuGCfLXmLsut9g1WAA
+sidebar_class_name: "delete api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Synthesizer"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1/synthesizer-configurations/{config_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a synthesizer configuration.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"config_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Config Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Successful Response"},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: get-trunk-api-v-1-trunks-trunk-id-get
+title: "Get Trunk"
+description: "Get details of a specific SIP trunk."
+sidebar_label: "Get Trunk"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vk1v4zYQ/SvEnHZRJk6CnnxLt8HWxbYbJN5eDMOYSGOZG4nUkqM0rqD/Xgwp2XKcpLsFcrEl8fHN9yNbYCwCTBcw9429D7DUkFPIvKnZOAtT+EiscmI0ZVBurVCFmjKzNpm6nV0rll2noMHV5FG2zHKYQkG8iksrrM3q4Ty9hFX/0eSrVUEMGgJljTe8hemihd/m8+tfCD15mC6W3VJDjR4rYvIhAixWBFMYSECDERdr5A1o8PStMZ5ymLJvSEPINlQhTFvgbS37AntjC9Cwdr5Chik0TWRhw6UAYg7ULIdOjHsKtbOBglBcnJ3J32FubpssoxDWTaluejBoyJxlsixwrOvSZDEvk69B9rQjt2ovWWOTLJj8R1wVJ3WfkONdA+pPWe80OF+gNf9ER1Y/ZujzaKtKVjEweROkBGTZrI0U7GUnLnu4mu3hnYbMEzLlK+RX3cmR6YRNRSPGD2mrumQhaup8RIR2+3kdu+U7KDu9g9mmLEHKPhj5kmh7I9jw5pAe89xIUrC8HtUxtV7P6e6+UsavWrkUXuF3/k3oXcw12bx2xvJbmLgauDsNfUNs38LObODuZDQLEzgJzlvYuhnzS1xhNZj0zzbZnXMloX09gKBudiRd99SfsYAtIM5gHO/j6X1+Ag8mavlE1H5NCg5P1T19p1wZm8ZDphzvXMMK9wKv3uGduJ3F5Z/U9e+yFCi+h/cKuk7i+fni4lgj/8LS5In3ynvn/79AplMoSiVTFY4BpcsOVl+SglGRjGUqRI+W+3qg97gdqc0nl+0aoQrFa1L3B4WARZTcBHkZGpOh5rL6X70gcSXTPW5U3X16U3ZfDiOV+lljA0QO4CPCVNuKeOP6ox10OnKnMMHaTB7OJ+l4n7TDydyNjvZbKWcq0PiA32Vmw1xDf1rHUUoAMSpNGZGDmtkC7VZ9cHZtiiaNp7q8nh219SGiQosFVWRZrZ1X43EKWnkKrvEZBa3Q5oqppMxVKhCzsYWMzAP5kHjPT89Oz0DD40npiuha40vJg6mKiXyKPyd/G964hk+YHvm0jmXHkuf0yLsgTtGoT8IhcdYucIWx+fsrjty64uA+Da3dT8/3Xs36PIszk7pEExs5+t32dVwA1kYCPRd4ugjqqJrpnrXUsHGBBdi2dxjoiy+7Tj5/a8jL5W2p4QG9wTup06KF3AR5zmG6xjLQK0G8u+k7/b16ydehoa208wOWjbyBhnvajm+DcYY3hHm8P7b98mWWUc2jjUeSIxq9a++PV3PYn/aDuqeW1MPDSFIOnWrbhJi7e7Jdt/dR3sXBrvsXk9vvPQ==
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Trunk"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/trunks/{trunk_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get details of a specific SIP trunk.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"trunk_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Trunk Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"id":{"type":"string","format":"uuid","title":"Id"},"name":{"type":"string","title":"Name"},"organization_id":{"type":"string","format":"uuid","title":"Organization Id"},"asterisk_identifier":{"type":"string","title":"Asterisk Identifier"},"created_at":{"type":"string","format":"date-time","title":"Created At"},"updated_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Updated At"},"auth":{"anyOf":[{"additionalProperties":true,"type":"object"},{"type":"null"}],"title":"Auth"},"aor":{"anyOf":[{"additionalProperties":true,"type":"object"},{"type":"null"}],"title":"Aor"},"endpoint":{"anyOf":[{"additionalProperties":true,"type":"object"},{"type":"null"}],"title":"Endpoint"},"identify":{"anyOf":[{"additionalProperties":true,"type":"object"},{"type":"null"}],"title":"Identify"},"registration":{"anyOf":[{"additionalProperties":true,"type":"object"},{"type":"null"}],"title":"Registration"},"is_registrar":{"anyOf":[{"type":"boolean"},{"type":"null"}],"title":"Is Registrar"}},"type":"object","required":["id","name","organization_id","asterisk_identifier","created_at"],"title":"TrunkDetails","description":"Detailed information about a SIP trunk (abstraction + PJSIP sections) "}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

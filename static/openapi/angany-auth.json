@@ -1,0 +1,648 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Angany Auth Service",
+    "description": "Authentication and authorization services powered by Ory Kratos and Hydra",
+    "version": "0.1.0",
+    "x-logo": {
+      "url": "/img/logo/logo-without-text.png",
+      "altText": "Angany.ai Logo"
+    }
+  },
+  "paths": {
+    "/api/v1/api-keys/": {
+      "get": {
+        "tags": [
+          "API Keys"
+        ],
+        "summary": "List Api Keys",
+        "description": "List API keys for an organization.\nShows all non-deleted keys (both active and inactive).\nUsers can see and manage the active/inactive status of their keys.\n\nArgs:\n    db: Database session\n    \nReturns:\n    List of API keys (excludes soft-deleted keys)",
+        "operationId": "list_api_keys_api_v1_api_keys__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIKeyListResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "API Keys"
+        ],
+        "summary": "Create Api Key",
+        "description": "Create a new API key for an organization.\n\nArgs:\n    api_key_data: API key creation data\n    request: FastAPI request object (for headers)\n    db: Database session\n    \nReturns:\n    Created API key with the actual key value (only shown once)",
+        "operationId": "create_api_key_api_v1_api_keys__post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/APIKeyCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIKeyCreateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/api-keys/scopes": {
+      "get": {
+        "tags": [
+          "API Keys"
+        ],
+        "summary": "Get Available Scopes",
+        "description": "Get available scopes grouped logically for portal interface.\n\nReturns scopes organized by resource type and permission level\nfor easy integration with the portal's API key management interface.\n\nThis endpoint uses cached data loaded from YAML at startup for fast access.\nScopes are currently global and not organization-specific.",
+        "operationId": "get_available_scopes_api_v1_api_keys_scopes_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/api-keys/{api_key_id}": {
+      "get": {
+        "tags": [
+          "API Keys"
+        ],
+        "summary": "Get Api Key",
+        "description": "Get details of a specific API key.\n\nArgs:\n    api_key_id: API key UUID\n    db: Database session\n    \nReturns:\n    API key details",
+        "operationId": "get_api_key_api_v1_api_keys__api_key_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "api_key_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Api Key Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIKeyRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "API Keys"
+        ],
+        "summary": "Update Api Key",
+        "description": "Update an API key.\n\nArgs:\n    api_key_id: API key UUID\n    api_key_data: Update data\n    db: Database session\n    \nReturns:\n    Updated API key",
+        "operationId": "update_api_key_api_v1_api_keys__api_key_id__put",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "api_key_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Api Key Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/APIKeyUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIKeyRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "API Keys"
+        ],
+        "summary": "Delete Api Key",
+        "description": "Delete an API key.\n\nArgs:\n    api_key_id: API key UUID\n    db: Database session\n    \nReturns:\n    Success message",
+        "operationId": "delete_api_key_api_v1_api_keys__api_key_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "api_key_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Api Key Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "title": "Response Delete Api Key Api V1 Api Keys  Api Key Id  Delete"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/api-keys/stats": {
+      "get": {
+        "tags": [
+          "API Keys"
+        ],
+        "summary": "Get Api Key Stats",
+        "description": "Get API key statistics for an organization.\n\nArgs:\n    organization_id: Organization UUID\n    db: Database session\n    \nReturns:\n    API key statistics",
+        "operationId": "get_api_key_stats_api_v1_api_keys_stats_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/APIKeyStats"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "APIKeyCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Name",
+            "description": "User-friendly name for the API key"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Scopes",
+            "description": "List of permissions/scopes"
+          },
+          "expires_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires At",
+            "description": "Optional expiration date"
+          },
+          "extra_metadata": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Extra Metadata",
+            "description": "Additional JSON metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "scopes"
+        ],
+        "title": "APIKeyCreate",
+        "description": "Schema for creating a new API key."
+      },
+      "APIKeyCreateResponse": {
+        "properties": {
+          "api_key": {
+            "$ref": "#/components/schemas/APIKeyRead"
+          },
+          "key_secret": {
+            "type": "string",
+            "title": "Key Secret",
+            "description": "The full API key - save this securely as it won't be shown again"
+          }
+        },
+        "type": "object",
+        "required": [
+          "api_key",
+          "key_secret"
+        ],
+        "title": "APIKeyCreateResponse",
+        "description": "Schema for API key creation response (includes the actual key once)."
+      },
+      "APIKeyListResponse": {
+        "properties": {
+          "api_keys": {
+            "items": {
+              "$ref": "#/components/schemas/APIKeyRead"
+            },
+            "type": "array",
+            "title": "Api Keys"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          }
+        },
+        "type": "object",
+        "required": [
+          "api_keys",
+          "total"
+        ],
+        "title": "APIKeyListResponse",
+        "description": "Schema for API key list response."
+      },
+      "APIKeyRead": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Name",
+            "description": "User-friendly name for the API key"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Scopes",
+            "description": "List of permissions/scopes"
+          },
+          "expires_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires At",
+            "description": "Optional expiration date"
+          },
+          "extra_metadata": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Extra Metadata",
+            "description": "Additional JSON metadata"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Organization Id"
+          },
+          "key_id": {
+            "type": "string",
+            "title": "Key Id",
+            "description": "Public key identifier (safe to display)"
+          },
+          "created_by": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Created By"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "last_used_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Used At"
+          },
+          "is_active": {
+            "type": "boolean",
+            "title": "Is Active"
+          },
+          "is_deleted": {
+            "type": "boolean",
+            "title": "Is Deleted",
+            "description": "Whether the key is soft-deleted",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "scopes",
+          "id",
+          "organization_id",
+          "key_id",
+          "created_by",
+          "created_at",
+          "last_used_at",
+          "is_active"
+        ],
+        "title": "APIKeyRead",
+        "description": "Schema for reading API key (without sensitive data)."
+      },
+      "APIKeyStats": {
+        "properties": {
+          "total_keys": {
+            "type": "integer",
+            "title": "Total Keys"
+          },
+          "active_keys": {
+            "type": "integer",
+            "title": "Active Keys"
+          },
+          "inactive_keys": {
+            "type": "integer",
+            "title": "Inactive Keys"
+          },
+          "keys_used_last_30_days": {
+            "type": "integer",
+            "title": "Keys Used Last 30 Days"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_keys",
+          "active_keys",
+          "inactive_keys",
+          "keys_used_last_30_days"
+        ],
+        "title": "APIKeyStats",
+        "description": "Schema for API key statistics."
+      },
+      "APIKeyUpdate": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "scopes": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "minItems": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scopes"
+          },
+          "expires_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires At"
+          },
+          "is_active": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Active"
+          },
+          "extra_metadata": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Extra Metadata"
+          }
+        },
+        "type": "object",
+        "title": "APIKeyUpdate",
+        "description": "Schema for updating an API key."
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

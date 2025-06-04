@@ -1,0 +1,71 @@
+---
+id: get-scenario-api-v-1-scenarios-scenario-id-get
+title: "Get Scenario"
+description: "Retrieve a specific scenario by ID."
+sidebar_label: "Get Scenario"
+hide_title: true
+hide_table_of_contents: true
+api: eJytV0uP2zYQ/ivEnFpAa3uDnnTbZtPEwDZZZJ30sDAEWhpJzFKkQo7cdQ3992Koh2V74yZBL7YkDr/55sGZ4R5IFh7iR3hI0UinrId1BBn61KmalDUQw0ckp3CLQgpfY6pylQrfi4vNTixvZxCBrdFJ3rHMIIYCKRlkElmrZHs9vvvksKSyJCmQIAKPaeMU7SB+3MO71er+d5QOHcSP63YdQS2drJDQ+SBgZIUQwwQHIlDMtpZUQgQOvzbKYQYxuQYj8GmJlYR4D7Srw1ZyyhQQQW5dJQliaJqAQoo0CwweEcsMWqbg0NfWePSM8mqx4L9jTz00aYre540WH3thiCC1htAQi8u61ioNbpp/8bxnP2FWO3YiqU5DZ+I530o+36EpqIT4erGIoFJmfD+wf8+7TyP5yaO7yp1Ck+mdYAUit05QiWNAZ9Ce7NqDNLsPeXD7ZS6LNhpFTKM1sNcGQrcTzFNeH8KD1GLy+WVmyihSUicVei8LvMTuEpllByP+7GFOCQ3rvRrha/uEhpOdGckCDQU6tbNVTUntUFYb/dN07gOMuB9gTuk87DxhJTptwjoxKByddKC0tSrFRBIparKLjH4ofJ8ZVtwMsKcMb9HzaRNBuxi0M1VPO42BWS613sj0KalLJ/tjdOCmCCt/nu9tNHyQzsndRTf+0SsQ972CU5Z3ypOwuegJCLKi8ShUfvChSKUxlkR32LNAXGpt/06UIXSuCVj+Rb9urNUozUWON4wllkdYpzT/KpFKdMekxAbFSAGzIRcbj24WEHLZaOrK3cAZs0RlGhNSFSYeU2uyl5kzcIEOQjVRVVNBfDEbbjp0scw0ipWqUDz06Ke2DJLMQzAPoYzoqYgN5tZxX+EF25CQKW8LTjdNlaQlpk9J2VTS8BnzaCjY8v8Y8b6pxGvWIN6xBj5+rCHYc27I+6baoOPsCQw4dwI9zp7AUCgvepKDYWgyZYqucGU/0nu45URgXSGN+ie0i+THAD5MtooOLXUoCbNE0kWgTBJesYkTtNfdVnFDDNTU2c8Cfeq2BqDDybabL5jSUdN+7Npf8Nu5I46MOSK0Pu/f0Las67dXr84b9mepVdY56Y1z1v18t86QpNL8NBayYwFt06PV7+gTQ0K369MqeLDyznYEOTCVL16KyCA6NLsR7NuiwRlixav/FSe2q1Pdy02bxujezrvfNuO2c99LygYRngnPALvYVkil7cdOiLoRMIa5rNV8ez0f5875fjIvtpOZ84GD2oVpOnmO/imJauhnyFDoO4E2DCS5DZJDZTSFNDvx2ppcFU03EYub++VZPTmWqKSRBVZcO7ilTxPeR9yMbONS9JGQJhOEGlNbCY9EyhRcq7bofId7PVvMFhDB85W2RaDWOM3eUFUx50/h5+pvRaVt6IrwmWZ1CL7UtMJnGo2YSSXuGIPtrK2nSprDYApvkcR4xs5mxvEYfef1ofc005nXWqqQ0IH5vo/nI8hasanXIRTDdSWCeHoLWEdQWk8svt9vpMdPTrctf/7aoOPbxTqCrXRKhnntcQ+Z8vycQZxL7fGCJb987PP+V/EtxkN6G07urdQNv0EET7g7ua6EQ12izMIdZ99L3KQp1jTZe1aDuION+f72zYoD17B/DmNIl53R8DCpMce89vtOYsXDbduONInfmWDb/gsbKOCW
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Scenario"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/scenarios/{scenario_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve a specific scenario by ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"scenario_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Scenario Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"name":{"type":"string","maxLength":100,"minLength":1,"title":"Name","description":"User-friendly name for the scenario."},"description":{"anyOf":[{"type":"string","maxLength":1000},{"type":"null"}],"title":"Description","description":"Optional description for the scenario."},"initial_message":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Initial Message","description":"Initial message spoken by the agent."},"prompt_preamble":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Prompt Preamble","description":"System prompt or preamble for the agent."},"voice_attitude":{"anyOf":[{"type":"string","maxLength":1000},{"type":"null"}],"title":"Voice Attitude","description":"Desired voice attitude or style."},"fallback_phrases":{"anyOf":[{"items":{"type":"string"},"type":"array"},{"type":"null"}],"title":"Fallback Phrases","description":"List of phrases to use if the agent cannot respond."},"allow_interruptions":{"anyOf":[{"type":"boolean"},{"type":"null"}],"title":"Allow Interruptions","description":"Whether the agent can be interrupted by the user.","default":true},"allowed_idle_time_seconds":{"anyOf":[{"type":"integer","minimum":0},{"type":"null"}],"title":"Allowed Idle Time Seconds","description":"Allowed idle time in seconds before a timeout action."},"num_check_human_present_times":{"anyOf":[{"type":"integer","minimum":0},{"type":"null"}],"title":"Num Check Human Present Times","description":"Number of times to check if human is present before ending."},"id":{"type":"string","format":"uuid","title":"Id"},"organization_id":{"type":"string","format":"uuid","title":"Organization Id"},"created_at":{"type":"string","format":"date-time","title":"Created At"},"updated_at":{"type":"string","format":"date-time","title":"Updated At"}},"type":"object","required":["name","id","organization_id","created_at","updated_at"],"title":"Scenario"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

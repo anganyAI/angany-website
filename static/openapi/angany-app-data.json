@@ -1,0 +1,1470 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "angany-app-data",
+    "version": "0.1.0",
+    "description": "Application data and analytics services",
+    "x-logo": {
+      "url": "/img/logo/logo-without-text.png",
+      "altText": "Angany.ai Logo"
+    }
+  },
+  "paths": {
+    "/api/v1/dashboard/call_details": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "summary": "List Call Details",
+        "description": "Retrieve call processing details.",
+        "operationId": "list_call_details_api_v1_dashboard_call_details_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of records to skip",
+              "default": 0,
+              "title": "Skip"
+            },
+            "description": "Number of records to skip"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "description": "Maximum number of records to return",
+              "default": 100,
+              "title": "Limit"
+            },
+            "description": "Maximum number of records to return"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CallDetailRead"
+                  },
+                  "title": "Response List Call Details Api V1 Dashboard Call Details Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/dashboard/summary": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "summary": "Get Dashboard Summary",
+        "description": "Retrieve aggregated dashboard summary data for an authorized organization.\nFilters counts and monthly usage by the specified year (defaults to current year).",
+        "operationId": "get_dashboard_summary_api_v1_dashboard_summary_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "year",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter summary data by a specific year (e.g., 2025). Defaults to the current year if omitted.",
+              "title": "Year"
+            },
+            "description": "Filter summary data by a specific year (e.g., 2025). Defaults to the current year if omitted."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardSummary"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/calls/{call_id}/logs/": {
+      "get": {
+        "tags": [
+          "Logs"
+        ],
+        "summary": "List Logs",
+        "description": "Retrieve logs from Loki for a specific organization,\nwith various filtering and pagination options.",
+        "operationId": "list_logs_api_v1_calls__call_id__logs__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "call_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "The specific Call ID to retrieve logs for"
+            }
+          },
+          {
+            "name": "start_time",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Start timestamp for the log query (ISO 8601 format)",
+              "title": "Start Time"
+            },
+            "description": "Start timestamp for the log query (ISO 8601 format)"
+          },
+          {
+            "name": "end_time",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "End timestamp for the log query (ISO 8601 format)",
+              "title": "End Time"
+            },
+            "description": "End timestamp for the log query (ISO 8601 format)"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "description": "Maximum number of log entries to return",
+              "default": 100,
+              "title": "Limit"
+            },
+            "description": "Maximum number of log entries to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Offset for pagination of log entries",
+              "default": 0,
+              "title": "Offset"
+            },
+            "description": "Offset for pagination of log entries"
+          },
+          {
+            "name": "direction",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^(backward|forward)$",
+              "description": "Direction of log fetching (backward or forward)",
+              "default": "backward",
+              "title": "Direction"
+            },
+            "description": "Direction of log fetching (backward or forward)"
+          },
+          {
+            "name": "search_term",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "A search term to filter logs (supports LogQL line filters like |=, |~, !=, !~)",
+              "title": "Search Term"
+            },
+            "description": "A search term to filter logs (supports LogQL line filters like |=, |~, !=, !~)"
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by log level (e.g., INFO, WARNING, ERROR). Assumes 'levelname' field in JSON.",
+              "title": "Level"
+            },
+            "description": "Filter by log level (e.g., INFO, WARNING, ERROR). Assumes 'levelname' field in JSON."
+          },
+          {
+            "name": "application",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "The application name to filter logs for (e.g., angany-voice-ai). Corresponds to the 'application' label in Loki.",
+              "title": "Application"
+            },
+            "description": "The application name to filter logs for (e.g., angany-voice-ai). Corresponds to the 'application' label in Loki."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedLogResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/calls/call-ids": {
+      "get": {
+        "tags": [
+          "Calls"
+        ],
+        "summary": "List Calls",
+        "description": "Retrieve a paginated list of calls.",
+        "operationId": "list_calls_api_v1_calls_call_ids_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of records to skip for pagination",
+              "default": 0,
+              "title": "Skip"
+            },
+            "description": "Number of records to skip for pagination"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "description": "Maximum number of call IDs to return",
+              "default": 100,
+              "title": "Limit"
+            },
+            "description": "Maximum number of call IDs to return"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedCallIdResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/calls/{call_id}/transcriptions/": {
+      "get": {
+        "tags": [
+          "Transcriptions"
+        ],
+        "summary": "List Transcriptions",
+        "description": "Retrieve all transcriptions for a specific `call_id` belonging to an authorized `organization_id`.\nTranscriptions are ordered by their timestamp.",
+        "operationId": "list_transcriptions_api_v1_calls__call_id__transcriptions__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "call_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "The specific Call ID to retrieve transcriptions for"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Transcription"
+                  },
+                  "title": "Response List Transcriptions Api V1 Calls  Call Id  Transcriptions  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/calls/{call_id}/performance_events/": {
+      "get": {
+        "tags": [
+          "Performance Events"
+        ],
+        "summary": "List Performance Events",
+        "description": "Retrieve all performance events for a specific `call_id` belonging to an authorized `organization_id`.\nPerformance events are ordered by their timestamp.",
+        "operationId": "list_performance_events_api_v1_calls__call_id__performance_events__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "call_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "The specific Call ID to retrieve performance events for"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PerformanceEvent"
+                  },
+                  "title": "Response List Performance Events Api V1 Calls  Call Id  Performance Events  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/calls/{call_id}/performance_events/calculation": {
+      "get": {
+        "tags": [
+          "Performance Events"
+        ],
+        "summary": "Calculate Component Times",
+        "description": "Calculate the total time spent by each component type (transcriber, synthesizer, agentic) in a conversation.\nReturns detailed statistics including total time, averages, min/max values, and event counts for each component type.",
+        "operationId": "calculate_component_times_api_v1_calls__call_id__performance_events_calculation_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "call_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "The specific Call ID to calculate component times for"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComponentTimesCalculation"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CallDetailRead": {
+        "properties": {
+          "cdr_unique_id": {
+            "type": "string",
+            "title": "Cdr Unique Id",
+            "description": "Unique ID from Asterisk CDR"
+          },
+          "tenant_id": {
+            "type": "string",
+            "format": "uuid4",
+            "title": "Tenant Id",
+            "description": "Tenant UUID associated with the call"
+          },
+          "mode": {
+            "type": "string",
+            "title": "Mode",
+            "description": "Processing mode (e.g., 'termination', 'origination')"
+          },
+          "app_start_time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "App Start Time",
+            "description": "Timestamp when processing started"
+          },
+          "app_end_time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "App End Time",
+            "description": "Timestamp when processing finished"
+          },
+          "app_duration_seconds": {
+            "type": "integer",
+            "title": "App Duration Seconds",
+            "description": "Duration of processing in seconds"
+          },
+          "language": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language",
+            "description": "Detected language code (e.g., 'en-US')"
+          },
+          "direction": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Direction",
+            "description": "Call direction (inbound/outbound)"
+          },
+          "caller_id_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Caller Id Name",
+            "description": "Caller ID Name"
+          },
+          "caller_id_number": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Caller Id Number",
+            "description": "Caller ID Number"
+          },
+          "extension": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Extension",
+            "description": "Extension/Number called within context"
+          },
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cdr_unique_id",
+          "tenant_id",
+          "mode",
+          "app_start_time",
+          "app_end_time",
+          "app_duration_seconds",
+          "id",
+          "created_at"
+        ],
+        "title": "CallDetailRead",
+        "description": "Schema for representing call details read from the DB via API.\nInherits core fields and adds DB-specific fields."
+      },
+      "CallIdEntry": {
+        "properties": {
+          "call_id": {
+            "type": "string",
+            "title": "Call Id",
+            "description": "The unique identifier for the call (e.g., cdr_unique_id)"
+          },
+          "app_start_time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "App Start Time",
+            "description": "Timestamp when the call processing started"
+          },
+          "call_end_time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Call End Time",
+            "description": "Timestamp when the call ended"
+          },
+          "caller_id_number": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Caller Id Number",
+            "description": "Caller ID Number associated with the call"
+          }
+        },
+        "type": "object",
+        "required": [
+          "call_id",
+          "app_start_time",
+          "call_end_time"
+        ],
+        "title": "CallIdEntry",
+        "description": "Represents a single Call ID entry, typically a CDR unique ID, with extra context."
+      },
+      "ComponentStatistics": {
+        "properties": {
+          "total": {
+            "type": "integer",
+            "title": "Total",
+            "description": "Total time spent by this component type in milliseconds."
+          },
+          "average": {
+            "type": "number",
+            "title": "Average",
+            "description": "Average time spent per request in milliseconds."
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count",
+            "description": "Number of completed requests for this component type."
+          },
+          "min": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min",
+            "description": "Minimum time spent in a single request in milliseconds."
+          },
+          "max": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max",
+            "description": "Maximum time spent in a single request in milliseconds."
+          },
+          "request_start_count": {
+            "type": "integer",
+            "title": "Request Start Count",
+            "description": "Total number of request_start events for this component type."
+          },
+          "response_received_count": {
+            "type": "integer",
+            "title": "Response Received Count",
+            "description": "Total number of response_received events for this component type."
+          },
+          "incomplete_count": {
+            "type": "integer",
+            "title": "Incomplete Count",
+            "description": "Number of incomplete requests (missing start or end event)."
+          },
+          "component_name": {
+            "type": "string",
+            "title": "Component Name",
+            "description": "Name of the component implementation (e.g., 'AzureTranscriber')."
+          }
+        },
+        "type": "object",
+        "required": [
+          "total",
+          "average",
+          "count",
+          "request_start_count",
+          "response_received_count",
+          "incomplete_count",
+          "component_name"
+        ],
+        "title": "ComponentStatistics",
+        "description": "Statistics for a specific component type (transcriber, synthesizer, agentic).",
+        "example": {
+          "average": 612.5,
+          "component_name": "AzureTranscriber",
+          "count": 4,
+          "incomplete_count": 0,
+          "max": 1200,
+          "min": 245,
+          "request_start_count": 4,
+          "response_received_count": 4,
+          "total": 2450
+        }
+      },
+      "ComponentTimesCalculation": {
+        "properties": {
+          "transcriber": {
+            "$ref": "#/components/schemas/ComponentStatistics",
+            "description": "Statistics for transcriber components."
+          },
+          "synthesizer": {
+            "$ref": "#/components/schemas/ComponentStatistics",
+            "description": "Statistics for synthesizer components."
+          },
+          "agentic": {
+            "$ref": "#/components/schemas/ComponentStatistics",
+            "description": "Statistics for agentic/agent components."
+          }
+        },
+        "type": "object",
+        "required": [
+          "transcriber",
+          "synthesizer",
+          "agentic"
+        ],
+        "title": "ComponentTimesCalculation",
+        "description": "Response model for the component times calculation endpoint.",
+        "example": {
+          "agentic": {
+            "average": 3900,
+            "component_name": "OpenAIAgent",
+            "count": 4,
+            "incomplete_count": 0,
+            "max": 6200,
+            "min": 2100,
+            "request_start_count": 4,
+            "response_received_count": 4,
+            "total": 15600
+          },
+          "synthesizer": {
+            "average": 450,
+            "component_name": "OpenAISynthesizer",
+            "count": 4,
+            "incomplete_count": 0,
+            "max": 800,
+            "min": 300,
+            "request_start_count": 4,
+            "response_received_count": 4,
+            "total": 1800
+          },
+          "transcriber": {
+            "average": 612.5,
+            "component_name": "AzureTranscriber",
+            "count": 4,
+            "incomplete_count": 0,
+            "max": 1200,
+            "min": 245,
+            "request_start_count": 4,
+            "response_received_count": 4,
+            "total": 2450
+          }
+        }
+      },
+      "ComponentType": {
+        "type": "string",
+        "enum": [
+          "transcriber",
+          "synthesizer",
+          "agent"
+        ],
+        "title": "ComponentType"
+      },
+      "DashboardSummary": {
+        "properties": {
+          "monthly_usage_seconds": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Monthly Usage Seconds"
+          },
+          "total_termination_calls": {
+            "type": "integer",
+            "title": "Total Termination Calls"
+          },
+          "total_passthrough_calls": {
+            "type": "integer",
+            "title": "Total Passthrough Calls"
+          },
+          "total_calls": {
+            "type": "integer",
+            "title": "Total Calls"
+          },
+          "last_calls": {
+            "items": {
+              "$ref": "#/components/schemas/CallDetailRead"
+            },
+            "type": "array",
+            "title": "Last Calls"
+          }
+        },
+        "type": "object",
+        "required": [
+          "monthly_usage_seconds",
+          "total_termination_calls",
+          "total_passthrough_calls",
+          "total_calls",
+          "last_calls"
+        ],
+        "title": "DashboardSummary",
+        "description": "Schema for the aggregated dashboard summary data."
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "LogEntry": {
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          },
+          "level": {
+            "type": "string",
+            "title": "Level"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "service_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Service Name"
+          },
+          "service_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Service Version"
+          },
+          "service_instance_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Service Instance Id"
+          },
+          "environment": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Environment"
+          },
+          "angany_tenant_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Angany Tenant Id"
+          },
+          "angany_call_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Angany Call Id"
+          },
+          "angany_protocol_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Angany Protocol Id"
+          },
+          "angany_request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Angany Request Id"
+          },
+          "angany_user_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Angany User Id"
+          },
+          "angany_data_sensitivity": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Angany Data Sensitivity",
+            "default": "INTERNAL"
+          },
+          "logger_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Logger Name"
+          },
+          "filename": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Filename"
+          },
+          "lineno": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lineno"
+          },
+          "funcName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Funcname"
+          },
+          "module": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Module"
+          },
+          "threadName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Threadname"
+          },
+          "process": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Process"
+          },
+          "error_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Type"
+          },
+          "error_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Message"
+          },
+          "stack_trace": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stack Trace"
+          },
+          "error_details": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Details"
+          },
+          "custom_fields": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Custom Fields"
+          },
+          "raw_loki_line": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Raw Loki Line"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "timestamp",
+          "level",
+          "message"
+        ],
+        "title": "LogEntry",
+        "description": "Represents a single log entry, aligned with the Angany Logging Standard.\nThe fields here are expected to be top-level in the JSON log from Loki."
+      },
+      "PaginatedCallIdResponse": {
+        "properties": {
+          "call_ids": {
+            "items": {
+              "$ref": "#/components/schemas/CallIdEntry"
+            },
+            "type": "array",
+            "title": "Call Ids"
+          },
+          "total_count": {
+            "type": "integer",
+            "title": "Total Count",
+            "description": "Total number of available call IDs for the query"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit",
+            "description": "The limit used for this paginated response"
+          },
+          "skip": {
+            "type": "integer",
+            "title": "Skip",
+            "description": "The skip/offset used for this paginated response"
+          }
+        },
+        "type": "object",
+        "required": [
+          "call_ids",
+          "total_count",
+          "limit",
+          "skip"
+        ],
+        "title": "PaginatedCallIdResponse",
+        "description": "Response model for returning a paginated list of call IDs."
+      },
+      "PaginatedLogResponse": {
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "total_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Count"
+          },
+          "logs": {
+            "items": {
+              "$ref": "#/components/schemas/LogEntry"
+            },
+            "type": "array",
+            "title": "Logs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "limit",
+          "offset",
+          "logs"
+        ],
+        "title": "PaginatedLogResponse",
+        "description": "Response model for returning a list of logs with pagination info."
+      },
+      "PerformanceEvent": {
+        "properties": {
+          "call_id": {
+            "type": "string",
+            "title": "Call Id",
+            "description": "The unique identifier for the call session."
+          },
+          "tenant_uuid": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Tenant Uuid",
+            "description": "The UUID of the tenant associated with the call."
+          },
+          "timestamp_unix": {
+            "type": "number",
+            "title": "Timestamp Unix",
+            "description": "Unix timestamp (seconds with milliseconds) of the transcription event."
+          },
+          "event_type": {
+            "$ref": "#/components/schemas/PerformanceEventType"
+          },
+          "component_type": {
+            "$ref": "#/components/schemas/ComponentType"
+          },
+          "component_name": {
+            "type": "string",
+            "title": "Component Name",
+            "description": "Specific class name of the component, e.g., 'AzureTranscriber', 'OpenAISynthesizer'."
+          },
+          "request_id": {
+            "type": "string",
+            "title": "Request Id",
+            "description": "Unique identifier for this specific operation (e.g., one STT request, one TTS synthesis)."
+          },
+          "conversation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Conversation Id",
+            "description": "Identifier for the overall call or conversation."
+          },
+          "elapsed_seconds": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Elapsed Seconds",
+            "description": "Duration of the event in seconds, if applicable."
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error",
+            "description": "Error message if the event represents an error."
+          },
+          "data": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data",
+            "description": "Optional dictionary for additional contextual data, e.g., {'text_length': 100, 'model_name': 'gpt-4o'}."
+          }
+        },
+        "type": "object",
+        "required": [
+          "call_id",
+          "tenant_uuid",
+          "timestamp_unix",
+          "event_type",
+          "component_type",
+          "component_name",
+          "request_id"
+        ],
+        "title": "PerformanceEvent"
+      },
+      "PerformanceEventType": {
+        "type": "string",
+        "enum": [
+          "request_start",
+          "response_received"
+        ],
+        "title": "PerformanceEventType"
+      },
+      "Transcription": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "The unique identifier for the transcription record."
+          },
+          "call_id": {
+            "type": "string",
+            "title": "Call Id",
+            "description": "The unique identifier for the call session."
+          },
+          "tenant_uuid": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Tenant Uuid",
+            "description": "The UUID of the tenant associated with the call."
+          },
+          "timestamp_unix": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp Unix",
+            "description": "Timestamp of the transcription event (UTC)."
+          },
+          "text": {
+            "type": "string",
+            "title": "Text",
+            "description": "The transcribed text."
+          },
+          "direction": {
+            "type": "string",
+            "title": "Direction",
+            "description": "Direction of the speech (e.g., 'agent', 'caller', 'inbound', 'outbound')."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At",
+            "description": "Timestamp of when the record was created (UTC)."
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At",
+            "description": "Timestamp of when the record was last updated (UTC)."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "call_id",
+          "tenant_uuid",
+          "timestamp_unix",
+          "text",
+          "direction",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "Transcription",
+        "description": "Schema for representing a transcription record, e.g., when reading from DB."
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

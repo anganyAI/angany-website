@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type * as OpenApiPlugin from 'docusaurus-plugin-openapi-docs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -31,12 +32,82 @@ const config: Config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'api',
+        docsPluginId: 'classic',
+        config: {
+          // Angany Auth API
+          'angany-auth': {
+            specPath: 'static/openapi/angany-auth.json',
+            outputDir: 'docs/api/angany-auth',
+            sidebarOptions: {
+              groupPathsBy: 'tag'
+            },
+            version: '1.0.0',
+            label: 'Angany Auth API',
+            baseUrl: '/api/angany-auth',
+            versions: {
+              '1.0.0': {
+                specPath: 'static/openapi/angany-auth.json',
+                outputDir: 'docs/api/angany-auth',
+                label: 'v1.0.0',
+                baseUrl: '/api/angany-auth',
+              },
+            },
+          } satisfies OpenApiPlugin.Options,
+          // Angany Configuration API  
+          'angany-configuration': {
+            specPath: 'static/openapi/angany-configuration.json',
+            outputDir: 'docs/api/angany-configuration',
+            sidebarOptions: {
+              groupPathsBy: 'tag'
+            },
+            version: '1.0.0',
+            label: 'Angany Configuration API',
+            baseUrl: '/api/angany-configuration',
+            versions: {
+              '1.0.0': {
+                specPath: 'static/openapi/angany-configuration.json',
+                outputDir: 'docs/api/angany-configuration',
+                label: 'v1.0.0',
+                baseUrl: '/api/angany-configuration',
+              },
+            },
+          } satisfies OpenApiPlugin.Options,
+          // Angany App Data API
+          'angany-app-data': {
+            specPath: 'static/openapi/angany-app-data.json',
+            outputDir: 'docs/api/angany-app-data',
+            sidebarOptions: {
+              groupPathsBy: 'tag'
+            },
+            version: '1.0.0',
+            label: 'Angany App Data API',
+            baseUrl: '/api/angany-app-data',
+            versions: {
+              '1.0.0': {
+                specPath: 'static/openapi/angany-app-data.json',
+                outputDir: 'docs/api/angany-app-data',
+                label: 'v1.0.0',
+                baseUrl: '/api/angany-app-data',
+              },
+            },
+          } satisfies OpenApiPlugin.Options,
+        }
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          docItemComponent: '@theme/ApiItem',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -58,6 +129,10 @@ const config: Config = {
         },
       } satisfies Preset.Options,
     ],
+  ],
+
+  themes: [
+    'docusaurus-theme-openapi-docs'
   ],
 
   themeConfig: {
@@ -97,7 +172,7 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'apiSidebar',
           position: 'right',
           label: 'Documentation',
         },
@@ -139,6 +214,10 @@ const config: Config = {
             {
               label: 'Documentation',
               to: '/docs/intro',
+            },
+            {
+              label: 'API Documentation',
+              to: '/docs/api',
             },
             {
               label: 'FAQ',

@@ -1,0 +1,71 @@
+---
+id: delete-user-api-v-1-users-user-id-delete
+title: "Delete User"
+description: "Deletes a user identity."
+sidebar_label: "Delete User"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVE2P0zAQ/SvWnEDytrsrTrkt7EpULAJB4VJV1WwyTQyJbexJ2RLlv6Nx0q/tgoToIXXsl/F7bz46YCwjZAv4EilEWGooKObBeDbOQga3VBNTVKjaSEGZgiwb3k5Ag/MUUGCzAjIoEnAlqBV6s9pcpXVcDVumWK0GCGiIlLfB8BayRQdv5/OPrwkDBcgWy36pwWPAhlj4CMBiQ5DBGAY0GCHmkSvQEOhHawIVkHFoSUPMK2oQsg546+WzyMHYEp7qmlek3gVkF9Vs1KRmt8qtFVc0aGWn9ozZcC3RxCU1K6D/r3giMlD0zkaKwvX68pX8nYb83OY5xbhua/VpBMu9r66vz7FfsTZFSoa6C8EF0JA7y2RZsOh9bfJ0PP0W5YPuyCgfJJNsBioFMZpaVoapieeA2uUnp2i3H9YpUaeO93q/YyxTSQH6Za93exgCbo+cvXcDQZHYxPK5DO6g7ylGLJMZA+TP0GSGmstpf7jbPXyjnE+qZ5F0DVePuOUhzMHewd0/y7gd7Hvush1ECv4soPw0NMSVO3QT6KHMM5iiN9PN1TS11LQbe6E/6qXPks8hQ8cdtbemYvYw9oe8PwwAudXYtUvIkeCNLdFu1Rtn16Zshx5XNx9nZ010imjQYkkNWVZrF5QLJVrzK51FrQJF14acolZoC8VUU+4aFYnZ2DKChg2FOMS9mlxOLkHD40XtykStDbW4YJpyKlvpcfHTcOVavmB65IlPecea5/TIexETNOpeYohO7yI3mKp/nCnDdFPS1U/FdYcG+tsQHN0VClNfo0n1m9h2Y+4WgN6IvCvQaYiJ1mw3zZYaKhdZYF33gJG+hLrvZftHS0Em5FLDBoPBB8nNooPCRFkXkK2xjvQX2i8+jeX9Uv3ruHtO1a7irdT7ButW3kDDd9oejefU4xVhkeZ5N57e5Dl5PvrubCTJTNyX/+3d/d38TvLZioX7Ih6LVu8WR1PnlFbXDYi5+0627/csWd6FY9//BqKRZEU=
+sidebar_class_name: "delete api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete User"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1/users/{user_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a user identity.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"user_id","in":"path","required":true,"schema":{"type":"string","description":"The Kratos Identity ID of the user to delete","title":"User Id"},"description":"The Kratos Identity ID of the user to delete"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Successful Response"},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

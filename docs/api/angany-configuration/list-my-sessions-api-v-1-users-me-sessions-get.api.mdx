@@ -1,0 +1,71 @@
+---
+id: list-my-sessions-api-v-1-users-me-sessions-get
+title: "List My Sessions"
+description: "Lists sessions for the currently authenticated user."
+sidebar_label: "List My Sessions"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFWE1v4zYQ/SvEnFpAsZ2gvagnN7tt02bbRe1tD4EhMNJY5i5FasmRG62h/16QlCxp7TiJG6AXx7Hm670ZDme0A+K5hfgOritjUBH7YNHAKoIMbWpESUIriOFWWLLMorVCK8vW2jDaIEuDkqwZr2iDikTKCTNWWTQTiECXaLgzcZNBDFJYSoo66cwkvBTJ9jJx0jYpsH+QI0EEFtPKCKohvtvBL8vl+x+RGzQQ362aVQQlN7xAQmO9gOIFQgwlzxEiEC7qzxWaGiIw+LkSBjOI11xajMCmGyw4xDvgqv5j7fWpLp2+UIQ5GoigEEoUVQHxZRPtH6tKSmgO+HnPc2SqKu7ReHJKngvlkTsaMlzzShLElxGQIImtBjQvseOi6ECiSV4RKH8IQK++n70M9u8hUr3uS6NEHzWOcc9mA+Ro2HH0J80N4POUxPY/gb/XWiJX8DTEn4QkNH1A9zUL7pklTpWdsAUSI828U/fFIjKhglDEnFmfSi7liBMyFfakzAOkA0pe172DZ9CWWlm0jpir2cz9GftcVGmK1q4ryf5shSGCVCtCRZ7OspTupAutph+t09kNyC6NO/YkgocucvddEBb2UERk7rNNgyUjVA4RrLUpOEEMVSUy6Jm6yRxLbQnEBxk9Rik+lMKgTTgdLYZDlxknvCBR4NEC6Ry8DWbZnHxEww7YunqGg0G8oxYajAprq/Os3XjNw9i0Sbi1leEqxUTiFuUpTk7Bnw+NsnlnlN16o2OvQqukQNrozI7dPVISQfbcyN4F7f8NeKqLUmJfBq9WcdedYZ/XJuoE9f1HTGmQ/d8MJ23nowT0rLRa3BhePxep0Iq9azPoCjNzv1OdvPTwBjUWTnGGW5Hi80rinC4hyoRnmUFrz831TcnmrYUmAjepJDzv2uAZ9tx4xebeQhOB1IHZc63ddvrHaqG/D+8ceauvq2MROvMbn4MXlcWbNm1OR39CJb7g2Wd1uTfw9dW33Lj7rH3KtmhctG44cJNne62wb3CST9ivfy+/nbA/lKzZQvALW2Iq1iL9gSlNjLurUmXcZCwAZ2uBMps8h7SonzUO+vuwO48PxGNUH5Dcyy26a9JzSlwmqa7UsO3381pPHXHJrr1cE4XJ99SkdyoN3UC2nyzPNrSf7p5gdz8YjAGPY3LDL2YjEi00jbP93dXV4ejyF5ciC83qrTHanD+3ZEhcyBNTi9Tp6Okzin/P3+rxQuiPdASFzY/1vP6as7ZNWxB5XNSTwZbu6VN5cbiC61ZukJGe3sDu4zDeBPpO3VFuozswGHLbXf8QFsGS0wZimPJSTLeXU78vTgucDkqo2xUXLp0hQcONcc/MhqiEdjXwY2MQcE6FWmsv2V1+KueqZtdarUVehT2Wzd/fHDSqsUTBFc+xcLu0m7u1ybkSX/wzGzGDVlcmRRsxrjJGKDHVBbNIJFTukLSNDmK4nMwmM4jg4ULq3IdWGel4EEU+dT/5j4t/BG10RReEDzQpfdq5pCU+0B7EhAt262w4nKW2VHBf/O0+5bZ79q5mi57PEcJdf4jOfRPQ0u9inJaSC1/fHs6uTe8d8FI4/JcQLloXhh9p92leRbDRlpzsbnfPLX4wsmncz2EHdIcvE5bfy8EW+CiS0zv70YA/Yd2/YthyWTkRf8Kf7/aJnfmU337rP9P3ay+zJ4Ld35t9qCv3jxEuVv8OJ4IN8sy/0Nm1WvM0xZIGWgct21nZt4ef3y7bm3m4CYYjHXVfBi2Zq3pge7cLEn4EaRroQvdDh2vSTfMvteyXMQ==
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List My Sessions"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/users/me/sessions"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists sessions for the currently authenticated user.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"page","in":"query","required":false,"schema":{"anyOf":[{"type":"integer","minimum":1},{"type":"null"}],"description":"Page number for pagination.","default":1,"title":"Page"},"description":"Page number for pagination."},{"name":"per_page","in":"query","required":false,"schema":{"anyOf":[{"type":"integer","maximum":250,"minimum":1},{"type":"null"}],"description":"Number of sessions per page.","default":100,"title":"Per Page"},"description":"Number of sessions per page."},{"name":"active","in":"query","required":false,"schema":{"anyOf":[{"type":"boolean"},{"type":"null"}],"description":"Filter sessions by active status. Set to false to see inactive, null for all.","default":true,"title":"Active"},"description":"Filter sessions by active status. Set to false to see inactive, null for all."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"sessions":{"items":{"properties":{"id":{"type":"string","format":"uuid","title":"Id"},"active":{"type":"boolean","title":"Active"},"expires_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Expires At"},"authenticated_at":{"type":"string","format":"date-time","title":"Authenticated At"},"issued_at":{"type":"string","format":"date-time","title":"Issued At"},"authenticator_assurance_level":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Authenticator Assurance Level"},"authentication_methods":{"anyOf":[{"items":{"properties":{"method":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Method"},"authenticator_assurance_level":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Authenticator Assurance Level"},"completed_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Completed At"}},"type":"object","title":"KratosAuthenticationMethod"},"type":"array"},{"type":"null"}],"title":"Authentication Methods"},"identity_id":{"type":"string","format":"uuid","title":"Identity Id"},"devices":{"anyOf":[{"items":{"properties":{"id":{"type":"string","format":"uuid","title":"Id"},"ip_address":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Ip Address"},"user_agent":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"User Agent"},"location":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Location"}},"type":"object","required":["id"],"title":"KratosSessionDevice"},"type":"array"},{"type":"null"}],"title":"Devices"},"tokenized":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Tokenized","description":"The tokenized version of the session (e.g. JWT). Only Sia-specific; not a standard Kratos field."}},"type":"object","required":["id","active","authenticated_at","issued_at","identity_id"],"title":"KratosSession"},"type":"array","title":"Sessions"},"total_count":{"type":"integer","title":"Total Count"},"page":{"anyOf":[{"type":"integer"},{"type":"null"}],"title":"Page"},"per_page":{"anyOf":[{"type":"integer"},{"type":"null"}],"title":"Per Page"}},"type":"object","required":["sessions","total_count"],"title":"PaginatedKratosSessions"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

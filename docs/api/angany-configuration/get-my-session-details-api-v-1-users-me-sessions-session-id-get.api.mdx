@@ -1,0 +1,71 @@
+---
+id: get-my-session-details-api-v-1-users-me-sessions-session-id-get
+title: "Get My Session Details"
+description: "Gets details for a specific session belonging to the currently authenticated user."
+sidebar_label: "Get My Session Details"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV91v2zYQ/1eIe2oBxU6CPWlPXlNk2RK0aNztITCEi3SW2VKkSp68uIL+94GkZMuJk6XGhr34Q7r78e53n2yBsXSQ3sG7xlrSLD47srBIoCCXW1mzNBpSuCR2oiBGqZxYGitQuJpyuZS5cOScNFrckzK6lLoUbASvSOQRUm0ENrwizTJHpkI0juwEEjA1WfQHXBWQQkmcVZusR8v6wzKsZbY+y7yOyyoa3rtsKymLLCuJIQFHeWMlbyC9a+HX+fzjL4SWLKR3i26RQI0WK2KyLghorAhS2MFAAtI7WyOvIAFL3xppqYCUbUMJuHxFFULaAm/qoMlW6hIeczVfkbi6EGYZSBjYYSMssZW0Ju87S1Ye47Z/fVVAdwSQd8uSq4125Lxp56en/msf6LbJc3Ju2SjxqReGBHKjmTR7caxr5YMjjZ5+cV6nHblbWx8plvEEWRyiYGlshQwpNE0gcvAv+oU5yzWN9O6NUYR6JDiLIl0C9FBLSy7DaJrefFiGeD17ZIFMJywrr70V041SgZ7hgPcRVsw4WDTOyP6oVxwwsncvpSOodK45Du0qaD61zdgMnWss6pwyRWtSL3HykvuzMaiYDaDiOoDun+rLoSJemcLtHyeZKvc0JaLssZbdRO3/zfHcVLWiXRr8axn3bgAOce2SQdDcf6GcR9H/3SIbN9sLwI6VXgutxc1rPfWN4qaPoE/Mwj/nTfajxRvVtt1pLXN6XUoc0yVknWFRWHLu2Fhf1WLWI3QJ+JmRYTn0uCPw/DAUs4DQJaBMZPZYtOtB/1Au7KbNnSdv8Tg7+kFxEWLwQ2lx0YfN65ivpOV3OrpW51uAQ8NqCy/WZMOwejS73tCknIjf/py/nYgPWm3ErcSTYZH4WWjDfrFg1AXaQkTHxVKSKiavIW07aA7093F33i+I56iGrvNn/nR+/nSi/oFKFrHM3ltr7PHjNO45oWQOV5Iy+d7bV4RNaqaSLHSLx3lyKBkTqFx5qFp3Ddo5LEdJ97xoIEPM/dt/ipf3Kx7dy43isKM3svu8GxeRvpe6q18EnwDG2A6DC+L+GBa/FKZYy+n6bBp2zmlF02HnnLa7ZbEb7Zu3PrYxWuOtc0vTirmGfoEM208U8BZIvTRBcujhukS9Ee+MXsqyieuxmH28elJv+xIVaiyp8gu8386NLVHL7+GdS4QlZxqbk0sE6kIwKcpNJRwxS106SKCvV0jhbHI6OYUEHk6UKYNpjVWeFFmVU/8ofJz8JXllGj5heuBJHXIAFc/pgbdOTFCKa4/h/ayN4wpDJfR79yWxuNmIYQGOgXSP/Wx3dfXfXEL6EHk/prVCGQoiuNz2+XAHWEvP0RnEmeKNDNvbkBeQQDq6RiwSWBnHXrNt79HRZ6u6zj/+1pD1t5NFAmu0Eu99zO9aKKTzvwtIl6gcvcDBm099Cb0Vr7tnHHJvqCXtK2mNqvH/IIGvtNm/EIUGsiIswiWq7QVmeU41j1Sf9Ds/Mra1dfl+3jfk8QUglkAy/Bj1s32z2jZKhMnTdVsrw6zxBnbd38BvG04=
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get My Session Details"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/users/me/sessions/{session_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Gets details for a specific session belonging to the currently authenticated user.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"session_id","in":"path","required":true,"schema":{"type":"string","description":"The ID of the session to retrieve.","title":"Session Id"},"description":"The ID of the session to retrieve."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"id":{"type":"string","format":"uuid","title":"Id"},"active":{"type":"boolean","title":"Active"},"expires_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Expires At"},"authenticated_at":{"type":"string","format":"date-time","title":"Authenticated At"},"issued_at":{"type":"string","format":"date-time","title":"Issued At"},"authenticator_assurance_level":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Authenticator Assurance Level"},"authentication_methods":{"anyOf":[{"items":{"properties":{"method":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Method"},"authenticator_assurance_level":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Authenticator Assurance Level"},"completed_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Completed At"}},"type":"object","title":"KratosAuthenticationMethod"},"type":"array"},{"type":"null"}],"title":"Authentication Methods"},"identity_id":{"type":"string","format":"uuid","title":"Identity Id"},"devices":{"anyOf":[{"items":{"properties":{"id":{"type":"string","format":"uuid","title":"Id"},"ip_address":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Ip Address"},"user_agent":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"User Agent"},"location":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Location"}},"type":"object","required":["id"],"title":"KratosSessionDevice"},"type":"array"},{"type":"null"}],"title":"Devices"},"tokenized":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Tokenized","description":"The tokenized version of the session (e.g. JWT). Only Sia-specific; not a standard Kratos field."}},"type":"object","required":["id","active","authenticated_at","issued_at","identity_id"],"title":"KratosSession"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

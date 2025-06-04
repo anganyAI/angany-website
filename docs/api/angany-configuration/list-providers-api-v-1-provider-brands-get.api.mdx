@@ -1,0 +1,71 @@
+---
+id: list-providers-api-v-1-provider-brands-get
+title: "List Providers"
+description: "Retrieve a list of all provider brands."
+sidebar_label: "List Providers"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWN1v2zgM/1cEvewOcJNmuKe8dVux9W63FU23eyiKgLFph6sse5Kcmxf4fz9Q8lecZh/A4R4OfWljiSKpH38kRO6lg8zK5Z28NsWOEjRWvDCgEyvvI5mgjQ2Vjgotl/IGnSHcoQChyDpRpAKUEmV7UGz8uZmMZFGiAT51lcilZOF1J2XXUNJ6t+gX1uHYep2hk5G0GFeGXC2Xd3v55vb2+gWCQSOXd/fNfSRLMJCjQ2O9gIYc5VLaByplJIm9/FyhqWUkDX6uyGAilykoi5G08RZzkMu9dHXJp0g7zNBIvmcKlXJyeR5JR07x7op1Nk3UG1GUk/tXrCzOR3beerUNX86gLQtt0fLx5+fn/O8wBKsqjtHatFLiphWWkYwL7VA7FoeyVBR77OefLJ/ZH7sExgA7Tw5zb6s0HDFHwbIPyPoB69ER6wzpTA5ue5KIP7CWU5p80PS5QvGAtUgLI9wWJxQRv+Asm0XiWVGiBnr260w2kUzIlgrqdUD7tOFXQU68Y7kj2xbNWWoIdaJq0aoUrLL3xbsQLI6P7iXo+n3qWXVominQruhKKcmR6p0ZqZj6MtrjVDnGwTthMTbo1kOMIEmIz4C6HkXFmQqjzo1i8wljN8Jk5ZWIVVAydeT31ft3IhjoUQhmrej4Kza1cFuyI8+cAc1qNmjWqDPSeIjSIWmCxJoS1I5S4ow9HcNLLyyuBuETJBrUtZ6TFbbEmFKKhUWzoxhFMN2x6v315buLq/Vfb65W15c364+L/5Zeh0550zGUsCFFHVQDhH0CThl3mKnfYuDLsfKpv2/bMt1DNnZlQLT3tTmm2FDg7h6J8QTX+0l9WAUwQrhXVZ6DOa4XYZ2+YiJIp4XJffUSsCkqJ+BkuIs0xZa48EhiHSP2mNW6y8wR2R8xMGRGJCgVoOuQu7V2W7T09SlDnjLk/54hI7L/eIZAxkDET9nxlB3/7+xoif6jmfEdoIYX+ASg6XtxBFjXvwXg/PYNQnIE19UjGB1ePxLkbPtC7B6IOWpnI8GvdxB2uDtLwg5IwUZNyWvDM7L1r+tXhCfV0G1elCQ+LvqFtvsU4jVyV8RI/fb8+XEn9BEUJeEWl8YU5mfaoMPKk6ADUvzrRD+kivhg9wcaha7pa+6nuThq/IrgIIOU2+xbReVPtBYyHBL7G6WRwRC3vPs9lvG9gulWbsSmAd6A7ulrvArwPWasE+E2/khhiG2OblvwkCB0/yW4rVzKOZQ03y3mHS/PwoxgPpoPeIaH+IynBD0wW+d4JOCDzt+bIMA2uUp4yda9C52BrsXLQqeUVWFwIS6ur45S51AiBw2ZTwxfCQuTgaavfs9GwqAtKhNjmzQOFcZFLiw6RzrjUrtDY4Pexex8di4j+eVMFZl3rTKKYaA8m/OS/3P2N7ltUbkzh1/crPRRB+Vu8YvrLzEDEm9ZB9+zLKzLwXO/HWEcpt70fvshg35i1tPizU7NSwXk+ez937fhvJNQEl94wRE+DKmMJNNuW1jHgvv9Bix+MKppeDlMWTjTErJcYYY5ix9PdIOfHaiKnfApeEK0G98Msvf8YYiF/XgpkluExM+a9u2hizjGcnzqqLCwlp7Ery9vOSgV37pnYsu8qPsxKhyg65Hu/T5I3BYPqJtGdp47/uZS0jT/AHsk3y0=
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Providers"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/provider-brands/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve a list of all provider brands.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"skip","in":"query","required":false,"schema":{"type":"integer","default":0,"title":"Skip"}},{"name":"limit","in":"query","required":false,"schema":{"type":"integer","default":100,"title":"Limit"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"type":"array","items":{"properties":{"brand_key":{"type":"string","title":"Brand Key","description":"Unique key for the provider brand (e.g., 'openai')."},"display_name":{"type":"string","title":"Display Name","description":"User-friendly display name for the brand."},"description":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Description","description":"Description of the provider brand."},"secret_schema":{"additionalProperties":true,"type":"object","title":"Secret Schema","description":"JSON schema for the secrets required by this brand."},"transcriber_engine":{"anyOf":[{"properties":{"engine_identifier":{"type":"string","title":"Engine Identifier","description":"Unique identifier for this specific service engine (e.g., OPENAI_WHISPER_V1)."},"display_name":{"type":"string","title":"Display Name","description":"User-friendly display name for the service engine."},"capabilities":{"anyOf":[{"items":{"type":"string"},"type":"array"},{"type":"null"}],"title":"Capabilities","description":"List of specific capabilities for this engine."}},"type":"object","required":["engine_identifier","display_name"],"title":"BrandServiceEngineSummary","description":"Summarized information about a specific service engine offered by a provider brand."},{"type":"null"}],"description":"Summary of the transcriber engine offered by this brand, if any."},"synthesizer_engine":{"anyOf":[{"properties":{"engine_identifier":{"type":"string","title":"Engine Identifier","description":"Unique identifier for this specific service engine (e.g., OPENAI_WHISPER_V1)."},"display_name":{"type":"string","title":"Display Name","description":"User-friendly display name for the service engine."},"capabilities":{"anyOf":[{"items":{"type":"string"},"type":"array"},{"type":"null"}],"title":"Capabilities","description":"List of specific capabilities for this engine."}},"type":"object","required":["engine_identifier","display_name"],"title":"BrandServiceEngineSummary","description":"Summarized information about a specific service engine offered by a provider brand."},{"type":"null"}],"description":"Summary of the synthesizer engine offered by this brand, if any."},"agentic_engine":{"anyOf":[{"properties":{"engine_identifier":{"type":"string","title":"Engine Identifier","description":"Unique identifier for this specific service engine (e.g., OPENAI_WHISPER_V1)."},"display_name":{"type":"string","title":"Display Name","description":"User-friendly display name for the service engine."},"capabilities":{"anyOf":[{"items":{"type":"string"},"type":"array"},{"type":"null"}],"title":"Capabilities","description":"List of specific capabilities for this engine."}},"type":"object","required":["engine_identifier","display_name"],"title":"BrandServiceEngineSummary","description":"Summarized information about a specific service engine offered by a provider brand."},{"type":"null"}],"description":"Summary of the agentic engine offered by this brand, if any."}},"type":"object","required":["brand_key","display_name","secret_schema"],"title":"ProviderBrandSchemaRead","description":"Information about a provider brand, its secret requirements, and a summary of its available service engines."},"title":"Response List Providers Api V1 Provider Brands  Get"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

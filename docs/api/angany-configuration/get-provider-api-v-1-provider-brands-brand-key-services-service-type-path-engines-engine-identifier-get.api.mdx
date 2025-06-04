@@ -1,0 +1,71 @@
+---
+id: get-provider-api-v-1-provider-brands-brand-key-services-service-type-path-engines-engine-identifier-get
+title: "Get Provider"
+description: "Retrieve a specific provider service engine definition."
+sidebar_label: "Get Provider"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9V9+P0zgQ/leseQIp2+6ie+pbgQp67C2rtiDdLVXkJtPUkDjBnhR6Uf7308ROmjZsQaDjpU2c8cz3jeeXKyCZWJg8wL3J9ypGY8VzI3VsYR1AjDYyqiCVa5jAAsko3KOQwhYYqa2KROF3CYtmryIUqBOlUcS4VVrxxhEEkBdoJL/MY5hAghS2+0JZqHB/c3zfNMZD9x9+wkMYetW2ewrpUGBYSNqFobNn24dQxahJbRWaMEyQIACLUWkUHWDyUMHr1er+OUqDBiYP63odQCGNzJDQ2EZAywxhAp15CEAxebYGARj8XCqDMUzIlBiAjXaYSZhUwJhgApaM0gkEQIpSXmi8Kd7gAeo66PQPmPyynaU/gNWhQHHPWvr2Bt75ZXszd9Dzo8aa3WnQFrm2aHnvs+tr/jsNo2UZRWjttkzFwgtDAFGuCTWxuCyKVEVNvIw/Wt5T9fAUhqOJlLPgefFBfR/rm+Y4T9G80+pzicJtEZ/wILa5EbTDY2j7kGbl4gmOklEg3t7P7qbzcLVahu9vno6gDiBWtkjlIXQOfxzLSycn7lhugMaiudoahTpOD8KrFKyys1ygns7FarV0ZvuB9KPhMTD7CjUamYpIEia5OYh82yW0t7taTO+WLxbz57NFIJZ/361ez5bzf2YLhyKShdyoVLXHIvXh7bbJJ0WY2SGwOmgXpDHyAByqfkGXaQocSi30F33l59BvlaUGbluR+lBa8A8fIJI6JCM1791gaMmgzD7A2uPP9VYlpStS4THYjjzO4V+A29cllk7X4KAXt4JyYdqSygEXI0mVYixO0AiHRjzZ5ibzL099kCrrg9OHQmSQvolexnFTjGV630sfl+qeR775iBFdZLZsDDxG6c/l27sWrCv/Oml4WTJlRKXBBrVDaYXS4r0sU2qgq/iStwNg7pJgAmWp4osY5/FjKX6sfY+meK9rib848XISGxZDi5qabTtp4iiPMe4JWxdDBiVhHEr6QS6xJLwileHlcHJqxZQGxFYqQ0syK8SXHWofQy0o8UVa4TGdsPHldZPidwiVRfx/EHrn1P4coVRaEh7Yz7Cqz+O93/oe+u3krKKfVdoen3Zwck3mZWdugTKGumaTfzx7NuyD72WqYpfiM2Ny8/NN0BUOfuqq7alAmkcnX3+grClNmHBTX5+X6iPz29wB5GDJbHKp/fyF1soEj3X/QrNmZ7g+9b3jYl7OtJfrHcvRvc67j9N46dz3LWOtCI+NA4XubDOkXe7HWgjcPDWBsSzUeH8zbivMlZtrx1U3WNbjdq4dV4NpsB77uXZcDSa3ujfTNqXYnXF/su2cuyMqwE9zzVjrBBi30tu8kfQUpzqR+iBOu9f0fj5I0lOJTGqZYNaWx9wkUqt/m282EAZtXpoIbSB4CiZMMcozYZFI6YS7+R6NdXpvRtejawjg61WaJw200qTsSpUlY15qfq6+KNrlJV0RfqVR0USOTGmFX6kjMZJK3LIO5lnkljLZ5I+fhV8hiTZpz9lVxxz8hfuO9z5DHBepVE2GNGwqHyAPIAvF9G84Zk6DBAKY9O8fbZzw+rfuDT5U+PNwzF8HsMstscWq2kiL70xa17z8uUTDl6J1AHtpFJfOpiTEyvJzDJOtTC1ecNCThc/Fp+Ix0m3KaSayl2nJbxBAM7D3bllceX6j4aEbfzOA4UE1hXaHMm6uppWXm0YRFtTTMOgL3Fq7GvRqtuJ8KDnEuiLgkz5oH3p1/xRdVTmJVf4JdV13YInfGWBd/wcHvKF6
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Provider"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/provider-brands/{brand_key}/services/{service_type_path}/engines/{engine_identifier}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve a specific provider service engine definition.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"brand_key","in":"path","required":true,"schema":{"type":"string","title":"Brand Key"}},{"name":"service_type_path","in":"path","required":true,"schema":{"type":"string","title":"Service Type Path"}},{"name":"engine_identifier","in":"path","required":true,"schema":{"type":"string","title":"Engine Identifier"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"engine_key":{"type":"string","title":"Engine Key","description":"Unique string key for the provider engine type (e.g., OPENAI_TTS_V1)."},"display_name":{"type":"string","title":"Display Name","description":"User-friendly display name (e.g., OpenAI TTS)."},"service_type":{"type":"string","title":"Service Type","description":"General category of service (e.g., TRANSCRIBER, SYNTHESIZER)."},"capabilities":{"anyOf":[{"items":{"type":"string"},"type":"array"},{"type":"null"}],"title":"Capabilities","description":"List of specific capabilities (e.g., [\"can_transcribe_stream\"])."},"configuration_schema":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Configuration Schema","description":"URL to retrieve the detailed configuration schema (form schema) for this engine."},"secret_schema":{"anyOf":[{"additionalProperties":true,"type":"object"},{"type":"null"}],"title":"Secret Schema","description":"JSON schema defining the structure for secrets in Vault."},"id":{"anyOf":[{"type":"string","format":"uuid"},{"type":"null"}],"title":"Id","description":"Unique identifier for the provider engine definition. May not be present for hardcoded definitions."},"created_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Created At","description":"Timestamp when the definition was created. May not be applicable for hardcoded definitions."},"updated_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Updated At","description":"Timestamp when the definition was last updated. May not be applicable for hardcoded definitions."}},"type":"object","required":["engine_key","display_name","service_type"],"title":"ProviderEngineDefinitionRead"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

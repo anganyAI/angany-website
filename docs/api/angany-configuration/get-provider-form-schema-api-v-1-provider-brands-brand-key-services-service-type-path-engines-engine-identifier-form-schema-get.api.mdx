@@ -1,0 +1,71 @@
+---
+id: get-provider-form-schema-api-v-1-provider-brands-brand-key-services-service-type-path-engines-engine-identifier-form-schema-get
+title: "Get Provider Form Schema"
+description: "Retrieve the UI configuration schema for a specific provider service engine."
+sidebar_label: "Get Provider Form Schema"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vk1v4zYQ/SvEnFqAtuKgJ92ybZoG3aJG4t2LYQiMNJa5K5FcknLjCvrviyElWV4lAYot9mJR5Gg+Ht+8cQtelA7SLaytPsoCrWPvrFCFgx2HAl1upfFSK0jhAb2VeETmD8g+3LNcq70sGyvonLn8gLVge22ZYM5gLvcyZ6b3yhzao8yRoSqlwiVw0Abjp/cFpFCizwbjbK9tnUWHmTAyO67OZ08huyw+s894yrLetxtXmT8ZzIzwhyyLAd2wyGSBysu9RJtdxCnRAweHeWOlP0G6beGPzWb9DoVFC+l21+04GGFFjR6tCwZK1AgpjKkAB0lIUWTgYPFLIy0WkHrbIIcYCdIWKD9IwXkrVQkcvPQVbQTo2Z94gq7jo/9ZVd8d57G/jc3JIFuTl2m8GVLfHe82eGT3Z48dwWnRGa0cOvr2+uqKHpece2zyHJ3bNxV76I2BQ66VR+XJXBhTyTzwKPnk6Jt2no9++oQ5Xa8oCkmmolpb4p+XFDtWMeQ6xGF36NnQFex3bWv2GDl+YyT7uDqfxYZhbLw9xnqA3bg6Q81YRMMNiwks7CLOHXrouq7j8Mv19Rybj6KSRWy+W2u1/S/AmEn55NcLWdFKeqzd3KDS+cWpUKe/96EFLm+cSNTvSOWxpIvedXzYE9aK04QW73VMEDoOtSvfYtBf6JwoEUZnb5CNwAh4E6tnHDizdxvqiqF7u93ZzRneiO7rZfwW4Xsp2GBCUjJzGO+2Rn/QvQQCjz2WQiKMTI6rZNC9RdS9pB3FpksG3UvamUJ0Sa97STvr5i4h3Vv0ZDhrXmBdvO+p8o1AH7w30Hd7kL1oQDVItdfBsi/3RpVCndivFxPiZn0P386US4taKFFijcqHOaJtKZT8N5w5ziw63dgcHWfUZx4rzHXNHHovVemAwxGti35Xy6vlFXB4XlS6DKk1tiJYZV0mtBV+Fv9If9CNX3h89ksTWCQqv8FnPxaxFJK9Jx9Up9HO1yL0Uq+Vr4nEt5W25978vwdpfz1UQ2IqIUM7hXLbnk1bEEYSPisi2CWjgEM6HWADqWj/pcHT84qOX5oTU2rtOBy08xS/bZ+Eww+26jra/tKgpRm743AUVoonYs22hUI6WheQ7kXl8A0Mf3ro2/hn9hoEQ7cqKusoqobegAPVOR3aJFo/MPAc1B+cwPzagkYfUBThn07b293kORo/8TAbKTTDR/m6u91Q+zREuFEzeo3gw2IyMi6za9tosdGfUXXdmKynd0qw674CHiC3bg==
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Provider Form Schema"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/provider-brands/{brand_key}/services/{service_type_path}/engines/{engine_identifier}/form-schema"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve the UI configuration schema for a specific provider service engine.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"brand_key","in":"path","required":true,"schema":{"type":"string","title":"Brand Key"}},{"name":"service_type_path","in":"path","required":true,"schema":{"type":"string","title":"Service Type Path"}},{"name":"engine_identifier","in":"path","required":true,"schema":{"type":"string","title":"Engine Identifier"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"type":"object","additionalProperties":true,"title":"Response Get Provider Form Schema Api V1 Provider Brands  Brand Key  Services  Service Type Path  Engines  Engine Identifier  Form Schema Get"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

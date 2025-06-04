@@ -1,0 +1,71 @@
+---
+id: revoke-my-session-api-v-1-users-me-sessions-session-id-to-revoke-delete
+title: "Revoke My Session"
+description: "Revokes a specific session for the currently authenticated user."
+sidebar_label: "Revoke My Session"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVcFu2zgQ/RViTrsAYyVBT7plmwAbIEWLxN2LYQgTaSyxkUiVHLnRCvr3xVCyY9dOsQusD7ZIPj3OvJk3HoCxDJCu4GPnPVlWXwN5WGsoKOTetGychRQeaeteKChUoaXcbEyuAoVgnFUb5xVXpPKJoO4VdlyRZZMjU6G6QH4BGlxLHoXuvoAUfCTMmj6beTJsTba9ygQesoZ2+yHbI0yRscvmN7OCamICDYHyzhvuIV0N8Ody+eUPQk8e0tV6XGto0WNDTD5EgMWGIIVznKDBSLItcgUaPH3vjKcCUvYdaQh5RQ1COgD3beRgb2wJP2u1rEjd3yq3ibLsZGKnpltECzZcC8PTfHhfqKVTk8gw/mdCSdNTaJ0NFCTA68sP8nNM89TlOYWw6Wr1OIPlrg/X16fYv7A2RayWuvPeedCQO8tkWbDYtrVU1zibfAvywnCgTuul1GymUApiNLU8GaYmnAJqlx+dou0/b2KpjmUe9X7HWKaSPIzrUe/20HvsD6R9cFOAkmITynNl20E/UQhYRjEmyPvQKIZayun4drd7/kY5H7XMKuY1XT3j1m80b/JO6r6fxu0k37nLdhBp+RNC+WhoiCsndtubJfZ2Cgm2JtleJdFtSUPJzm3JcM4Z44HNnqTQU+kOzbbXrGJuYXaLrJ8ngIRj7MZF5Bz5jS3R9uqjsxtTdtN0UDdf7k8sdYxo0GJJjUwrGT7Ol2jN3/EsaOUpuM7nFLRCWyimmnLXqEDMxpYBNGzJh4n3anG5uAQNrxe1K2Nona9FHtOUiWzFr4sfhivX8QXTKy/a2BBY85JeeZ/EAo16EA7Js3WBG4y2mMfNZG31qVez5X9OcXjz1/8xbOdaSMBJW6OJNoi5DXMLrABbI2JcgYbYBtKt0zydWgE0pGfH5FpD5QILxzA8Y6Cvvh5H2f7ekZc5vNawRW/wWcq8GqAwQZ4LSDdYB/pF7r89zhb6Xf2bOXouzZ2TrPhoi3UnK9DwQv17gz8OkoqwiH8bwwy9yXNq+YDkZO7J4N177Pbu4W55J73RicB7Q8wG0LuHg9F2HOMwTIileyE7jvuQWdYS4zj+AxIlrAM=
+sidebar_class_name: "delete api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Revoke My Session"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1/users/me/sessions/{session_id_to_revoke}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Revokes a specific session for the currently authenticated user.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"session_id_to_revoke","in":"path","required":true,"schema":{"type":"string","description":"The ID of the session to revoke.","title":"Session Id To Revoke"},"description":"The ID of the session to revoke."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Successful Response"},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

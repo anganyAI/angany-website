@@ -1,0 +1,6714 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Angany Configuration API",
+    "description": "Configuration management for organizations, resources, and telecom settings",
+    "version": "1.0.0",
+    "x-logo": {
+      "url": "/img/logo/logo-without-text.png",
+      "altText": "Angany.ai Logo"
+    }
+  },
+  "paths": {
+    "/api/v1/my-organization/": {
+      "put": {
+        "tags": [
+          "My Organization"
+        ],
+        "summary": "Update My Organization",
+        "operationId": "update_my_organization_api_v1_my_organization__put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrganizationUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganizationSchema"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/trunks/": {
+      "get": {
+        "tags": [
+          "Trunks"
+        ],
+        "summary": "List Trunks",
+        "description": "List all SIP trunks for the organization.",
+        "operationId": "list_trunks_api_v1_trunks__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrunkListResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Trunks"
+        ],
+        "summary": "Create Trunk",
+        "description": "Create a new SIP trunk for the organization.",
+        "operationId": "create_trunk_api_v1_trunks__post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TrunkCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrunkInfo"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/trunks/{trunk_id}": {
+      "get": {
+        "tags": [
+          "Trunks"
+        ],
+        "summary": "Get Trunk",
+        "description": "Get details of a specific SIP trunk.",
+        "operationId": "get_trunk_api_v1_trunks__trunk_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "trunk_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Trunk Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrunkDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Trunks"
+        ],
+        "summary": "Delete Trunk",
+        "description": "Delete a specific SIP trunk.",
+        "operationId": "delete_trunk_api_v1_trunks__trunk_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "trunk_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Trunk Id"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Force"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Trunks"
+        ],
+        "summary": "Update Trunk",
+        "description": "Update an existing SIP trunk.",
+        "operationId": "update_trunk_api_v1_trunks__trunk_id__put",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "trunk_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Trunk Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TrunkUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrunkDetails"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "List Users",
+        "description": "Lists all users.",
+        "operationId": "list_users_api_v1_users__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserListResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Create User",
+        "description": "Creates a new user.",
+        "operationId": "create_user_api_v1_users__post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserInfo"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/users/{user_id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Read User",
+        "description": "Retrieves a specific user.",
+        "operationId": "read_user_api_v1_users__user_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the user to retrieve",
+              "title": "User Id"
+            },
+            "description": "The ID of the user to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserInfo"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Update User",
+        "description": "Updates a user identity.",
+        "operationId": "update_user_api_v1_users__user_id__put",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The Kratos Identity ID of the user to update",
+              "title": "User Id"
+            },
+            "description": "The Kratos Identity ID of the user to update"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserInfo"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Delete User",
+        "description": "Deletes a user identity.",
+        "operationId": "delete_user_api_v1_users__user_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The Kratos Identity ID of the user to delete",
+              "title": "User Id"
+            },
+            "description": "The Kratos Identity ID of the user to delete"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/invite": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Invite User",
+        "description": "Creates a new user and generates a secure code link.",
+        "operationId": "invite_user_api_v1_users_invite_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserInvitation"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvitationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/users/me/": {
+      "get": {
+        "tags": [
+          "Current User"
+        ],
+        "summary": "Get Current User",
+        "description": "Retrieves the currently authenticated user.",
+        "operationId": "get_current_user_api_v1_users_me__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileStatus"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/users/me/sessions": {
+      "get": {
+        "tags": [
+          "Current User"
+        ],
+        "summary": "List My Sessions",
+        "description": "Lists sessions for the currently authenticated user.",
+        "operationId": "list_my_sessions_api_v1_users_me_sessions_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Page number for pagination.",
+              "default": 1,
+              "title": "Page"
+            },
+            "description": "Page number for pagination."
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 250,
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Number of sessions per page.",
+              "default": 100,
+              "title": "Per Page"
+            },
+            "description": "Number of sessions per page."
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter sessions by active status. Set to false to see inactive, null for all.",
+              "default": true,
+              "title": "Active"
+            },
+            "description": "Filter sessions by active status. Set to false to see inactive, null for all."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedKratosSessions"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/me/sessions/{session_id}": {
+      "get": {
+        "tags": [
+          "Current User"
+        ],
+        "summary": "Get My Session Details",
+        "description": "Gets details for a specific session belonging to the currently authenticated user.",
+        "operationId": "get_my_session_details_api_v1_users_me_sessions__session_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the session to retrieve.",
+              "title": "Session Id"
+            },
+            "description": "The ID of the session to retrieve."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KratosSession"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/me/sessions/{session_id_to_revoke}": {
+      "delete": {
+        "tags": [
+          "Current User"
+        ],
+        "summary": "Revoke My Session",
+        "description": "Revokes a specific session for the currently authenticated user.",
+        "operationId": "revoke_my_session_api_v1_users_me_sessions__session_id_to_revoke__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "session_id_to_revoke",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The ID of the session to revoke.",
+              "title": "Session Id To Revoke"
+            },
+            "description": "The ID of the session to revoke."
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/resources/": {
+      "post": {
+        "tags": [
+          "Resources"
+        ],
+        "summary": "Create Resource",
+        "description": "Create a new Resource (DID/Identifier) with its mode and configuration.",
+        "operationId": "create_resource_api_v1_resources__post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Resources"
+        ],
+        "summary": "List Resources",
+        "description": "Retrieve a list of resources.",
+        "operationId": "list_resources_api_v1_resources__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Skip"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ResourceRead"
+                  },
+                  "title": "Response List Resources Api V1 Resources  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/resources/{resource_id}": {
+      "get": {
+        "tags": [
+          "Resources"
+        ],
+        "summary": "Get Resource",
+        "description": "Retrieve details of a specific resource by its ID.",
+        "operationId": "get_resource_api_v1_resources__resource_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "resource_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Resource Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Resources"
+        ],
+        "summary": "Delete Resource",
+        "description": "Delete a specific resource by its ID.",
+        "operationId": "delete_resource_api_v1_resources__resource_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "resource_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Resource Id"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Resources"
+        ],
+        "summary": "Update Resource",
+        "description": "Update a specific resource by its ID.",
+        "operationId": "update_resource_api_v1_resources__resource_id__put",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "resource_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Resource Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/transcriber-configurations/": {
+      "post": {
+        "tags": [
+          "Transcriber"
+        ],
+        "summary": "Create Transcriber",
+        "description": "Create a new transcriber configuration.",
+        "operationId": "create_transcriber_api_v1_transcriber_configurations__post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TranscriberConfigurationCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TranscriberConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Transcriber"
+        ],
+        "summary": "List Transcriber",
+        "description": "Retrieve transcriber configurations.",
+        "operationId": "list_transcriber_api_v1_transcriber_configurations__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "title": "Skip"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TranscriberConfigurationRead"
+                  },
+                  "title": "Response List Transcriber Api V1 Transcriber Configurations  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/transcriber-configurations/{config_id}": {
+      "get": {
+        "tags": [
+          "Transcriber"
+        ],
+        "summary": "Get Transcriber",
+        "description": "Retrieve a specific transcriber configuration.",
+        "operationId": "get_transcriber_api_v1_transcriber_configurations__config_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TranscriberConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Transcriber"
+        ],
+        "summary": "Update Transcriber",
+        "description": "Update an existing transcriber configuration.",
+        "operationId": "update_transcriber_api_v1_transcriber_configurations__config_id__put",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TranscriberConfigurationUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TranscriberConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Transcriber"
+        ],
+        "summary": "Delete Transcriber",
+        "description": "Delete a transcriber configuration.",
+        "operationId": "delete_transcriber_api_v1_transcriber_configurations__config_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/synthesizer-configurations/": {
+      "post": {
+        "tags": [
+          "Synthesizer"
+        ],
+        "summary": "Create Synthesizer",
+        "description": "Create a new synthesizer configuration.",
+        "operationId": "create_synthesizer_api_v1_synthesizer_configurations__post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SynthesizerConfigurationCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SynthesizerConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Synthesizer"
+        ],
+        "summary": "List Synthesizer",
+        "description": "Retrieve synthesizer configurations.",
+        "operationId": "list_synthesizer_api_v1_synthesizer_configurations__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "title": "Skip"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SynthesizerConfigurationRead"
+                  },
+                  "title": "Response List Synthesizer Api V1 Synthesizer Configurations  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/synthesizer-configurations/{config_id}": {
+      "get": {
+        "tags": [
+          "Synthesizer"
+        ],
+        "summary": "Get Synthesizer",
+        "description": "Retrieve a specific synthesizer configuration.",
+        "operationId": "get_synthesizer_api_v1_synthesizer_configurations__config_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SynthesizerConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Synthesizer"
+        ],
+        "summary": "Update Synthesizer",
+        "description": "Update an existing synthesizer configuration.",
+        "operationId": "update_synthesizer_api_v1_synthesizer_configurations__config_id__put",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SynthesizerConfigurationUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SynthesizerConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Synthesizer"
+        ],
+        "summary": "Delete Synthesizer",
+        "description": "Delete a synthesizer configuration.",
+        "operationId": "delete_synthesizer_api_v1_synthesizer_configurations__config_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/agentic-configurations/": {
+      "post": {
+        "tags": [
+          "Agentic"
+        ],
+        "summary": "Create Agentic",
+        "description": "Create a new agentic configuration.",
+        "operationId": "create_agentic_api_v1_agentic_configurations__post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenticConfigurationCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgenticConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Agentic"
+        ],
+        "summary": "List Agentic",
+        "description": "Retrieve agentic configurations.",
+        "operationId": "list_agentic_api_v1_agentic_configurations__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "title": "Skip"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AgenticConfigurationRead"
+                  },
+                  "title": "Response List Agentic Api V1 Agentic Configurations  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/agentic-configurations/{config_id}": {
+      "get": {
+        "tags": [
+          "Agentic"
+        ],
+        "summary": "Get Agentic",
+        "description": "Retrieve a specific agentic configuration.",
+        "operationId": "get_agentic_api_v1_agentic_configurations__config_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgenticConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Agentic"
+        ],
+        "summary": "Update Agentic",
+        "description": "Update an existing agentic configuration.",
+        "operationId": "update_agentic_api_v1_agentic_configurations__config_id__put",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgenticConfigurationUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgenticConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Agentic"
+        ],
+        "summary": "Delete Agentic",
+        "description": "Delete an agentic configuration.",
+        "operationId": "delete_agentic_api_v1_agentic_configurations__config_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/conversation-configurations/": {
+      "post": {
+        "tags": [
+          "Conversation"
+        ],
+        "summary": "Create Conversation",
+        "description": "Create a new conversation configuration.",
+        "operationId": "create_conversation_api_v1_conversation_configurations__post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConversationConfigurationCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Conversation"
+        ],
+        "summary": "List Conversation",
+        "description": "Retrieve conversation configurations.",
+        "operationId": "list_conversation_api_v1_conversation_configurations__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "title": "Skip"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConversationConfigurationRead"
+                  },
+                  "title": "Response List Conversation Api V1 Conversation Configurations  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/conversation-configurations/{config_id}": {
+      "get": {
+        "tags": [
+          "Conversation"
+        ],
+        "summary": "Get Conversation",
+        "description": "Retrieve a specific conversation configuration.",
+        "operationId": "get_conversation_api_v1_conversation_configurations__config_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Conversation"
+        ],
+        "summary": "Update Conversation",
+        "description": "Update an existing conversation configuration.",
+        "operationId": "update_conversation_api_v1_conversation_configurations__config_id__put",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConversationConfigurationUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationConfigurationRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Conversation"
+        ],
+        "summary": "Delete Conversation",
+        "description": "Delete a conversation configuration.",
+        "operationId": "delete_conversation_api_v1_conversation_configurations__config_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Config Id"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/providers/": {
+      "post": {
+        "tags": [
+          "AI Providers"
+        ],
+        "summary": "Create Provider",
+        "description": "Create a new provider configuration.",
+        "operationId": "create_provider_api_v1_providers__post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProviderCreateWithSecrets"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProviderRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "AI Providers"
+        ],
+        "summary": "List Providers",
+        "description": "List all provider configurations.",
+        "operationId": "list_providers_api_v1_providers__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "title": "Skip"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProviderRead"
+                  },
+                  "title": "Response List Providers Api V1 Providers  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/providers/{provider_id}": {
+      "get": {
+        "tags": [
+          "AI Providers"
+        ],
+        "summary": "Get Provider",
+        "description": "Get a specific provider configuration.",
+        "operationId": "get_provider_api_v1_providers__provider_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "provider_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Provider Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProviderRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AI Providers"
+        ],
+        "summary": "Update Provider",
+        "description": "Update an existing provider's configuration.",
+        "operationId": "update_provider_api_v1_providers__provider_id__put",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "provider_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Provider Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProviderUpdateWithSecrets"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProviderRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AI Providers"
+        ],
+        "summary": "Delete Provider",
+        "operationId": "delete_provider_api_v1_providers__provider_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "provider_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Provider Id"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/provider-brands/": {
+      "get": {
+        "tags": [
+          "Providers Brands"
+        ],
+        "summary": "List Providers",
+        "description": "Retrieve a list of all provider brands.",
+        "operationId": "list_providers_api_v1_provider_brands__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "title": "Skip"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProviderBrandSchemaRead"
+                  },
+                  "title": "Response List Providers Api V1 Provider Brands  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/provider-brands/{brand_key}/services/{service_type_path}/engines/{engine_identifier}": {
+      "get": {
+        "tags": [
+          "Providers Brands"
+        ],
+        "summary": "Get Provider",
+        "description": "Retrieve a specific provider service engine definition.",
+        "operationId": "get_provider_api_v1_provider_brands__brand_key__services__service_type_path__engines__engine_identifier__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "brand_key",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Brand Key"
+            }
+          },
+          {
+            "name": "service_type_path",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Service Type Path"
+            }
+          },
+          {
+            "name": "engine_identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Engine Identifier"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProviderEngineDefinitionRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/provider-brands/{brand_key}/services/{service_type_path}/engines/{engine_identifier}/form-schema": {
+      "get": {
+        "tags": [
+          "Providers Brands"
+        ],
+        "summary": "Get Provider Form Schema",
+        "description": "Retrieve the UI configuration schema for a specific provider service engine.",
+        "operationId": "get_provider_form_schema_api_v1_provider_brands__brand_key__services__service_type_path__engines__engine_identifier__form_schema_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "brand_key",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Brand Key"
+            }
+          },
+          {
+            "name": "service_type_path",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Service Type Path"
+            }
+          },
+          {
+            "name": "engine_identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Engine Identifier"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Get Provider Form Schema Api V1 Provider Brands  Brand Key  Services  Service Type Path  Engines  Engine Identifier  Form Schema Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/scenarios/": {
+      "post": {
+        "tags": [
+          "Scenarios"
+        ],
+        "summary": "Create Scenario",
+        "description": "Create a new scenario.",
+        "operationId": "create_scenario_api_v1_scenarios__post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScenarioCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scenario"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Scenarios"
+        ],
+        "summary": "List Scenarios",
+        "description": "Retrieve scenarios.",
+        "operationId": "list_scenarios_api_v1_scenarios__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of items to skip",
+              "default": 0,
+              "title": "Skip"
+            },
+            "description": "Number of items to skip"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 0,
+              "description": "Maximum number of items to return",
+              "default": 100,
+              "title": "Limit"
+            },
+            "description": "Maximum number of items to return"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scenarios"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/scenarios/{scenario_id}": {
+      "get": {
+        "tags": [
+          "Scenarios"
+        ],
+        "summary": "Get Scenario",
+        "description": "Retrieve a specific scenario by ID.",
+        "operationId": "get_scenario_api_v1_scenarios__scenario_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "scenario_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Scenario Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scenario"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Scenarios"
+        ],
+        "summary": "Update Scenario",
+        "description": "Update an existing scenario.",
+        "operationId": "update_scenario_api_v1_scenarios__scenario_id__put",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "scenario_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Scenario Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScenarioUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Scenario"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Scenarios"
+        ],
+        "summary": "Delete Scenario",
+        "description": "Delete a scenario.",
+        "operationId": "delete_scenario_api_v1_scenarios__scenario_id__delete",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "scenario_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Scenario Id"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AgenticConfigurationCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "A unique name for this agentic configuration within the organization."
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "description": "Optional description for the agentic configuration."
+          },
+          "provider_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Provider Id",
+            "description": "The ProviderAccount ID to use for this configuration."
+          },
+          "engine_identifier": {
+            "type": "string",
+            "title": "Engine Identifier",
+            "description": "Identifier of the specific agentic engine from the provider (e.g., 'gpt-4')."
+          },
+          "engine_specific_config": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Engine Specific Config",
+            "description": "Provider/engine-specific configuration parameters, conforming to the engine's schema."
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "provider_id",
+          "engine_identifier"
+        ],
+        "title": "AgenticConfigurationCreate"
+      },
+      "AgenticConfigurationRead": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "A unique name for this agentic configuration within the organization."
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "description": "Optional description for the agentic configuration."
+          },
+          "provider_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Provider Id",
+            "description": "The ProviderAccount ID to use for this configuration."
+          },
+          "engine_identifier": {
+            "type": "string",
+            "title": "Engine Identifier",
+            "description": "Identifier of the specific agentic engine from the provider (e.g., 'gpt-4')."
+          },
+          "engine_specific_config": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Engine Specific Config",
+            "description": "Provider/engine-specific configuration parameters, conforming to the engine's schema."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier for the agentic configuration."
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Organization Id",
+            "description": "Identifier of the organization owning this configuration."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At",
+            "description": "Timestamp when the configuration was created."
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At",
+            "description": "Timestamp when the configuration was last updated."
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "provider_id",
+          "engine_identifier",
+          "id",
+          "organization_id",
+          "created_at"
+        ],
+        "title": "AgenticConfigurationRead"
+      },
+      "AgenticConfigurationUpdate": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "engine_specific_config": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Engine Specific Config",
+            "description": "Updated provider/engine-specific configuration parameters."
+          }
+        },
+        "type": "object",
+        "title": "AgenticConfigurationUpdate"
+      },
+      "BrandServiceEngineSummary": {
+        "properties": {
+          "engine_identifier": {
+            "type": "string",
+            "title": "Engine Identifier",
+            "description": "Unique identifier for this specific service engine (e.g., OPENAI_WHISPER_V1)."
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name",
+            "description": "User-friendly display name for the service engine."
+          },
+          "capabilities": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Capabilities",
+            "description": "List of specific capabilities for this engine."
+          }
+        },
+        "type": "object",
+        "required": [
+          "engine_identifier",
+          "display_name"
+        ],
+        "title": "BrandServiceEngineSummary",
+        "description": "Summarized information about a specific service engine offered by a provider brand."
+      },
+      "ConversationConfigurationCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "A unique name for this conversation configuration within the organization."
+          },
+          "transcriber_config_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Transcriber Config Id",
+            "description": "ID of the Transcriber Configuration to use."
+          },
+          "synthesizer_config_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Synthesizer Config Id",
+            "description": "ID of the Synthesizer Configuration to use."
+          },
+          "agentic_config_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Agentic Config Id",
+            "description": "ID of the Agentic Configuration to use."
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "transcriber_config_id",
+          "synthesizer_config_id",
+          "agentic_config_id"
+        ],
+        "title": "ConversationConfigurationCreate"
+      },
+      "ConversationConfigurationRead": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "A unique name for this conversation configuration within the organization."
+          },
+          "transcriber_config_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Transcriber Config Id",
+            "description": "ID of the Transcriber Configuration to use."
+          },
+          "synthesizer_config_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Synthesizer Config Id",
+            "description": "ID of the Synthesizer Configuration to use."
+          },
+          "agentic_config_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Agentic Config Id",
+            "description": "ID of the Agentic Configuration to use."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier for the conversation configuration."
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Organization Id",
+            "description": "Identifier of the organization owning this configuration."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At",
+            "description": "Timestamp when the configuration was created."
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At",
+            "description": "Timestamp when the configuration was last updated."
+          },
+          "transcriber_configuration": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TranscriberConfigurationRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "synthesizer_configuration": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SynthesizerConfigurationRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "agentic_configuration": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AgenticConfigurationRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "transcriber_config_id",
+          "synthesizer_config_id",
+          "agentic_config_id",
+          "id",
+          "organization_id",
+          "created_at"
+        ],
+        "title": "ConversationConfigurationRead"
+      },
+      "ConversationConfigurationUpdate": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "transcriber_config_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transcriber Config Id"
+          },
+          "synthesizer_config_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Synthesizer Config Id"
+          },
+          "agentic_config_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Agentic Config Id"
+          }
+        },
+        "type": "object",
+        "title": "ConversationConfigurationUpdate"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "IdentityTraitsUpdate": {
+        "properties": {
+          "role": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role",
+            "description": "User role (e.g., admin, member)"
+          },
+          "organization_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Organization Id",
+            "description": "UUID of the organization the user belongs to"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/NameUpdate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "email": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "email"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Email"
+          }
+        },
+        "type": "object",
+        "title": "IdentityTraitsUpdate",
+        "description": "Schema for updating mutable identity traits via API."
+      },
+      "InvitationResponse": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "invite_link": {
+            "type": "string",
+            "title": "Invite Link"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Expires At"
+          },
+          "email_sent": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Email Sent"
+          }
+        },
+        "type": "object",
+        "required": [
+          "email",
+          "invite_link",
+          "expires_at"
+        ],
+        "title": "InvitationResponse",
+        "description": "Response schema for user invitation."
+      },
+      "KratosAuthenticationMethod": {
+        "properties": {
+          "method": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Method"
+          },
+          "authenticator_assurance_level": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Authenticator Assurance Level"
+          },
+          "completed_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Completed At"
+          }
+        },
+        "type": "object",
+        "title": "KratosAuthenticationMethod"
+      },
+      "KratosSession": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "active": {
+            "type": "boolean",
+            "title": "Active"
+          },
+          "expires_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires At"
+          },
+          "authenticated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Authenticated At"
+          },
+          "issued_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Issued At"
+          },
+          "authenticator_assurance_level": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Authenticator Assurance Level"
+          },
+          "authentication_methods": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/KratosAuthenticationMethod"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Authentication Methods"
+          },
+          "identity_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Identity Id"
+          },
+          "devices": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/KratosSessionDevice"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Devices"
+          },
+          "tokenized": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tokenized",
+            "description": "The tokenized version of the session (e.g. JWT). Only Sia-specific; not a standard Kratos field."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "active",
+          "authenticated_at",
+          "issued_at",
+          "identity_id"
+        ],
+        "title": "KratosSession"
+      },
+      "KratosSessionDevice": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "ip_address": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ip Address"
+          },
+          "user_agent": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "User Agent"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Location"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "title": "KratosSessionDevice"
+      },
+      "ModeEnum": {
+        "type": "string",
+        "enum": [
+          "termination",
+          "passthrough"
+        ],
+        "title": "ModeEnum"
+      },
+      "NameUpdate": {
+        "properties": {
+          "first": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "First"
+          },
+          "last": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last"
+          }
+        },
+        "type": "object",
+        "title": "NameUpdate"
+      },
+      "OrganizationSchema": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "title": "Name"
+          },
+          "primary_contact_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Contact Name"
+          },
+          "primary_contact_email": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "email"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Contact Email"
+          },
+          "primary_contact_phone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Contact Phone"
+          },
+          "billing_address_line1": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing Address Line1"
+          },
+          "billing_address_line2": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing Address Line2"
+          },
+          "billing_city": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing City"
+          },
+          "billing_state_province": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing State Province"
+          },
+          "billing_postal_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing Postal Code"
+          },
+          "billing_country": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing Country"
+          },
+          "website": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2083,
+                "minLength": 1,
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Website"
+          },
+          "tax_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tax Id"
+          },
+          "plan_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Plan Name"
+          },
+          "subscription_status": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SubscriptionStatusEnum"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "is_active": {
+            "type": "boolean",
+            "title": "Is Active"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
+          },
+          "lemon_squeezy_customer_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lemon Squeezy Customer Id"
+          },
+          "lemon_squeezy_subscription_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lemon Squeezy Subscription Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "is_active",
+          "id",
+          "created_at"
+        ],
+        "title": "OrganizationSchema"
+      },
+      "OrganizationUpdate": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "primary_contact_name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Contact Name"
+          },
+          "primary_contact_email": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "email"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Contact Email"
+          },
+          "primary_contact_phone": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 50
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Contact Phone"
+          },
+          "billing_address_line1": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing Address Line1"
+          },
+          "billing_address_line2": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing Address Line2"
+          },
+          "billing_city": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing City"
+          },
+          "billing_state_province": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing State Province"
+          },
+          "billing_postal_code": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 50
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing Postal Code"
+          },
+          "billing_country": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Billing Country"
+          },
+          "website": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2083,
+                "minLength": 1,
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Website"
+          },
+          "tax_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tax Id"
+          },
+          "plan_name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 50
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Plan Name"
+          },
+          "subscription_status": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SubscriptionStatusEnum"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "is_active": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Active"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          },
+          "lemon_squeezy_customer_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lemon Squeezy Customer Id"
+          },
+          "lemon_squeezy_subscription_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lemon Squeezy Subscription Id"
+          }
+        },
+        "type": "object",
+        "title": "OrganizationUpdate"
+      },
+      "PaginatedKratosSessions": {
+        "properties": {
+          "sessions": {
+            "items": {
+              "$ref": "#/components/schemas/KratosSession"
+            },
+            "type": "array",
+            "title": "Sessions"
+          },
+          "total_count": {
+            "type": "integer",
+            "title": "Total Count"
+          },
+          "page": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page"
+          },
+          "per_page": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Per Page"
+          }
+        },
+        "type": "object",
+        "required": [
+          "sessions",
+          "total_count"
+        ],
+        "title": "PaginatedKratosSessions"
+      },
+      "PassthroughConfigCreate": {
+        "properties": {
+          "destination": {
+            "type": "string",
+            "title": "Destination",
+            "examples": [
+              "sip:1234@provider.com"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "destination"
+        ],
+        "title": "PassthroughConfigCreate"
+      },
+      "PassthroughConfigRead": {
+        "properties": {
+          "destination": {
+            "type": "string",
+            "title": "Destination",
+            "examples": [
+              "sip:1234@provider.com"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "resource_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Resource Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "destination",
+          "id",
+          "resource_id"
+        ],
+        "title": "PassthroughConfigRead"
+      },
+      "PassthroughConfigUpdate": {
+        "properties": {
+          "destination": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Destination",
+            "examples": [
+              "sip:4321@other.com"
+            ]
+          }
+        },
+        "type": "object",
+        "title": "PassthroughConfigUpdate"
+      },
+      "ProviderBrandSchemaRead": {
+        "properties": {
+          "brand_key": {
+            "type": "string",
+            "title": "Brand Key",
+            "description": "Unique key for the provider brand (e.g., 'openai')."
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name",
+            "description": "User-friendly display name for the brand."
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "description": "Description of the provider brand."
+          },
+          "secret_schema": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Secret Schema",
+            "description": "JSON schema for the secrets required by this brand."
+          },
+          "transcriber_engine": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BrandServiceEngineSummary"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Summary of the transcriber engine offered by this brand, if any."
+          },
+          "synthesizer_engine": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BrandServiceEngineSummary"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Summary of the synthesizer engine offered by this brand, if any."
+          },
+          "agentic_engine": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BrandServiceEngineSummary"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Summary of the agentic engine offered by this brand, if any."
+          }
+        },
+        "type": "object",
+        "required": [
+          "brand_key",
+          "display_name",
+          "secret_schema"
+        ],
+        "title": "ProviderBrandSchemaRead",
+        "description": "Information about a provider brand, its secret requirements, and a summary of its available service engines."
+      },
+      "ProviderCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 3,
+            "title": "Name",
+            "description": "Name of the provider configuration."
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 500
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "description": "Optional description for the provider configuration."
+          },
+          "brand_key": {
+            "type": "string",
+            "title": "Brand Key",
+            "description": "Key of the provider brand (e.g., 'openai', 'azure')."
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "brand_key"
+        ],
+        "title": "ProviderCreate"
+      },
+      "ProviderCreateWithSecrets": {
+        "properties": {
+          "provider": {
+            "$ref": "#/components/schemas/ProviderCreate",
+            "description": "The core provider data."
+          },
+          "secrets_payload": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string",
+                  "format": "password",
+                  "writeOnly": true
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Secrets Payload",
+            "description": "Optional dictionary of secrets to store in Vault."
+          }
+        },
+        "type": "object",
+        "required": [
+          "provider"
+        ],
+        "title": "ProviderCreateWithSecrets"
+      },
+      "ProviderEngineDefinitionRead": {
+        "properties": {
+          "engine_key": {
+            "type": "string",
+            "title": "Engine Key",
+            "description": "Unique string key for the provider engine type (e.g., OPENAI_TTS_V1)."
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name",
+            "description": "User-friendly display name (e.g., OpenAI TTS)."
+          },
+          "service_type": {
+            "type": "string",
+            "title": "Service Type",
+            "description": "General category of service (e.g., TRANSCRIBER, SYNTHESIZER)."
+          },
+          "capabilities": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Capabilities",
+            "description": "List of specific capabilities (e.g., [\"can_transcribe_stream\"])."
+          },
+          "configuration_schema": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Configuration Schema",
+            "description": "URL to retrieve the detailed configuration schema (form schema) for this engine."
+          },
+          "secret_schema": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Secret Schema",
+            "description": "JSON schema defining the structure for secrets in Vault."
+          },
+          "id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id",
+            "description": "Unique identifier for the provider engine definition. May not be present for hardcoded definitions."
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At",
+            "description": "Timestamp when the definition was created. May not be applicable for hardcoded definitions."
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At",
+            "description": "Timestamp when the definition was last updated. May not be applicable for hardcoded definitions."
+          }
+        },
+        "type": "object",
+        "required": [
+          "engine_key",
+          "display_name",
+          "service_type"
+        ],
+        "title": "ProviderEngineDefinitionRead"
+      },
+      "ProviderRead": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 3,
+            "title": "Name",
+            "description": "Name of the provider configuration."
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 500
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "description": "Optional description for the provider configuration."
+          },
+          "brand_key": {
+            "type": "string",
+            "title": "Brand Key",
+            "description": "Key of the provider brand (e.g., 'openai', 'azure')."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Organization Id"
+          },
+          "secret_reference": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Secret Reference",
+            "description": "Reference to where the secret is stored (e.g., Vault path)."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "brand_key",
+          "id",
+          "organization_id",
+          "created_at"
+        ],
+        "title": "ProviderRead"
+      },
+      "ProviderUpdate": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100,
+                "minLength": 3
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 500
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          }
+        },
+        "type": "object",
+        "title": "ProviderUpdate"
+      },
+      "ProviderUpdateWithSecrets": {
+        "properties": {
+          "provider": {
+            "$ref": "#/components/schemas/ProviderUpdate",
+            "description": "The core provider data to update."
+          },
+          "secrets_payload": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string",
+                  "format": "password",
+                  "writeOnly": true
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Secrets Payload",
+            "description": "Optional dictionary of secrets to set/update in Vault. If provided, replaces existing secrets."
+          }
+        },
+        "type": "object",
+        "required": [
+          "provider"
+        ],
+        "title": "ProviderUpdateWithSecrets"
+      },
+      "ResourceCreate": {
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "maxLength": 255,
+            "title": "Identifier",
+            "examples": [
+              "+15551234567",
+              "support_queue"
+            ]
+          },
+          "mode": {
+            "$ref": "#/components/schemas/ModeEnum"
+          },
+          "passthrough_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PassthroughConfigCreate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "termination_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TerminationConfigCreate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "identifier",
+          "mode"
+        ],
+        "title": "ResourceCreate"
+      },
+      "ResourceRead": {
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "maxLength": 255,
+            "title": "Identifier",
+            "examples": [
+              "+15551234567",
+              "support_queue"
+            ]
+          },
+          "mode": {
+            "$ref": "#/components/schemas/ModeEnum"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Organization Id"
+          },
+          "passthrough_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PassthroughConfigRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "termination_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TerminationConfigRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "identifier",
+          "mode",
+          "id",
+          "organization_id"
+        ],
+        "title": "ResourceRead"
+      },
+      "ResourceUpdate": {
+        "properties": {
+          "identifier": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Identifier",
+            "examples": [
+              "+15559876543"
+            ]
+          },
+          "mode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModeEnum"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "passthrough_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PassthroughConfigUpdate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "termination_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TerminationConfigUpdate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "title": "ResourceUpdate"
+      },
+      "Scenario": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Name",
+            "description": "User-friendly name for the scenario."
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 1000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "description": "Optional description for the scenario."
+          },
+          "initial_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Initial Message",
+            "description": "Initial message spoken by the agent."
+          },
+          "prompt_preamble": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Preamble",
+            "description": "System prompt or preamble for the agent."
+          },
+          "voice_attitude": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 1000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Voice Attitude",
+            "description": "Desired voice attitude or style."
+          },
+          "fallback_phrases": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback Phrases",
+            "description": "List of phrases to use if the agent cannot respond."
+          },
+          "allow_interruptions": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allow Interruptions",
+            "description": "Whether the agent can be interrupted by the user.",
+            "default": true
+          },
+          "allowed_idle_time_seconds": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allowed Idle Time Seconds",
+            "description": "Allowed idle time in seconds before a timeout action."
+          },
+          "num_check_human_present_times": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Num Check Human Present Times",
+            "description": "Number of times to check if human is present before ending."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Organization Id"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "id",
+          "organization_id",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "Scenario"
+      },
+      "ScenarioBase": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Name",
+            "description": "User-friendly name for the scenario."
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 1000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "description": "Optional description for the scenario."
+          },
+          "initial_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Initial Message",
+            "description": "Initial message spoken by the agent."
+          },
+          "prompt_preamble": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Preamble",
+            "description": "System prompt or preamble for the agent."
+          },
+          "voice_attitude": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 1000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Voice Attitude",
+            "description": "Desired voice attitude or style."
+          },
+          "fallback_phrases": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback Phrases",
+            "description": "List of phrases to use if the agent cannot respond."
+          },
+          "allow_interruptions": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allow Interruptions",
+            "description": "Whether the agent can be interrupted by the user.",
+            "default": true
+          },
+          "allowed_idle_time_seconds": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allowed Idle Time Seconds",
+            "description": "Allowed idle time in seconds before a timeout action."
+          },
+          "num_check_human_present_times": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Num Check Human Present Times",
+            "description": "Number of times to check if human is present before ending."
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "ScenarioBase"
+      },
+      "ScenarioCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Name",
+            "description": "User-friendly name for the scenario."
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 1000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "description": "Optional description for the scenario."
+          },
+          "initial_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Initial Message",
+            "description": "Initial message spoken by the agent."
+          },
+          "prompt_preamble": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Preamble",
+            "description": "System prompt or preamble for the agent."
+          },
+          "voice_attitude": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 1000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Voice Attitude",
+            "description": "Desired voice attitude or style."
+          },
+          "fallback_phrases": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback Phrases",
+            "description": "List of phrases to use if the agent cannot respond."
+          },
+          "allow_interruptions": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allow Interruptions",
+            "description": "Whether the agent can be interrupted by the user.",
+            "default": true
+          },
+          "allowed_idle_time_seconds": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allowed Idle Time Seconds",
+            "description": "Allowed idle time in seconds before a timeout action."
+          },
+          "num_check_human_present_times": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Num Check Human Present Times",
+            "description": "Number of times to check if human is present before ending."
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "ScenarioCreate"
+      },
+      "ScenarioUpdate": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 1000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "initial_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Initial Message"
+          },
+          "prompt_preamble": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Preamble"
+          },
+          "voice_attitude": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 1000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Voice Attitude"
+          },
+          "fallback_phrases": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback Phrases"
+          },
+          "allow_interruptions": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allow Interruptions"
+          },
+          "allowed_idle_time_seconds": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allowed Idle Time Seconds"
+          },
+          "num_check_human_present_times": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Num Check Human Present Times"
+          }
+        },
+        "type": "object",
+        "title": "ScenarioUpdate"
+      },
+      "Scenarios": {
+        "properties": {
+          "scenarios": {
+            "items": {
+              "$ref": "#/components/schemas/Scenario"
+            },
+            "type": "array",
+            "title": "Scenarios"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          }
+        },
+        "type": "object",
+        "required": [
+          "scenarios",
+          "total"
+        ],
+        "title": "Scenarios"
+      },
+      "SubscriptionStatusEnum": {
+        "type": "string",
+        "enum": [
+          "trialing",
+          "active",
+          "past_due",
+          "incomplete",
+          "incomplete_expired",
+          "unpaid",
+          "canceled",
+          "paused"
+        ],
+        "title": "SubscriptionStatusEnum"
+      },
+      "SynthesizerConfigurationCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "A unique name for this synthesizer configuration within the organization."
+          },
+          "provider_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Provider Id",
+            "description": "The ProviderAccount ID to use for this configuration."
+          },
+          "engine_identifier": {
+            "type": "string",
+            "title": "Engine Identifier",
+            "description": "Identifier of the specific synthesizer engine from the provider (e.g., 'openai-tts-1')."
+          },
+          "language": {
+            "type": "string",
+            "title": "Language",
+            "description": "BCP-47 language code (e.g., en-US, fr-FR).",
+            "default": "en-US"
+          },
+          "audio_encoding": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Audio Encoding",
+            "description": "Audio encoding format (e.g., linear16, mp3 for output if applicable).",
+            "default": "linear16"
+          },
+          "sampling_rate": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sampling Rate",
+            "description": "Audio sampling rate in Hz.",
+            "default": 16000
+          },
+          "engine_specific_config": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Engine Specific Config",
+            "description": "Provider/engine-specific configuration parameters, conforming to the engine's schema."
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "provider_id",
+          "engine_identifier"
+        ],
+        "title": "SynthesizerConfigurationCreate"
+      },
+      "SynthesizerConfigurationRead": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "A unique name for this synthesizer configuration within the organization."
+          },
+          "provider_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Provider Id",
+            "description": "The ProviderAccount ID to use for this configuration."
+          },
+          "engine_identifier": {
+            "type": "string",
+            "title": "Engine Identifier",
+            "description": "Identifier of the specific synthesizer engine from the provider (e.g., 'openai-tts-1')."
+          },
+          "language": {
+            "type": "string",
+            "title": "Language",
+            "description": "BCP-47 language code (e.g., en-US, fr-FR).",
+            "default": "en-US"
+          },
+          "audio_encoding": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Audio Encoding",
+            "description": "Audio encoding format (e.g., linear16, mp3 for output if applicable).",
+            "default": "linear16"
+          },
+          "sampling_rate": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sampling Rate",
+            "description": "Audio sampling rate in Hz.",
+            "default": 16000
+          },
+          "engine_specific_config": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Engine Specific Config",
+            "description": "Provider/engine-specific configuration parameters, conforming to the engine's schema."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier for the synthesizer configuration."
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Organization Id",
+            "description": "Identifier of the organization owning this configuration."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At",
+            "description": "Timestamp when the configuration was created."
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At",
+            "description": "Timestamp when the configuration was last updated."
+          },
+          "has_secret_configured": {
+            "type": "boolean",
+            "title": "Has Secret Configured",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "provider_id",
+          "engine_identifier",
+          "id",
+          "organization_id",
+          "created_at"
+        ],
+        "title": "SynthesizerConfigurationRead"
+      },
+      "SynthesizerConfigurationUpdate": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "language": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language"
+          },
+          "audio_encoding": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Audio Encoding"
+          },
+          "sampling_rate": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sampling Rate"
+          },
+          "engine_specific_config": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Engine Specific Config",
+            "description": "Updated provider/engine-specific configuration parameters."
+          }
+        },
+        "type": "object",
+        "title": "SynthesizerConfigurationUpdate"
+      },
+      "TerminationConfigCreate": {
+        "properties": {
+          "conversation_configuration_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Conversation Configuration Id",
+            "description": "Optional ID of the Conversation Configuration to use for agentic termination."
+          },
+          "scenario_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scenario Id",
+            "description": "Optional ID of the Scenario to use for agentic termination."
+          }
+        },
+        "type": "object",
+        "title": "TerminationConfigCreate"
+      },
+      "TerminationConfigRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier for the termination configuration."
+          },
+          "resource_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Resource Id",
+            "description": "Identifier of the resource this termination config belongs to."
+          },
+          "conversation_configuration_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Conversation Configuration Id",
+            "description": "ID of the linked Conversation Configuration, if any."
+          },
+          "conversation_configuration": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ConversationConfigurationRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "scenario_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scenario Id",
+            "description": "ID of the linked Scenario, if any."
+          },
+          "scenario": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ScenarioBase"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "resource_id"
+        ],
+        "title": "TerminationConfigRead"
+      },
+      "TerminationConfigUpdate": {
+        "properties": {
+          "conversation_configuration_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Conversation Configuration Id",
+            "description": "Optional ID of the Conversation Configuration to use for agentic termination."
+          },
+          "scenario_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scenario Id",
+            "description": "Optional ID of the Scenario to use for agentic termination."
+          }
+        },
+        "type": "object",
+        "title": "TerminationConfigUpdate"
+      },
+      "TranscriberConfigurationCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "A unique name for this transcriber configuration within the organization."
+          },
+          "provider_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Provider Id",
+            "description": "The ProviderAccount ID to use for this configuration. Secrets and brand are derived from this provider."
+          },
+          "engine_identifier": {
+            "type": "string",
+            "title": "Engine Identifier",
+            "description": "Identifier of the specific transcriber engine from the provider (e.g., 'whisper-1')."
+          },
+          "sampling_rate": {
+            "type": "integer",
+            "title": "Sampling Rate",
+            "description": "Audio sampling rate in Hz.",
+            "default": 16000
+          },
+          "audio_encoding": {
+            "type": "string",
+            "title": "Audio Encoding",
+            "description": "Audio encoding format (e.g., linear16, mulaw).",
+            "default": "linear16"
+          },
+          "language": {
+            "type": "string",
+            "title": "Language",
+            "description": "BCP-47 language code (e.g., en-US, fr-FR).",
+            "default": "en-US"
+          },
+          "chunk_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chunk Size",
+            "description": "Optional audio chunk size in bytes for streaming."
+          },
+          "engine_specific_config": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Engine Specific Config",
+            "description": "Provider/engine-specific configuration parameters, conforming to the engine's schema."
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "provider_id",
+          "engine_identifier"
+        ],
+        "title": "TranscriberConfigurationCreate"
+      },
+      "TranscriberConfigurationRead": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "A unique name for this transcriber configuration within the organization."
+          },
+          "provider_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Provider Id",
+            "description": "The ProviderAccount ID to use for this configuration. Secrets and brand are derived from this provider."
+          },
+          "engine_identifier": {
+            "type": "string",
+            "title": "Engine Identifier",
+            "description": "Identifier of the specific transcriber engine from the provider (e.g., 'whisper-1')."
+          },
+          "sampling_rate": {
+            "type": "integer",
+            "title": "Sampling Rate",
+            "description": "Audio sampling rate in Hz.",
+            "default": 16000
+          },
+          "audio_encoding": {
+            "type": "string",
+            "title": "Audio Encoding",
+            "description": "Audio encoding format (e.g., linear16, mulaw).",
+            "default": "linear16"
+          },
+          "language": {
+            "type": "string",
+            "title": "Language",
+            "description": "BCP-47 language code (e.g., en-US, fr-FR).",
+            "default": "en-US"
+          },
+          "chunk_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chunk Size",
+            "description": "Optional audio chunk size in bytes for streaming."
+          },
+          "engine_specific_config": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Engine Specific Config",
+            "description": "Provider/engine-specific configuration parameters, conforming to the engine's schema."
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id",
+            "description": "Unique identifier for the transcriber configuration."
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Organization Id",
+            "description": "Identifier of the organization owning this configuration."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At",
+            "description": "Timestamp when the configuration was created."
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At",
+            "description": "Timestamp when the configuration was last updated."
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "provider_id",
+          "engine_identifier",
+          "id",
+          "organization_id",
+          "created_at"
+        ],
+        "title": "TranscriberConfigurationRead"
+      },
+      "TranscriberConfigurationUpdate": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "provider_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provider Id"
+          },
+          "engine_identifier": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Engine Identifier"
+          },
+          "sampling_rate": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sampling Rate"
+          },
+          "audio_encoding": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Audio Encoding"
+          },
+          "language": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language"
+          },
+          "chunk_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chunk Size"
+          },
+          "engine_specific_config": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Engine Specific Config",
+            "description": "Updated provider/engine-specific configuration parameters."
+          }
+        },
+        "type": "object",
+        "title": "TranscriberConfigurationUpdate"
+      },
+      "TrunkCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "User-defined display name for the trunk."
+          },
+          "sip_server": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sip Server",
+            "description": "IP address or hostname of the SIP server/provider. Required for non-registrar endpoints."
+          },
+          "sip_username": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sip Username",
+            "description": "SIP username for authentication (defaults to asterisk_identifier)"
+          },
+          "sip_password": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sip Password",
+            "description": "SIP password for authentication",
+            "default": "secret123"
+          },
+          "context": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Context",
+            "description": "Asterisk dialplan context for incoming calls",
+            "default": "stasis-angany"
+          },
+          "codecs": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Codecs",
+            "description": "Comma-separated list of allowed codecs",
+            "default": "ulaw,alaw,g722"
+          },
+          "transport": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transport",
+            "description": "PJSIP transport to use",
+            "default": "transport-udp"
+          },
+          "enable_registration": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enable Registration",
+            "description": "Whether to send REGISTER requests to the server",
+            "default": true
+          },
+          "identify_ip": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Identify Ip",
+            "description": "IP address/network to match for identify (if not registering)"
+          },
+          "is_registrar": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Registrar",
+            "description": "If True, this endpoint will act as a registrar for external SIP endpoints",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "TrunkCreate",
+        "description": "Model for creating a new SIP trunk ",
+        "example": {
+          "codecs": "opus,g722,ulaw",
+          "context": "from-provider",
+          "enable_registration": true,
+          "is_registrar": false,
+          "name": "My Provider Trunk",
+          "sip_password": "pa$$w0rd",
+          "sip_server": "sip.provider.com",
+          "sip_username": "user123"
+        }
+      },
+      "TrunkDetails": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Organization Id"
+          },
+          "asterisk_identifier": {
+            "type": "string",
+            "title": "Asterisk Identifier"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
+          },
+          "auth": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Auth"
+          },
+          "aor": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Aor"
+          },
+          "endpoint": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Endpoint"
+          },
+          "identify": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Identify"
+          },
+          "registration": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Registration"
+          },
+          "is_registrar": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Registrar"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "organization_id",
+          "asterisk_identifier",
+          "created_at"
+        ],
+        "title": "TrunkDetails",
+        "description": "Detailed information about a SIP trunk (abstraction + PJSIP sections) "
+      },
+      "TrunkInfo": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "organization_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Organization Id"
+          },
+          "asterisk_identifier": {
+            "type": "string",
+            "title": "Asterisk Identifier"
+          },
+          "sip_server": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sip Server"
+          },
+          "sip_username": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sip Username"
+          },
+          "context": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Context"
+          },
+          "codecs": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Codecs"
+          },
+          "transport": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transport"
+          },
+          "enable_registration": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enable Registration"
+          },
+          "identify_ip": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Identify Ip"
+          },
+          "is_registrar": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Registrar"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "organization_id",
+          "asterisk_identifier"
+        ],
+        "title": "TrunkInfo",
+        "description": "Information about a single trunk for listing "
+      },
+      "TrunkListResponse": {
+        "properties": {
+          "trunks": {
+            "items": {
+              "$ref": "#/components/schemas/TrunkInfo"
+            },
+            "type": "array",
+            "title": "Trunks"
+          }
+        },
+        "type": "object",
+        "required": [
+          "trunks"
+        ],
+        "title": "TrunkListResponse",
+        "description": "Response for listing trunk names and IDs ",
+        "example": {
+          "trunks": [
+            {
+              "asterisk_identifier": "my-provider-trunk-123",
+              "id": "123e4567-e89b-12d3-a456-426614174000",
+              "name": "My Provider Trunk",
+              "organization_id": "789e4567-e89b-12d3-a456-426614174000"
+            }
+          ]
+        }
+      },
+      "TrunkUpdate": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name",
+            "description": "User-defined display name for the trunk."
+          },
+          "sip_server": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sip Server",
+            "description": "IP address or hostname of the SIP server/provider"
+          },
+          "sip_username": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sip Username",
+            "description": "SIP username for authentication"
+          },
+          "sip_password": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sip Password",
+            "description": "SIP password for authentication"
+          },
+          "context": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Context",
+            "description": "Asterisk dialplan context for incoming calls"
+          },
+          "codecs": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Codecs",
+            "description": "Comma-separated list of allowed codecs"
+          },
+          "transport": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transport",
+            "description": "PJSIP transport to use"
+          },
+          "enable_registration": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enable Registration",
+            "description": "Whether to send REGISTER requests to the server"
+          },
+          "identify_ip": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Identify Ip",
+            "description": "IP address/network to match for identify (if not registering)"
+          },
+          "is_registrar": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Registrar",
+            "description": "If True, this endpoint will act as a registrar for external SIP endpoints"
+          }
+        },
+        "type": "object",
+        "title": "TrunkUpdate",
+        "description": "Model for updating an existing SIP trunk. All fields are optional. ",
+        "example": {
+          "enable_registration": false,
+          "identify_ip": "192.168.1.100",
+          "is_registrar": false,
+          "name": "Updated Trunk Name",
+          "sip_password": "newSecr3t",
+          "sip_server": "sip.newprovider.com"
+        }
+      },
+      "UserCreate": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "first_name": {
+            "type": "string",
+            "title": "First Name"
+          },
+          "last_name": {
+            "type": "string",
+            "title": "Last Name"
+          },
+          "password": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Password"
+          },
+          "role": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role",
+            "default": "admin"
+          },
+          "organization_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Organization Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "email",
+          "first_name",
+          "last_name"
+        ],
+        "title": "UserCreate"
+      },
+      "UserInfo": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "schema_id": {
+            "type": "string",
+            "title": "Schema Id"
+          },
+          "state": {
+            "type": "string",
+            "title": "State",
+            "default": "active"
+          },
+          "traits": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UserInfoTraits"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "organization_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Organization Id"
+          },
+          "verifiable_addresses": {
+            "items": {
+              "$ref": "#/components/schemas/VerifiableAddressSchema"
+            },
+            "type": "array",
+            "title": "Verifiable Addresses"
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
+          },
+          "last_login": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Login"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "schema_id"
+        ],
+        "title": "UserInfo",
+        "description": "User information schema that matches the exact structure used in angany-configuration.\n\nThis is returned by all authentication methods and used throughout the system."
+      },
+      "UserInfoName": {
+        "properties": {
+          "first": {
+            "type": "string",
+            "title": "First"
+          },
+          "last": {
+            "type": "string",
+            "title": "Last"
+          }
+        },
+        "type": "object",
+        "required": [
+          "first",
+          "last"
+        ],
+        "title": "UserInfoName",
+        "description": "User name information from Kratos identity traits."
+      },
+      "UserInfoTraits": {
+        "properties": {
+          "email": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "email"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Email"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UserInfoName"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "role": {
+            "type": "string",
+            "title": "Role",
+            "default": "user"
+          }
+        },
+        "type": "object",
+        "title": "UserInfoTraits",
+        "description": "User traits from Kratos identity - matches angany-configuration structure."
+      },
+      "UserInvitation": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "first_name": {
+            "type": "string",
+            "title": "First Name"
+          },
+          "last_name": {
+            "type": "string",
+            "title": "Last Name"
+          },
+          "role": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role",
+            "default": "admin"
+          },
+          "send_email": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Send Email",
+            "default": true
+          },
+          "organization_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Organization Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "email",
+          "first_name",
+          "last_name"
+        ],
+        "title": "UserInvitation",
+        "description": "Schema for inviting a user to an organization."
+      },
+      "UserListResponse": {
+        "properties": {
+          "users": {
+            "items": {
+              "$ref": "#/components/schemas/UserInfo"
+            },
+            "type": "array",
+            "title": "Users"
+          }
+        },
+        "type": "object",
+        "required": [
+          "users"
+        ],
+        "title": "UserListResponse"
+      },
+      "UserProfileStatus": {
+        "properties": {
+          "has_completed_onboarding": {
+            "type": "boolean",
+            "title": "Has Completed Onboarding"
+          },
+          "is_email_verified": {
+            "type": "boolean",
+            "title": "Is Email Verified"
+          }
+        },
+        "type": "object",
+        "required": [
+          "has_completed_onboarding",
+          "is_email_verified"
+        ],
+        "title": "UserProfileStatus"
+      },
+      "UserUpdate": {
+        "properties": {
+          "traits": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IdentityTraitsUpdate"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Updated user traits (e.g., role, organization_id)"
+          },
+          "state": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "State",
+            "description": "Updated user state (e.g., 'active' or 'inactive')"
+          },
+          "organization_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Organization Id",
+            "description": "Optional: Change the user's primary organization ID. Use with caution."
+          }
+        },
+        "type": "object",
+        "title": "UserUpdate"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VerifiableAddressSchema": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "value": {
+            "type": "string",
+            "title": "Value"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified"
+          },
+          "via": {
+            "type": "string",
+            "title": "Via",
+            "default": "email"
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "value",
+          "verified"
+        ],
+        "title": "VerifiableAddressSchema",
+        "description": "Verifiable address schema from Kratos identity."
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

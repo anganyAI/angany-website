@@ -1,0 +1,71 @@
+---
+id: delete-resource-api-v-1-resources-resource-id-delete
+title: "Delete Resource"
+description: "Delete a specific resource by its ID."
+sidebar_label: "Delete Resource"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v2zgQ/SvEnHYBxk6CnnTLbgI0QBZbpO5eDMMYS2OZrUSy5MgbV9B/Xwz1YTlpFs3BEcnH4Zs3b6YFxjJCtoZniq4JOUXYaCgo5sF4Ns5CBvdUEZNCFT3lZm9yFQaw2p2U4age7xegwXkKKHceC8igSLe2I3SL3myPN9M6bs9HpthuezhoiJQ3wfAJsnULH1erT38QBgqQrTfdRoPHgDUxhZgAFmuCDGahQIMR1h75ABoCfW9MoAIyDg1piPmBaoSsBT55uRo5GFuChr0LNTJk0DQpChuuBDAqox4L6IRCoOidjRQlyu31B/l3qdjnJs8pxn1TqecBDJ2GD7e3b7H/YGWKJJt6CMEF0JA7y2RZsOh9ZfJ0vPwa5UI7S8EH0ZxNT6UgRlPJl2Gq41tA5fKLU7Snv/dJxkstOj3tGMtUUoBu0+lxD0PA00ygJ9cTlBTrWP5M2xH6F8WIZRKjh7wPTWKolZx257fd7ivlfFHXdcqrf3rAbc5hzvL26r6fxn0v388eGyFixzcB5U9DTXxwZ9+D7g2YwRK9WR5vlpPxl+3Mrd3M8Z+lrn2l5r6fJDowexgcLOtdD5DXjd27hByI3tkS7Un96ezelE3fleru0yO87u1LRI0WS6rJstq7oFwo0Zof6SzqqeujVmgLxVRR7moVidnYMoKGI4XYx71ZXC+uQcPLVeXKRK0Jlahh6nIpW+nn6l/DB9fwFdMLL3yqP1a8oheekligUU8SQ/L0LnKNqQuGzh+G09ikrxNsz830y3NskFs4LX2FJhk70W+Hoq4BvZF8b5ITx8mpIZsPoo2Gg4ss8LbdYaQvoeo62f7eUJABt9FwxGBwJ0Vbt1CYKN8FZHusIv1PLr89D/7/Xb3HeLS5FZMfsWpkBRq+0enVxEzNfSAs0phtB8RdnpPn2d03s0iG4eT7+4enh9WDFLARiSbXDi7V48ds3FxSa9sesXLfyHbdxJRlLRy77j+fz0vK
+sidebar_class_name: "delete api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Resource"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/api/v1/resources/{resource_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a specific resource by its ID.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"resource_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Resource Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Successful Response"},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

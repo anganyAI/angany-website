@@ -1,0 +1,71 @@
+---
+id: update-provider-api-v-1-providers-provider-id-put
+title: "Update Provider"
+description: "Update an existing provider's configuration."
+sidebar_label: "Update Provider"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1V0tv2zgQ/ivEXNICiu10dy+6pQ9gg3Y3Qep2D4ZhTKSxzFYiuSSVxBX03xdDSrZsx05TYC+CKA3n8c18w2EDHgsH6Qwur8SN1fcyJ+tgnkBOLrPSeKkVpPDF5OhJoBL0KJ2XqhCmkz5zItNqKYvaIkuPIAFtKC6uckihDpsX/YYFGrm4v9is3WL7S+aLhak9JOAoq630a0hnDfw5nd68JbRkIZ3N23kCBi1W5NlZFlBYEaQw0AMJSPbcoF9BApb+raWlHFJva0rAZSuqENIG/NrwVuetVAUksNS2Qs9u10GLl75kgR4dcZVDyy6wSnL+rc7XrGffQqaVJ+X5FxpTyiwAMv7mGNBm4ICxDJeX5LpVMMPvuzmYrkhk2tIGeZGjR+G1iAAz8Lu6IioNoFpfLwNO+8FW+PiJVOFXkF5MJglUUvXr39pkI6/qsgSOuQfjb9bc7lXJTxr6YzI5pfr9QGXbJr2cvvtGmX8iH7E02RlHmSXvFgbXpcZ81yHMc8k6sbzZweho+g0696Atl8CDlZ6uVbmOuT1w6lQ4n6NT4qZzap9Z1yZ6JXKZhTe7Fnopulg4u478OGZYSCW+Yl36kbha9mWQJ8KSKTEjtyVnt330JILbSp1ty21+DNl/pF91QUDbsj5LzmjlIn5vJpPDUv1cZxk5t6xLcdsJwy8zoq/il9TuXqXug84fGWW/GrBpr4v9/9V9vBS2n8VS2+fcvLOo8sV3Wj+FUm/4LQuJj7Q+MPuR1gdYBJXiFY2KUSLOtCGF8iwRZ/ijtnT2OpiV+UvaJ3fNBLQtUMkfwffFyxRcD7aKqC1W+cLSkiyp7GSve56j4najZx+izR/m48OKLAW4on0hnXBeW9oAFjgq+OSJSGWW0FO+QH8yYGbbuZehXnvX3sWt4pK7THeS9oqO1+MTKk/FH4kejTzTL1Sk07bkQh0cJnYn6Cd6yy1h3rWT39+8OewgX7GUecz1B2u1/fX2kZNHWfKb9FS5Q4FSZzt/f6KCpPJUkIV2voULrcX1IHOfdHSQ81a54hQ3/yLnsAhnWBQ5LhrAEFP++1yqOK5oupMbpGELb0T3eBjvI3ynTmKezg4UxtxW5FeaZ8A41IVhLIUxGjm+vxhvJsBxM5jc2sH095mTGtM0nAE3+Ky8N9BNc7y+iwJsmuvidjuifXjEypS0P2J1g+MG590q3GT+idmCbUi11MGbDolLVaBai3fDFi0ub64OFO9KVKiwoIqUD+1+yCXHp7vTtc3IJYKbsqeSMl3xWMBHvYME7sm6qPdiNBlNIIHH81IXwbXaloy4rIoxfwqP8wfpV7r2554e/ciEwLH0U3r0myBGKMUn1sFxGu18hWoAWHch6Om8H2CzZetL7w5dZtm1sSlRBgKFKJqufmaARnLYF3Hi7S4tCaTD+X+ewEo7z+JNc4eOvtiybfnzvzVZvlfME7hHK/GOczdrIJeO33NIl1g6OhHSq9uOZ6/FMY97Oikm0z2WNa8ggXBM71xUQhNZEYaKnDWdxLto7DxQfavhoPNxV4o7LrOMjD8pOx8w8ubLlBt5d3updM5bLD5wF8GH6KwOsQf6hW8NlKiKmntVClEllwfWnJYNKTsSJv3LoJXuwtE0UWKqv5Nq2w06nteMS9v+B0gyDvI=
+sidebar_class_name: "put api-method"
+info_path: docs/api/angany-configuration/angany-configuration-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update Provider"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/api/v1/providers/{provider_id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update an existing provider's configuration.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"provider_id","in":"path","required":true,"schema":{"type":"string","format":"uuid","title":"Provider Id"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"properties":{"provider":{"description":"The core provider data to update.","properties":{"name":{"anyOf":[{"type":"string","maxLength":100,"minLength":3},{"type":"null"}],"title":"Name"},"description":{"anyOf":[{"type":"string","maxLength":500},{"type":"null"}],"title":"Description"}},"type":"object","title":"ProviderUpdate"},"secrets_payload":{"anyOf":[{"additionalProperties":{"type":"string","format":"password","writeOnly":true},"type":"object"},{"type":"null"}],"title":"Secrets Payload","description":"Optional dictionary of secrets to set/update in Vault. If provided, replaces existing secrets."}},"type":"object","required":["provider"],"title":"ProviderUpdateWithSecrets"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"name":{"type":"string","maxLength":100,"minLength":3,"title":"Name","description":"Name of the provider configuration."},"description":{"anyOf":[{"type":"string","maxLength":500},{"type":"null"}],"title":"Description","description":"Optional description for the provider configuration."},"brand_key":{"type":"string","title":"Brand Key","description":"Key of the provider brand (e.g., 'openai', 'azure')."},"id":{"type":"string","format":"uuid","title":"Id"},"organization_id":{"type":"string","format":"uuid","title":"Organization Id"},"secret_reference":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Secret Reference","description":"Reference to where the secret is stored (e.g., Vault path)."},"created_at":{"type":"string","format":"date-time","title":"Created At"},"updated_at":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"title":"Updated At"}},"type":"object","required":["name","brand_key","id","organization_id","created_at"],"title":"ProviderRead"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,70 @@
+---
+id: get-api-key-stats-api-v-1-api-keys-stats-get
+title: "Get Api Key Stats"
+description: "Get API key statistics for an organization."
+sidebar_label: "Get Api Key Stats"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVMFO40AM/ZWRz6Etyy03VqygAgkE7amtKjcxyUCYGWacQjbKv688Sbst7Io9bg9Nxn52nu3naYGxCJAu4Pxuqq6pCbBKIKeQee1YWwMpXBIr8T5TowIj68A6C+rReoVGWV+g0T9RwKOlWZpzX4R0aZRSR761zlN1e2BQ8/n0osflm1RdIOMGA6lAIWhres/S3BPX3uwyfuYBCVhHPqac5pBCQbxGp9fP1KwFFuJpe7ozhsFaEEMCnoKzJlCAtIVvk4k8jst/qLOMQnisK3U/gCGBzBomwwJH5yqdRQLjpyAxLYSspBeUN+eFHuv+C2wZq8ginhpHkII2TAV5SIA1V2KZCawfR5cAZqy39HXUecTtw7T518DpgNyHxjbVgfJ1hYHXZ5N1jl/kkFA1D5SrGwyszibqQkK6LtnF2M0TZX3PX2vtKRfZHTTkuNCP/P9KanXQgLvpNTUPMl74qOKHOJGo2s8iGkEnvwQCZbXX3EC6aOFqNrv7TujJQ7pYdasEXohLO4gMEnDIJaQwRqfH21N5nAjJcRgY7LLFb/cCOMy572bJ7AQeYZDCpgd0cYiPNiJ3JZoCTaPOay7VA/mtzuhTqeIkw4MmFZpcYc2l9bvNC31gUM6+kadcbRp16xt17ZFtiAFXTe4REtiSD33Wyeh0NIEE3k8qW0ROta+kev1SjMUU/07eNJe25hOmdx45U8hYK57RO+/Zj1CrG8khBTob+AXj0hiM1cf7xmkRo/rjLNvf2/f/X07DiKUdY1ehNrJfsXPtoJ8FoNPS6lPp1aAhkUOsfZVAaQMLrG2Fw9xXXSfm15q8CHWVwBa9xo0IZLHqEigJ8yjaVpYm3gwZOVHsFqta6Hy6s47UffljJlRqYbcX6SDKZPci2QcXmuYgd9v2iJl9JtN1/eZKC+QM3arrul/CPjqA
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-auth/angany-auth-service
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Api Key Stats"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/api-keys/stats"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get API key statistics for an organization.
+
+Args:
+    organization_id: Organization UUID
+    db: Database session
+    
+Returns:
+    API key statistics
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"properties":{"total_keys":{"type":"integer","title":"Total Keys"},"active_keys":{"type":"integer","title":"Active Keys"},"inactive_keys":{"type":"integer","title":"Inactive Keys"},"keys_used_last_30_days":{"type":"integer","title":"Keys Used Last 30 Days"}},"type":"object","required":["total_keys","active_keys","inactive_keys","keys_used_last_30_days"],"title":"APIKeyStats","description":"Schema for API key statistics."}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

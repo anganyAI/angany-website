@@ -1,0 +1,71 @@
+---
+id: list-call-details-api-v-1-dashboard-call-details-get
+title: "List Call Details"
+description: "Retrieve call processing details."
+sidebar_label: "List Call Details"
+hide_title: true
+hide_table_of_contents: true
+api: eJytV01vGzkM/SuCLu0C46+iJ9/cOOgaaLtF4vSSDQx6RNtsZiRV0mRjGP7vC0oz47GdZNN2L4ltkXwkRT5SOxlg7eX4Vk7Bb5YGnJJ3mVToc0c2kNFyLK8wOMIHFDkUhbDO5Og96bVQGIAK35eZNBYdsPxMybEsyIcFSy9qkQVYWjyMFqpBOT5dY5CZ9JhXjsJWjm938s/5/OsHBIdOjm/v9neZtOCgxIDORwENJcqx9PdkZSaJHf1RodvKTDr8UZFDJccrKDxm0ucbLEGOdzJsLWuRDrhGJzNZkqayKuV4eBr2l6pcohNmJRzmxikvghE1nMIVVEWIWoFCwTav+Wj/eiv7rA2ioJLCb0UBjymK0XA47AQ1OnXncxIU+im3HIbK6W54o2EnwE/Ry7MIX2OS78+ht0Z79BzBu+GQ/x1buq5yLq1VVYirWlhmMjc6oA4sDtYWlMc6G3z3rLM7zwo4B5w/ClhGLOu4OgMl5Fy5RaXpR4ULUh01HxzptTyEe6GcuImCYqbkadTNyVSsnCnFxAd05O/FxfSKUxRQgw7PIKyMKyHIsawqUu87kPOo9RRcfXJzM5sK8N7kBAGV+IfCRoRNak3GLY3Cl4L6zOenxr8eWpr1xVvsr/uZeBPQlaRjut9k4o1xtG6+/sFgYO3CB3BhEah8EraNVEHAXpQ6+DKxVlyzuping5OQqUQfoLTinw3qLu9ETFSNC6jVrztwqdXPwq9Ik98c8FWVqG/hMTda+Sc7tIs5rRXEda1wit0KmFUXmLRoIPaZLECvK1jHsEFv/1pFWjxOAHNM/YuuuELuOu3c6J+hY8Ccq6tBEHm3KlD3bq5TAShymCetX/Nh2ho4deKCZ01rX7wlvTSVVgNThfgh4nPVo1uQWiQi/TUnLqIVMVPiCzxRCM3xNB0fw0bO+x+Ak50XoJPAPpP4GFD738j5ZWvgFK49GdRTKwaaWIa0iET8GCfAEa+dF/ks9kbukElqAeGnO/MiqYpJkHtm06Rrlt8xD0ej8faEz7vMW7PhGU+dsMYzTRyDPAri5OamcXm5Qjhn6+s4k8TKOOHQOvSoAzdwXKDqpUc4BJWGBxP49IN4IBCTr7P+33qmN+goeJEbh2JFWCgvQCsBSnkx/dDzFnNaUV6f9ePIqX1rRqf4RD6I2EfTGnJiSXwbiXbXOz79iJxtzvf7d+/Op/M3KEglWrp0zrifGc3HIzhlgD89M6MLkx+dvqLMmyLc3x3qpdkEWsYzycE4KP36xTmJ3jM3tsaeF43JEHM+/a9a5bgSdC3XKalDelN2nw8j3deTYI0Ib89nBtPdlhg2hpf0tHRbCBs5lgOwNHgYDdoFfdBd0DvLeSztdEvdFb1NzyYEXpDj1fP3ZRJgZNIrEyVrJ0GvQW97YG1PQQCZyQd0idnksD/qD8/6anIoMsEqqSc0FNtAuRce3QPlyO4+9gqzjmiVKzg+KtcD/in+6TGjmSr0mM/6Nl4nFGHO7DaWk+hXH0h8YhvsujU+lBCLul7Zz5rr1NndoTte9YKq88ceDWwBFKs0Or+rL+lWgiXO0oix2vdamkftVd1lcmN8YPHdbgkeb1yx3/PP6WHBXaTIw7LoPC2e9fylR9CTHt/j9vAqe4CiYpHYqK8Hfd0j5QX45j11wL/jL47YgfiezOQGQcXH5a5WmuQ52q7WGaWxlbZ9Pl7OuWoqvpm2+utqz5oPHcoCve3Y3u2SxNzco97vZeN54O9MYvv9v4DMXj0=
+sidebar_class_name: "get api-method"
+info_path: docs/api/angany-app-data/angany-app-data
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Call Details"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/v1/dashboard/call_details"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieve call processing details.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"skip","in":"query","required":false,"schema":{"type":"integer","minimum":0,"description":"Number of records to skip","default":0,"title":"Skip"},"description":"Number of records to skip"},{"name":"limit","in":"query","required":false,"schema":{"type":"integer","maximum":1000,"minimum":1,"description":"Maximum number of records to return","default":100,"title":"Limit"},"description":"Maximum number of records to return"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"type":"array","items":{"properties":{"cdr_unique_id":{"type":"string","title":"Cdr Unique Id","description":"Unique ID from Asterisk CDR"},"tenant_id":{"type":"string","format":"uuid4","title":"Tenant Id","description":"Tenant UUID associated with the call"},"mode":{"type":"string","title":"Mode","description":"Processing mode (e.g., 'termination', 'origination')"},"app_start_time":{"type":"string","format":"date-time","title":"App Start Time","description":"Timestamp when processing started"},"app_end_time":{"type":"string","format":"date-time","title":"App End Time","description":"Timestamp when processing finished"},"app_duration_seconds":{"type":"integer","title":"App Duration Seconds","description":"Duration of processing in seconds"},"language":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Language","description":"Detected language code (e.g., 'en-US')"},"direction":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Direction","description":"Call direction (inbound/outbound)"},"caller_id_name":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Caller Id Name","description":"Caller ID Name"},"caller_id_number":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Caller Id Number","description":"Caller ID Number"},"extension":{"anyOf":[{"type":"string"},{"type":"null"}],"title":"Extension","description":"Extension/Number called within context"},"id":{"type":"integer","title":"Id"},"created_at":{"type":"string","format":"date-time","title":"Created At"}},"type":"object","required":["cdr_unique_id","tenant_id","mode","app_start_time","app_end_time","app_duration_seconds","id","created_at"],"title":"CallDetailRead","description":"Schema for representing call details read from the DB via API.\nInherits core fields and adds DB-specific fields."},"title":"Response List Call Details Api V1 Dashboard Call Details Get"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"properties":{"detail":{"items":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
