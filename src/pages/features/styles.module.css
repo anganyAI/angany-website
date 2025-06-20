@@ -1,88 +1,240 @@
-.header {
-  padding: 4rem 0;
-  text-align: center;
+/* Page Container */
+.pageContainer {
+  background-color: #0D0E11;
+  min-height: 100vh;
   position: relative;
+}
+
+/* Hero Section */
+.heroSection {
+  width: 100vw;
+  height: 724px;
+  position: relative;
+  background: #0D0E11;
   overflow: hidden;
-  background-color: var(--ifm-color-primary);
-  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.title {
-  font-size: 3rem;
-  font-weight: 700;
+.heroContent {
+  position: relative;
+  width: 1200px;
+  max-width: 90%;
+  text-align: center;
+  z-index: 5;
 }
 
-.content {
-  font-size: 1.1rem;
-  line-height: 1.6;
+.pageHeader {
+  color: #FFFFFF;
+  font-size: 48px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 1.1em;
+  letter-spacing: -1px;
+  margin: 0 0 20px 0;
+}
+
+.highlightText {
+  color: #1CA1F2;
+}
+
+.pageSubtitle {
+  color: #C8D2D9;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* Main Content */
+.mainContent {
+  position: relative;
+  width: 100%;
+  background-color: #0D0E11;
+  padding-top: 0px;
+  margin-top: -50px;
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.contentWrapper {
+  position: relative;
+  width: 1200px;
+  max-width: 90%;
+}
+
+/* Intro Section */
+.introSection {
+  margin-bottom: 4rem;
 }
 
 .intro {
-  font-size: 1.3rem;
-  line-height: 1.7;
-  color: var(--ifm-color-primary);
-  font-weight: 500;
+  color: #C8D2D9;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: center;
+  margin: 0 auto 2rem auto;
+  max-width: 900px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+/* Section Styles */
+.section {
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 3rem 0;
+}
+
+/* Card Styles */
+.architectureCard,
+.techStackCard,
+.securityCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 20px;
   margin-bottom: 2rem;
 }
 
-.architectureBox {
-  background-color: #f0f4ff;
+.capabilityCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
-  border-radius: 8px;
-  margin: 2rem 0;
-  border-left: 4px solid var(--ifm-color-primary);
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
 }
 
-.capability {
-  margin: 3rem 0;
+.capabilityCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(28, 161, 242, 0.3);
+  box-shadow: 0 10px 30px rgba(28, 161, 242, 0.1);
 }
 
-.capability h3 {
-  color: var(--ifm-color-primary);
+.capabilityTitle {
+  color: #1CA1F2;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
 }
 
 .capabilityContent {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  color: #C8D2D9;
 }
 
-.capabilityDescription {
-  flex: 1;
-  min-width: 250px;
+.capabilitySubtitle {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem 0;
 }
 
-.capabilityDescription h4 {
-  color: var(--ifm-color-primary-dark);
+.capabilitySubtitle:first-child {
+  margin-top: 0;
+}
+
+.capabilityText {
+  color: #C8D2D9;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.exampleBox {
+  background: rgba(28, 161, 242, 0.1);
+  border: 1px solid rgba(28, 161, 242, 0.3);
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-style: italic;
+  line-height: 1.6;
   margin-top: 1rem;
+}
+
+.cardText {
+  color: #C8D2D9;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.cardText:last-child {
+  margin-bottom: 0;
+}
+
+/* List Styles */
+.processList,
+.techList,
+.securityList {
+  color: #C8D2D9;
+  line-height: 1.8;
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.processList li,
+.techList li,
+.securityList li {
   margin-bottom: 0.5rem;
 }
 
-.example {
-  background-color: #f9fafb;
-  padding: 1rem;
-  border-radius: 8px;
-  border-left: 3px solid var(--ifm-color-secondary);
-  font-style: italic;
+.techList strong,
+.securityList strong {
+  color: #1CA1F2;
 }
 
-.techStack {
-  background-color: #f9fafb;
-  padding: 2rem;
-  border-radius: 8px;
-  margin: 2rem 0;
-}
-
-.techStack ul {
-  margin-left: 1.5rem;
-}
-
-.securityBox {
-  background-color: #f0fdf4;
-  padding: 2rem;
-  border-radius: 8px;
-  margin: 2rem 0;
-  border-left: 4px solid var(--ifm-color-secondary);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pageHeader {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  
+  .pageSubtitle {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .intro {
+    font-size: 18px;
+    line-height: 28px;
+    padding: 1.5rem;
+  }
+  
+  .capabilityCard,
+  .architectureCard,
+  .techStackCard,
+  .securityCard {
+    padding: 1.5rem;
+  }
+  
+  .mainContent {
+    margin-top: -30px;
+    padding-bottom: 60px;
+  }
 } 

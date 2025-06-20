@@ -1,0 +1,565 @@
+/* Footer Container */
+.footer {
+  position: relative;
+  width: 100%;
+  height: 395px;
+  background-color: #0D0E11;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 55px;
+}
+
+.footerContainer {
+  position: relative;
+  width: 1340px;
+  height: 340px;
+  max-width: 100%;
+}
+
+/* Top gradient line - matches landing page exactly */
+.topGradientLine {
+  width: 1152px;
+  height: 1px;
+  left: 0;
+  top: -55px;
+  position: absolute;
+  background: linear-gradient(90deg, rgba(71, 148, 225, 0) 0%, rgba(70.62, 147.61, 224.60, 0.50) 53%, rgba(71, 148, 225, 0) 100%);
+}
+
+/* Middle separator line */
+.middleSeparatorLine {
+  width: 1240px;
+  height: 0px;
+  left: 100px;
+  top: 226px;
+  position: absolute;
+  outline: 0.20px #4CBBFF solid;
+  outline-offset: -0.10px;
+}
+
+/* Brand Section (Logo + Description + Social) */
+.brandSection {
+  width: 293px;
+  left: 100px;
+  top: 0px;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 7px;
+  display: flex;
+}
+
+.brandContent {
+  align-self: stretch;
+  height: 130px;
+  position: relative;
+}
+
+.logoSection {
+  width: 156px;
+  left: 0px;
+  top: 9.68px;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.logoImage {
+  width: 39.43px;
+  height: 39.65px;
+}
+
+.logoText {
+  font-size: 24px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.logoBlue {
+  color: #1CA1F2;
+}
+
+.logoWhite {
+  color: white;
+}
+
+.brandDescription {
+  width: 265px;
+  height: 60px;
+  left: 0px;
+  top: 62px;
+  position: absolute;
+  color: #C8D2D9;
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.socialIcons {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  display: flex;
+}
+
+.socialIcons i {
+  color: #4CBBFF;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.socialIcons i:hover {
+  color: #1CA1F2;
+}
+
+/* Main Content Area */
+.mainContent {
+  width: 865px;
+  left: 478px;
+  top: 19px;
+  position: absolute;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+}
+
+/* Footer Columns */
+.footerColumn {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  display: flex;
+}
+
+.footerColumn:nth-child(2),
+.footerColumn:nth-child(3) {
+  gap: 22px;
+}
+
+.columnTitle {
+  color: #F3F4F3;
+  font-size: 16px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 24.28px;
+  letter-spacing: 0.16px;
+  word-wrap: break-word;
+}
+
+.columnLinks {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  display: flex;
+}
+
+.footerLink {
+  color: #C8D2D9;
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerLink:hover {
+  color: #1CA1F2;
+}
+
+/* Newsletter Section - matches landing page exactly */
+.newsletterSection {
+  width: 361px;
+  height: 108px;
+  position: relative;
+}
+
+.newsletterTitle {
+  left: 9px;
+  top: 0px;
+  position: absolute;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #F3F4F3;
+  font-size: 16px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  line-height: 24.28px;
+  letter-spacing: 0.16px;
+  word-wrap: break-word;
+}
+
+.newsletterSubtitle {
+  left: 9px;
+  top: 28px;
+  position: absolute;
+  color: #C8D2D9;
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.newsletterForm {
+  width: 361px;
+  height: 39px;
+  left: 0px;
+  top: 69px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+  border-radius: 50px;
+  outline: 1px rgba(255, 255, 255, 0.06) solid;
+  outline-offset: -1px;
+  backdrop-filter: blur(100px);
+  display: flex;
+  align-items: center;
+}
+
+.newsletterInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #C8D2D9;
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 16px;
+  padding-left: 15px;
+  flex: 1;
+  height: 100%;
+}
+
+.newsletterInput::placeholder {
+  color: #C8D2D9;
+}
+
+.subscribeButton {
+  width: 93px;
+  height: 30px;
+  padding: 8.79px 16.23px;
+  margin-right: 5px;
+  background: linear-gradient(314deg, #4CBBFF 0%, #417AF5 62%, #3F71EF 80%, #4977E9 97%);
+  overflow: hidden;
+  border-radius: 33.81px;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  gap: 6.76px;
+  display: flex;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 12.52px;
+  word-wrap: break-word;
+  transition: opacity 0.3s ease;
+}
+
+.subscribeButton:hover {
+  opacity: 0.9;
+}
+
+/* Bottom Section - matches landing page positioning exactly */
+.bottomSection {
+  width: 1238px;
+  left: 102px;
+  top: 246px;
+  position: absolute;
+  justify-content: space-between;
+  align-items: flex-end;
+  display: flex;
+}
+
+.copyright {
+  width: 200px;
+  height: 23px;
+  color: #C8D2D9;
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 16px;
+  word-wrap: break-word;
+}
+
+.legalLinks {
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  display: flex;
+}
+
+.legalLink {
+  color: #C8D2D9;
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 16px;
+  word-wrap: break-word;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.legalLink:hover {
+  color: #1CA1F2;
+}
+
+.separator {
+  color: white;
+  font-size: 12px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 19.20px;
+  word-wrap: break-word;
+}
+
+/* Responsive Design */
+
+/* Large Desktop */
+@media (max-width: 1440px) {
+  .footerContainer {
+    max-width: calc(100% - 40px);
+    margin: 0 20px;
+  }
+  
+  .topGradientLine {
+    width: 100%;
+  }
+  
+  .middleSeparatorLine {
+    width: calc(100% - 200px);
+  }
+  
+  .bottomSection {
+    width: calc(100% - 200px);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .footer {
+    height: auto;
+    min-height: 400px;
+    padding: 40px 20px;
+  }
+  
+  .footerContainer {
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+  }
+  
+  .topGradientLine {
+    left: 0;
+    top: -40px;
+  }
+  
+  .brandSection {
+    position: static;
+    width: 100%;
+    margin-bottom: 40px;
+    left: auto;
+    top: auto;
+  }
+  
+  .mainContent {
+    position: static;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 30px;
+    left: auto;
+    top: auto;
+  }
+  
+  .footerColumn {
+    min-width: 200px;
+  }
+  
+  .newsletterSection {
+    width: 100%;
+    max-width: 361px;
+    height: auto;
+    margin-top: 20px;
+  }
+  
+  .middleSeparatorLine {
+    position: static;
+    width: 100%;
+    height: 1px;
+    margin: 30px 0;
+    left: auto;
+    top: auto;
+  }
+  
+  .bottomSection {
+    position: static;
+    width: 100%;
+    margin-top: 30px;
+    left: auto;
+    top: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 15px;
+    height: auto;
+    min-height: 500px;
+  }
+  
+  .brandSection {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .logoSection {
+    position: static;
+    width: auto;
+    left: auto;
+    top: auto;
+    margin-bottom: 15px;
+  }
+  
+  .brandDescription {
+    position: static;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    left: auto;
+    top: auto;
+    margin-bottom: 20px;
+  }
+  
+  .mainContent {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footerColumn {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .newsletterSection {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  
+  .newsletterTitle {
+    position: static;
+    left: auto;
+    top: auto;
+    margin-bottom: 8px;
+  }
+  
+  .newsletterSubtitle {
+    position: static;
+    left: auto;
+    top: auto;
+    margin-bottom: 20px;
+  }
+  
+  .newsletterForm {
+    position: static;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 361px;
+    margin: 0 auto;
+  }
+  
+  .bottomSection {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .legalLinks {
+    justify-content: center;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+  }
+  
+  .logoText {
+    font-size: 20px;
+  }
+  
+  .logoImage {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .brandDescription {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  
+  .footerColumn {
+    gap: 20px;
+  }
+  
+  .columnTitle {
+    font-size: 15px;
+  }
+  
+  .footerLink {
+    font-size: 13px;
+  }
+  
+  .newsletterForm {
+    flex-direction: column;
+    height: auto;
+    border-radius: 12px;
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .newsletterInput {
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+  }
+  
+  .subscribeButton {
+    width: 100%;
+    height: 40px;
+    border-radius: 12px;
+    margin-right: 0;
+  }
+  
+  .socialIcons {
+    gap: 15px;
+  }
+  
+  .socialIcons i {
+    font-size: 16px;
+  }
+} 

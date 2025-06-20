@@ -1,63 +1,130 @@
-.header {
-  padding: 4rem 0;
-  text-align: center;
+/* Page Container */
+.pageContainer {
+  background-color: #0D0E11;
+  min-height: 100vh;
   position: relative;
+}
+
+/* Hero Section */
+.heroSection {
+  width: 100vw;
+  height: 724px;
+  position: relative;
+  background: #0D0E11;
   overflow: hidden;
-  background-color: var(--ifm-color-primary);
-  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.title {
-  font-size: 3rem;
-  font-weight: 700;
+.heroContent {
+  position: relative;
+  width: 1200px;
+  max-width: 90%;
+  text-align: center;
+  z-index: 5;
 }
 
+.pageHeader {
+  color: #FFFFFF;
+  font-size: 48px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 1.1em;
+  letter-spacing: -1px;
+  margin: 0 0 20px 0;
+}
+
+.highlightText {
+  color: #1CA1F2;
+}
+
+.pageSubtitle {
+  color: #C8D2D9;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* Main Content */
+.mainContent {
+  position: relative;
+  width: 100%;
+  background-color: #0D0E11;
+  padding-top: 0px;
+  margin-top: -50px;
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.contentWrapper {
+  position: relative;
+  width: 1200px;
+  max-width: 90%;
+}
+
+/* FAQ Container */
 .faqContainer {
-  margin: 2rem 0;
+  margin-bottom: 4rem;
 }
 
 .faqItem {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
   margin-bottom: 1rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
+.faqItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(28, 161, 242, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(28, 161, 242, 0.1);
+}
+
 .faqItem.active {
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(28, 161, 242, 0.5);
+  box-shadow: 0 10px 30px rgba(28, 161, 242, 0.15);
 }
 
 .faqQuestion {
   width: 100%;
+  padding: 1.5rem 2rem;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem;
-  font-size: 1.1rem;
-  color: var(--ifm-font-color-base);
-  font-weight: 500;
-  text-align: left;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.faqItem.active .faqQuestion {
-  background-color: #f9fafb;
-  color: var(--ifm-color-primary);
+  transition: color 0.3s ease;
 }
 
 .faqQuestion:hover {
-  background-color: #f9fafb;
+  color: #1CA1F2;
 }
 
 .faqIcon {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 300;
+  color: #1CA1F2;
   transition: transform 0.3s ease;
+  min-width: 24px;
+  margin-left: 1rem;
 }
 
 .faqItem.active .faqIcon {
@@ -65,53 +132,150 @@
 }
 
 .faqAnswer {
-  padding: 0 1.25rem;
-  max-height: 0;
+  padding: 0 2rem;
   overflow: hidden;
-  opacity: 0;
   transition: all 0.3s ease;
-}
-
-.faqItem.active .faqAnswer {
-  padding: 0 1.25rem 1.25rem;
-  opacity: 1;
+  color: #C8D2D9;
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
 }
 
 .faqAnswer p {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  padding-bottom: 1.5rem;
 }
 
 .faqAnswer p:last-child {
   margin-bottom: 0;
+  padding-bottom: 1.5rem;
 }
 
 .faqAnswer ul {
+  margin: 1rem 0;
   padding-left: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 
-.faqAnswer a {
-  color: var(--ifm-color-primary);
+.faqAnswer li {
+  margin-bottom: 0.5rem;
+  color: #C8D2D9;
+}
+
+.link {
+  color: #1CA1F2;
   text-decoration: none;
-  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.faqAnswer a:hover {
+.link:hover {
+  color: #388AEA;
   text-decoration: underline;
 }
 
-.ctaBox {
-  background-color: #f0f4ff;
-  border-radius: 8px;
-  padding: 2rem;
-  text-align: center;
-  margin: 3rem 0 2rem;
+/* CTA Section */
+.ctaSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
 }
 
-.ctaBox h2 {
-  color: var(--ifm-color-primary);
-  margin-top: 0;
+.ctaCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.ctaTitle {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.ctaDescription {
+  color: #C8D2D9;
+  font-size: 1.125rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
 }
 
 .ctaButtons {
-  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #1CA1F2 0%, #388AEA 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(28, 161, 242, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pageHeader {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  
+  .pageSubtitle {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  
+  .contentWrapper {
+    max-width: 95%;
+  }
+  
+  .faqQuestion {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .faqAnswer {
+    padding: 0 1.5rem;
+  }
+  
+  .ctaCard {
+    padding: 2rem;
+  }
+  
+  .ctaTitle {
+    font-size: 1.5rem;
+  }
+  
+  .ctaDescription {
+    font-size: 1rem;
+  }
+  
+  .ctaButton {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+  
+  .mainContent {
+    margin-top: -30px;
+    padding-bottom: 60px;
+  }
 } 

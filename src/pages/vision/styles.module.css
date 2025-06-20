@@ -1,83 +1,254 @@
-.header {
-  padding: 4rem 0;
-  text-align: center;
+/* Page Container */
+.pageContainer {
+  background-color: #0D0E11;
+  min-height: 100vh;
   position: relative;
+}
+
+/* Hero Section */
+.heroSection {
+  width: 100vw;
+  height: 724px;
+  position: relative;
+  background: #0D0E11;
   overflow: hidden;
-  background-color: var(--ifm-color-primary);
-  color: white;
-}
-
-.title {
-  font-size: 3rem;
-  font-weight: 700;
-}
-
-.content {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.intro {
-  font-size: 1.3rem;
-  line-height: 1.7;
-  color: var(--ifm-color-primary);
-  font-weight: 500;
-  margin-bottom: 2rem;
-}
-
-.statement {
-  background-color: #f0f4ff;
-  padding: 2rem;
-  border-radius: 8px;
-  margin: 2rem 0;
-  border-left: 4px solid var(--ifm-color-primary);
-}
-
-.comparison {
+  margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin: 2rem 0;
+  align-items: center;
+  justify-content: center;
 }
 
-.comparisonColumn {
-  flex: 1;
-  min-width: 250px;
-  background-color: #f9fafb;
-  padding: 1.5rem;
-  border-radius: 8px;
+.heroContent {
+  position: relative;
+  width: 1200px;
+  max-width: 90%;
+  text-align: center;
+  z-index: 5;
 }
 
-.comparisonColumn:first-child {
-  border-left: 4px solid #ef4444;
+.pageHeader {
+  color: #FFFFFF;
+  font-size: 48px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 1.1em;
+  letter-spacing: -1px;
+  margin: 0 0 20px 0;
 }
 
-.comparisonColumn:last-child {
-  border-left: 4px solid var(--ifm-color-secondary);
+.highlightText {
+  color: #1CA1F2;
 }
 
-.comparisonColumn h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
+.pageSubtitle {
+  color: #C8D2D9;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
-.objective {
-  background-color: #f9fafb;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin: 1.5rem 0;
-  border-left: 4px solid var(--ifm-color-accent);
+/* Main Content */
+.mainContent {
+  position: relative;
+  width: 100%;
+  background-color: #0D0E11;
+  padding-top: 0px;
+  margin-top: -50px;
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: center;
 }
 
-.objective h3 {
-  margin-top: 0;
-  color: var(--ifm-color-primary);
+.contentWrapper {
+  position: relative;
+  width: 1200px;
+  max-width: 90%;
 }
 
-.founderNote {
-  background-color: #f0fdf4;
+/* Content Sections */
+.section {
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 3rem 0;
+}
+
+/* Consistent Card Styles */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
-  border-radius: 8px;
-  margin: 3rem 0 1rem;
-  border-left: 4px solid var(--ifm-color-secondary);
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(28, 161, 242, 0.3);
+  box-shadow: 0 10px 30px rgba(28, 161, 242, 0.1);
+}
+
+.cardTitle {
+  color: #1CA1F2;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.cardText {
+  color: #C8D2D9;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 1rem 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.cardText:last-child {
+  margin-bottom: 0;
+}
+
+/* Vision & Mission Grid */
+.visionMissionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Revolutionary Approach */
+.approachGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.traditionalCard {
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.traditionalCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.1);
+}
+
+.anganyCard {
+  background: rgba(28, 161, 242, 0.08);
+  border: 1px solid rgba(28, 161, 242, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.anganyCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(28, 161, 242, 0.5);
+  box-shadow: 0 10px 30px rgba(28, 161, 242, 0.15);
+}
+
+.approachTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.traditionalCard .approachTitle {
+  color: #EF4444;
+}
+
+.anganyCard .approachTitle {
+  color: #1CA1F2;
+}
+
+.approachList {
+  color: #C8D2D9;
+  line-height: 1.8;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.approachList li {
+  margin-bottom: 0.5rem;
+}
+
+/* Timeline Grid */
+.timelineGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.timelineTitle {
+  color: #1CA1F2;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Founder Signature */
+.founderSignature {
+  color: #1CA1F2;
+  font-weight: 600;
+  margin-top: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .pageHeader {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .pageSubtitle {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .visionMissionGrid,
+  .approachGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card,
+  .traditionalCard,
+  .anganyCard {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mainContent {
+    margin-top: -30px;
+    padding-bottom: 60px;
+  }
+
+  .contentWrapper {
+    max-width: 95%;
+  }
 } 

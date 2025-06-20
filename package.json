@@ -20,9 +20,10 @@
     "docs:build": "npm generate-api-docs && npm build"
   },
   "dependencies": {
-    "@docusaurus/core": "3.8.0",
-    "@docusaurus/preset-classic": "3.8.0",
-    "@docusaurus/theme-common": "3.8.0",
+    "@docusaurus/core": "3.8.1",
+    "@docusaurus/preset-classic": "3.8.1",
+    "@docusaurus/theme-common": "3.8.1",
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "docusaurus-plugin-openapi-docs": "4.4.0",
@@ -32,9 +33,9 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.8.0",
-    "@docusaurus/tsconfig": "3.8.0",
-    "@docusaurus/types": "3.8.0",
+    "@docusaurus/module-type-aliases": "3.8.1",
+    "@docusaurus/tsconfig": "3.8.1",
+    "@docusaurus/types": "3.8.1",
     "rimraf": "^6.0.1",
     "typescript": "~5.6.2"
   },

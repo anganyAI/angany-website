@@ -1,0 +1,69 @@
+{
+  "name": "Angany AI Platform",
+  "description": "Enterprise AI platform providing telecommunications, configuration management, and application data services",
+  "url": "https://dev.angany.ai/a2a",
+  "provider": {
+    "organization": "Angany",
+    "url": "https://angany.ai"
+  },
+  "version": "1.0.0",
+  "documentationUrl": "https://docs.angany.ai/a2a",
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": true,
+    "stateTransitionHistory": false
+  },
+  "authentication": {
+    "schemes": ["Bearer"],
+    "credentials": null
+  },
+  "defaultInputModes": ["text", "data"],
+  "defaultOutputModes": ["text", "data"],
+  "skills": [
+    {
+      "id": "telecom-management",
+      "name": "Telecommunications Management",
+      "description": "Manage SIP trunks, phone calls, users, and telecom infrastructure",
+      "tags": ["telecommunications", "sip", "voip", "calls", "trunks"],
+      "examples": [
+        "Create a new SIP trunk for provider connection",
+        "List all active calls in the system",
+        "Manage user accounts and permissions",
+        "Configure call routing and contexts",
+        "Monitor call quality and statistics"
+      ],
+      "inputModes": ["text", "data"],
+      "outputModes": ["text", "data"]
+    },
+    {
+      "id": "config-management", 
+      "name": "Configuration Management",
+      "description": "Manage system configurations, AI agent settings, transcriber/synthesizer configurations, and scenarios",
+      "tags": ["configuration", "ai-agents", "transcription", "synthesis", "scenarios", "providers"],
+      "examples": [
+        "Update transcriber configuration settings",
+        "Create new AI conversation scenario",
+        "Manage provider account settings",
+        "Configure synthesizer voice parameters",
+        "Set up conversation flows and workflows"
+      ],
+      "inputModes": ["text", "data"],
+      "outputModes": ["text", "data"]
+    },
+    {
+      "id": "app-data-management",
+      "name": "Application Data Management", 
+      "description": "Access and manage application data, call analytics, system metrics, and business intelligence",
+      "tags": ["data", "analytics", "metrics", "reporting", "business-intelligence"],
+      "examples": [
+        "Generate call usage reports and statistics",
+        "Query system performance metrics",
+        "Export configuration and user data",
+        "Monitor resource utilization",
+        "Analyze conversation patterns and outcomes"
+      ],
+      "inputModes": ["text", "data"],
+      "outputModes": ["text", "data", "file"]
+    }
+  ]
+}

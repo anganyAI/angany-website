@@ -1,23 +1,115 @@
 import React from 'react';
-import Layout from '@theme/Layout';
-import styles from './styles.module.css';
 import type {ReactNode} from 'react';
+import Head from '@docusaurus/Head';
+import Header from '@site/src/components/Header';
+import Footer from '@site/src/components/Footer';
+import styles from './styles.module.css';
+
+function BackgroundEffects() {
+  return (
+    <>
+      {/* Hero Background Vector */}
+      <div style={{
+        position: 'absolute',
+        left: '-433px',
+        top: '159px',
+        width: '1693.33px',
+        height: '1590.89px',
+        backgroundImage: 'url("/img/landing/hero-background-vector.svg")',
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        zIndex: 1,
+        pointerEvents: 'none'
+      }}></div>
+
+      {/* Background Gradients */}
+      <div style={{
+        width: '164.44px',
+        height: '844.51px',
+        left: '82.86px',
+        top: '-19.64px',
+        position: 'absolute',
+        transform: 'rotate(-46deg)',
+        transformOrigin: 'top left',
+        background: 'linear-gradient(180deg, rgba(43.17, 187.92, 255, 0.24) 0%, rgba(43, 188, 255, 0) 100%)',
+        boxShadow: '87.19558715820312px 87.19558715820312px 87.19558715820312px',
+        filter: 'blur(43.60px)',
+        pointerEvents: 'none'
+      }}></div>
+
+      <div style={{
+        width: '54.71px',
+        height: '918.33px',
+        left: '-14.94px',
+        top: '22.67px',
+        position: 'absolute',
+        transform: 'rotate(-46deg)',
+        transformOrigin: 'top left',
+        background: 'linear-gradient(180deg, rgba(43, 188, 255, 0.28) 0%, rgba(43, 188, 255, 0) 100%)',
+        boxShadow: '60px 60px 60px',
+        filter: 'blur(30px)',
+        pointerEvents: 'none'
+      }}></div>
+
+      <div style={{
+        width: '159.78px',
+        height: '918.33px',
+        left: '-156.31px',
+        top: '184.86px',
+        position: 'absolute',
+        transform: 'rotate(-46deg)',
+        transformOrigin: 'top left',
+        background: 'linear-gradient(180deg, rgba(43.17, 187.92, 255, 0.24) 0%, rgba(43, 188, 255, 0) 100%)',
+        boxShadow: '87.19558715820312px 87.19558715820312px 87.19558715820312px',
+        filter: 'blur(43.60px)',
+        pointerEvents: 'none'
+      }}></div>
+    </>
+  );
+}
 
 export default function Contact(): ReactNode {
+  const pageTitle = "Contact Us | Angany.ai";
+  const pageDescription = "Get in touch with the Angany.ai team";
+
   return (
-    <Layout
-      title="Contact Us | Angany.ai"
-      description="Get in touch with the Angany.ai team">
-      <header className={styles.header}>
-        <div className="container">
-          <h1 className={styles.title}>Contact Us</h1>
+    <div className={styles.pageContainer}>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content="/img/og-image.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=PT+Mono&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+      </Head>
+      
+      <Header />
+      
+      {/* Hero Section with Background Effects */}
+      <section className={styles.heroSection}>
+        <BackgroundEffects />
+
+        {/* Hero Content */}
+        <div className={styles.heroContent}>
+          <h1 className={styles.pageHeader}>
+            <span className={styles.highlightText}>Contact</span> Us
+          </h1>
+          <p className={styles.pageSubtitle}>
+            Get in touch with the Angany.ai team
+          </p>
         </div>
-      </header>
-      <main className="container margin-vert--lg">
-        <div className="row">
-          <div className="col col--6 col--offset-3">
+      </section>
+
+      {/* Main Content */}
+      <main className={styles.mainContent}>
+        <div className={styles.contentWrapper}>
+          <div className={styles.contactSection}>
             <div className={styles.contactBox}>
-              <h2>Join Our Journey</h2>
+              <h2 className={styles.sectionTitle}>Join Our Journey</h2>
               <p className={styles.contactIntro}>
                 Be among the first to experience Angany.ai. Join our exclusive list to receive development 
                 updates, early access opportunities, and insights into the future of AI-powered telecommunications.
@@ -44,22 +136,22 @@ export default function Contact(): ReactNode {
                 }
               }}>
                 <div className={styles.formGroup}>
-                  <label htmlFor="name">Your Name</label>
+                  <label htmlFor="name" className={styles.formLabel}>Your Name</label>
                   <input type="text" id="name" className={styles.formControl} placeholder="Enter your name" />
                 </div>
                 
                 <div className={styles.formGroup}>
-                  <label htmlFor="email">Email Address*</label>
+                  <label htmlFor="email" className={styles.formLabel}>Email Address*</label>
                   <input type="email" id="email" className={styles.formControl} placeholder="Enter your email address" required />
                 </div>
                 
                 <div className={styles.formGroup}>
-                  <label htmlFor="company">Company</label>
+                  <label htmlFor="company" className={styles.formLabel}>Company</label>
                   <input type="text" id="company" className={styles.formControl} placeholder="Enter your company name" />
                 </div>
                 
                 <div className={styles.formGroup}>
-                  <label htmlFor="interest">Your Interest</label>
+                  <label htmlFor="interest" className={styles.formLabel}>Your Interest</label>
                   <select id="interest" className={styles.formControl}>
                     <option value="">Select your interest</option>
                     <option value="user">Potential User</option>
@@ -71,14 +163,14 @@ export default function Contact(): ReactNode {
                 </div>
                 
                 <div className={styles.formGroup}>
-                  <label htmlFor="message">Message (Optional)</label>
+                  <label htmlFor="message" className={styles.formLabel}>Message (Optional)</label>
                   <textarea id="message" className={styles.formControl} rows={4} placeholder="How can we help you?"></textarea>
                 </div>
                 
                 <div className={styles.formGroup}>
                   <div className={styles.checkboxGroup}>
-                    <input type="checkbox" id="consent" required />
-                    <label htmlFor="consent">I agree to receive updates about Angany.ai*</label>
+                    <input type="checkbox" id="consent" className={styles.checkbox} required />
+                    <label htmlFor="consent" className={styles.checkboxLabel}>I agree to receive updates about Angany.ai*</label>
                   </div>
                 </div>
                 
@@ -93,20 +185,20 @@ export default function Contact(): ReactNode {
             </div>
 
             <div className={styles.contactInfo}>
-              <h2>Other Ways to Connect</h2>
+              <h2 className={styles.sectionTitle}>Other Ways to Connect</h2>
               
               <div className={styles.contactMethod}>
-                <h3>Email</h3>
-                <p>For general inquiries: <a href="mailto:sylvainboilydroid@gmail.com">sylvainboilydroid@gmail.com</a></p>
+                <h3 className={styles.methodTitle}>Email</h3>
+                <p className={styles.methodText}>For general inquiries: <a href="mailto:sylvainboilydroid@gmail.com" className={styles.link}>sylvainboilydroid@gmail.com</a></p>
               </div>
               
               <div className={styles.contactMethod}>
-                <h3>Location</h3>
-                <p>Angany.ai is based in Quebec, Canada.</p>
+                <h3 className={styles.methodTitle}>Location</h3>
+                <p className={styles.methodText}>Angany.ai is based in Quebec, Canada.</p>
               </div>
               
               <div className={styles.contactMethod}>
-                <h3>Follow Us</h3>
+                <h3 className={styles.methodTitle}>Follow Us</h3>
                 <div className={styles.socialLinks}>
                   <a href="https://github.com/anganyAI" className={styles.socialLink} target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -120,6 +212,8 @@ export default function Contact(): ReactNode {
           </div>
         </div>
       </main>
-    </Layout>
+      
+      <Footer />
+    </div>
   );
 } 

@@ -1,14 +1,83 @@
 import React, { useState } from 'react';
-import Layout from '@theme/Layout';
-import styles from './styles.module.css';
 import type {ReactNode} from 'react';
+import Head from '@docusaurus/Head';
+import Header from '@site/src/components/Header';
+import Footer from '@site/src/components/Footer';
+import styles from './styles.module.css';
 
 interface FAQItem {
   question: string;
   answer: ReactNode;
 }
 
+function BackgroundEffects() {
+  return (
+    <>
+      {/* Hero Background Vector */}
+      <div style={{
+        position: 'absolute',
+        left: '-433px',
+        top: '159px',
+        width: '1693.33px',
+        height: '1590.89px',
+        backgroundImage: 'url("/img/landing/hero-background-vector.svg")',
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        zIndex: 1,
+        pointerEvents: 'none'
+      }}></div>
+
+      {/* Background Gradients */}
+      <div style={{
+        width: '164.44px',
+        height: '844.51px',
+        left: '82.86px',
+        top: '-19.64px',
+        position: 'absolute',
+        transform: 'rotate(-46deg)',
+        transformOrigin: 'top left',
+        background: 'linear-gradient(180deg, rgba(43.17, 187.92, 255, 0.24) 0%, rgba(43, 188, 255, 0) 100%)',
+        boxShadow: '87.19558715820312px 87.19558715820312px 87.19558715820312px',
+        filter: 'blur(43.60px)',
+        pointerEvents: 'none'
+      }}></div>
+
+      <div style={{
+        width: '54.71px',
+        height: '918.33px',
+        left: '-14.94px',
+        top: '22.67px',
+        position: 'absolute',
+        transform: 'rotate(-46deg)',
+        transformOrigin: 'top left',
+        background: 'linear-gradient(180deg, rgba(43, 188, 255, 0.28) 0%, rgba(43, 188, 255, 0) 100%)',
+        boxShadow: '60px 60px 60px',
+        filter: 'blur(30px)',
+        pointerEvents: 'none'
+      }}></div>
+
+      <div style={{
+        width: '159.78px',
+        height: '918.33px',
+        left: '-156.31px',
+        top: '184.86px',
+        position: 'absolute',
+        transform: 'rotate(-46deg)',
+        transformOrigin: 'top left',
+        background: 'linear-gradient(180deg, rgba(43.17, 187.92, 255, 0.24) 0%, rgba(43, 188, 255, 0) 100%)',
+        boxShadow: '87.19558715820312px 87.19558715820312px 87.19558715820312px',
+        filter: 'blur(43.60px)',
+        pointerEvents: 'none'
+      }}></div>
+    </>
+  );
+}
+
 export default function FAQ(): ReactNode {
+  const pageTitle = "FAQ | Angany.ai";
+  const pageDescription = "Frequently Asked Questions about Angany.ai";
+  
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -107,7 +176,7 @@ export default function FAQ(): ReactNode {
             release is expected within 18-24 months.
           </p>
           <p>
-            You can <a href="/contact">join our waitlist</a> to be among the first to experience Angany.ai 
+            You can <a href="https://beta.angany.ai/sign-up" target="_blank" rel="noopener noreferrer" className={styles.link}>join our waitlist</a> to be among the first to experience Angany.ai 
             and receive updates on our development progress.
           </p>
         </>
@@ -120,7 +189,7 @@ export default function FAQ(): ReactNode {
           <p>
             We're actively seeking early testers, integration partners, and industry advisors to help shape 
             the future of Angany.ai. If you're interested in being part of our journey, please 
-            <a href="/contact"> contact us</a> to discuss possibilities for collaboration.
+            <a href="/contact" className={styles.link}> contact us</a> to discuss possibilities for collaboration.
           </p>
         </>
       ),
@@ -128,54 +197,77 @@ export default function FAQ(): ReactNode {
   ];
 
   return (
-    <Layout
-      title="FAQ | Angany.ai"
-      description="Frequently Asked Questions about Angany.ai">
-      <header className={styles.header}>
-        <div className="container">
-          <h1 className={styles.title}>Frequently Asked Questions</h1>
-        </div>
-      </header>
-      <main className="container margin-vert--lg">
-        <div className="row">
-          <div className="col col--8 col--offset-2">
-            <div className={styles.faqContainer}>
-              {faqItems.map((item, index) => (
-                <div 
-                  key={index} 
-                  className={`${styles.faqItem} ${activeIndex === index ? styles.active : ''}`}
-                >
-                  <button
-                    className={styles.faqQuestion}
-                    onClick={() => toggleFAQ(index)}
-                    aria-expanded={activeIndex === index}
-                  >
-                    {item.question}
-                    <span className={styles.faqIcon}>
-                      {activeIndex === index ? '−' : '+'}
-                    </span>
-                  </button>
-                  <div 
-                    className={styles.faqAnswer} 
-                    style={{ 
-                      maxHeight: activeIndex === index ? '1000px' : '0',
-                      opacity: activeIndex === index ? 1 : 0 
-                    }}
-                  >
-                    {item.answer}
-                  </div>
-                </div>
-              ))}
-            </div>
+    <div className={styles.pageContainer}>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content="/img/og-image.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=PT+Mono&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+      </Head>
+      
+      <Header />
+      
+      {/* Hero Section with Background Effects */}
+      <section className={styles.heroSection}>
+        <BackgroundEffects />
 
-            <div className={styles.ctaBox}>
-              <h2>Still have questions?</h2>
-              <p>
+        {/* Hero Content */}
+        <div className={styles.heroContent}>
+          <h1 className={styles.pageHeader}>
+            Frequently Asked <span className={styles.highlightText}>Questions</span>
+          </h1>
+          <p className={styles.pageSubtitle}>
+            Everything you need to know about Angany.ai
+          </p>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <main className={styles.mainContent}>
+        <div className={styles.contentWrapper}>
+          <div className={styles.faqContainer}>
+            {faqItems.map((item, index) => (
+              <div 
+                key={index} 
+                className={`${styles.faqItem} ${activeIndex === index ? styles.active : ''}`}
+              >
+                <button
+                  className={styles.faqQuestion}
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={activeIndex === index}
+                >
+                  {item.question}
+                  <span className={styles.faqIcon}>
+                    {activeIndex === index ? '−' : '+'}
+                  </span>
+                </button>
+                <div 
+                  className={styles.faqAnswer} 
+                  style={{ 
+                    maxHeight: activeIndex === index ? '1000px' : '0',
+                    opacity: activeIndex === index ? 1 : 0 
+                  }}
+                >
+                  {item.answer}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.ctaSection}>
+            <div className={styles.ctaCard}>
+              <h2 className={styles.ctaTitle}>Still have questions?</h2>
+              <p className={styles.ctaDescription}>
                 We're here to help! If you don't see your question answered above, 
                 please reach out to us directly.
               </p>
               <div className={styles.ctaButtons}>
-                <a href="/contact" className="button button--primary button--lg">
+                <a href="/contact" className={styles.ctaButton}>
                   Contact Us
                 </a>
               </div>
@@ -183,6 +275,8 @@ export default function FAQ(): ReactNode {
           </div>
         </div>
       </main>
-    </Layout>
+      
+      <Footer />
+    </div>
   );
 } 
