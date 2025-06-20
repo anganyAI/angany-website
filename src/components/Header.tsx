@@ -10,7 +10,24 @@ export default function Header() {
   };
 
   return (
-    <div className={`${styles.headerWrapper} navbar custom-header`}>
+    <div className={styles.headerWrapper}>
+      {/* Hidden navbar element for TOC JavaScript measurement */}
+      <div 
+        className="navbar navbar-measurement-hidden"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '60px',
+          visibility: 'hidden',
+          pointerEvents: 'none',
+          zIndex: -1,
+          opacity: 0
+        }}
+        aria-hidden="true"
+      />
+      
       <div className={styles.headerContainer}>
         {/* Logo */}
         <Link to="/" className={styles.logo}>
