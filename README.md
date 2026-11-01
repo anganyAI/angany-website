@@ -54,9 +54,11 @@ Pour revenir sur une modification publiée, annuler le commit concerné puis pou
 sur `main` : le même workflow republie le site.
 
 L'ancien site Docusaurus et son historique sont conservés dans le dépôt privé
-`anganyAI/angany-website-old`, dont le déploiement est désactivé. Ce dépôt contient
-uniquement le nouveau labo. Les anciennes pages produit et documentation ne font
-pas partie du nouveau site ; une page 404 oriente les visiteurs vers l'accueil.
+`anganyAI/angany-website-old`, dont les workflows sont désactivés. Son ancienne
+adresse GitHub Pages ne contient qu'une redirection vers `https://angany.ai/`.
+Ce dépôt contient uniquement le nouveau labo. Les anciennes pages produit et
+documentation ne font pas partie du nouveau site ; une page 404 oriente les visiteurs
+vers l'accueil.
 
 ## Contenu et attribution
 
