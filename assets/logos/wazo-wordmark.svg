@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1232" height="544" viewBox="0 0 308 136">
+  <title>Wazo — bleu — facettes épurées</title>
+  <defs>
+    <clipPath id="clip-w">
+      <path d="M8.3 35H24L37.4 71.4L51.5 35H61.7L75.9 71.4L89.5 35H105L81.5 95H68.8L56.3 62.2L43.1 95H30.1Z" clip-rule="nonzero" />
+    </clipPath>
+    <clipPath id="clip-a">
+      <path d="M154 42C148 36 141 34 134 34C116 34 102 48 102 65.5C102 83 116 97 134 97C142 97 148 94 154 88V95H169V35H154Z M154.5 65.5A19 18.5 0 1 1 116.5 65.5A19 18.5 0 1 1 154.5 65.5Z" clip-rule="evenodd" />
+    </clipPath>
+    <clipPath id="clip-z">
+      <path d="M176 35H231V48L198 82H231V95H176V82L210 48H176Z" clip-rule="nonzero" />
+    </clipPath>
+    <clipPath id="clip-o">
+      <path d="M302 65.5A34 32 0 1 1 234 65.5A34 32 0 1 1 302 65.5Z M287 65.5A19 18.5 0 1 1 249 65.5A19 18.5 0 1 1 287 65.5Z" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="lettre-w" clip-path="url(#clip-w)">
+    <polygon points="-500,-500 1200,-500 350,1200" fill="#0752c8" />
+    <polygon points="8,35 25,35 14,52" fill="#093c99" />
+    <polygon points="14,52 28,40 36,70" fill="#0752c8" />
+    <polygon points="24,79 37,66 39,95" fill="#086bef" />
+    <polygon points="37,68 53,70 43,95" fill="#073990" />
+    <polygon points="44,55 63,35 61,72" fill="#0645aa" />
+    <polygon points="48,35 63,35 44,55" fill="#126be5" />
+    <polygon points="61,72 71,60 77,70" fill="#063c95" />
+    <polygon points="61,72 93,65 87,88" fill="#074ab5" />
+    <polygon points="61,72 87,88 69,95" fill="#0759d4" />
+    <polygon points="76,71 90,35 105,35" fill="#093a91" />
+  </g>
+  <g id="lettre-a" clip-path="url(#clip-a)">
+    <polygon points="-500,-500 1200,-500 350,1200" fill="#0752c8" />
+    <polygon points="101,68 106,42 116,64" fill="#073992" />
+    <polygon points="105,43 135,30 121,51" fill="#0643ac" />
+    <polygon points="121,51 135,30 140,53" fill="#083c99" />
+    <polygon points="140,53 159,35 169,35" fill="#0866df" />
+    <polygon points="140,53 170,36 170,70" fill="#07398e" />
+    <polygon points="151,97 170,74 173,100" fill="#06368c" />
+    <polygon points="100,65 114,63 111,95" fill="#0644ac" />
+  </g>
+  <g id="lettre-z" clip-path="url(#clip-z)">
+    <polygon points="-500,-500 1200,-500 350,1200" fill="#0752c8" />
+    <polygon points="175,35 192,35 184,48" fill="#0649b4" />
+    <polygon points="192,35 199,49 184,49" fill="#0969e9" />
+    <polygon points="199,35 227,35 211,70" fill="#0642a7" />
+    <polygon points="227,35 237,35 211,70" fill="#126ce8" />
+    <polygon points="181,80 191,95 172,99" fill="#0769e8" />
+    <polygon points="207,82 233,82 203,101" fill="#0641a7" />
+    <polygon points="224,82 232,92 232,82" fill="#083992" />
+  </g>
+  <g id="lettre-o" clip-path="url(#clip-o)">
+    <polygon points="-500,-500 1200,-500 350,1200" fill="#0759d4" />
+    <polygon points="234,63 240,45 250,62" fill="#0863df" />
+    <polygon points="240,45 272,30 250,62" fill="#0750bf" />
+    <polygon points="234,64 249,63 245,93" fill="#07388e" />
+    <polygon points="245,93 249,63 268,99" fill="#0643ac" />
+    <polygon points="289,37 305,62 301,40" fill="#0641a3" />
+  </g>
+</svg>

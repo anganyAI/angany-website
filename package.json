@@ -1,0 +1,15 @@
+{
+  "name": "sylvain-boily-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Angany AI, le labo de Sylvain Boily. HTML, CSS et JavaScript, sans dépendance.",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "start": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/dev.mjs --preview",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

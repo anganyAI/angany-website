@@ -1,0 +1,47 @@
+Mountain photograph
+Hanson Lu / Unsplash
+https://unsplash.com/photos/9B9nMbOwAME
+https://images.unsplash.com/photo-1562196533-c504efbf3942
+Used under the Unsplash license. This is an editorial landscape, not a photograph claimed to be taken by Sylvain.
+
+Profile photograph
+Sylvain Boily's public GitHub profile: https://github.com/sboily
+Downloaded from the avatar_url returned by GitHub's public user API.
+
+Manrope
+https://github.com/google/fonts/tree/main/ofl/manrope
+SIL Open Font License: fonts/OFL.txt
+
+Geist Mono
+https://github.com/google/fonts/tree/main/ofl/geistmono
+SIL Open Font License: fonts/GeistMono-OFL.txt
+
+Phosphor Icons
+https://github.com/phosphor-icons/core
+MIT license: PHOSPHOR-LICENSE.txt
+
+GitHub, LinkedIn and X marks
+https://github.com/twbs/icons
+MIT license: BOOTSTRAP-ICONS-LICENSE.txt
+
+Brand logos — original assets, used to identify the companies and projects.
+All trademarks remain the property of their respective owners.
+
+XiVO
+https://www.xivo.solutions/app/uploads/2024/09/Logo-XiVO.svg
+
+Wazo
+https://wazo.io/assets/wazo-logo-complet-bleu-rouge-OIYL7Gj3.svg
+https://wazo.io/assets/wazo-nom-bleu-rouge-DzuqNh3_.svg
+
+Luge
+Original light and dark marks from the Luge application's ui/public/images/
+directory: logo.png and logo-night.png.
+
+RoomKit
+https://www.roomkit.live/favicon.svg
+
+Tchat N Sign
+https://tchatnsign.com/images/mainLogo.svg
+
+The route, computer, game cards, D20 and project diagrams are decorative HTML/CSS/SVG illustrations.
