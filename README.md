@@ -74,6 +74,7 @@ Références principales consultées le 1er novembre 2026 :
 - https://wazo-platform.org/blog/introducing-wazo/
 - https://www.voiceaispace.com/industry-conversations/founder-interview-sylvain-boily
 - https://github.com/sboily/dndkit (issu de gamemaster-mcp)
+- https://github.com/sboily/n8n-nodes-hubitat
 
 Crédits des images, de la typographie et des icônes : `assets/CREDITS.txt`.
 La photographie du profil GitHub sert de portrait provisoire et peut être remplacée

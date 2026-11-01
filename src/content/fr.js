@@ -20,7 +20,7 @@ export default {
   },
   openSource: {
     label: '02 / En partage', title: 'Du code qui circule', intro: 'Des projets personnels et des contributions. À explorer, à utiliser, à faire évoluer.',
-    filters: [['all', 'Tout'], ['ai', 'IA & automatisation'], ['telecom', 'Télécoms']], filterLabel: 'Filtrer les projets open source', result: 'projets affichés', link: 'Tout mon GitHub',
+    filters: [['all', 'Tout'], ['ai', 'IA & automatisation'], ['telecom', 'Télécoms'], ['home', 'Domotique']], filterLabel: 'Filtrer les projets open source', result: 'projets affichés', link: 'Tout mon GitHub',
     descriptions: [
       'Un client Python asynchrone et un cœur Rust pour connecter les agents à Buzz, l’espace collaboratif de Block.',
       'La téléphonie Wazo dans les workflows visuels de Node-RED.',
@@ -29,6 +29,7 @@ export default {
       'Une bibliothèque SIP légère pour relier téléphonie et applications d’IA vocale.',
       'Un pont entre les conversations Open WebUI et les automatisations n8n.',
       'La découverte de services Consul appliquée aux infrastructures Asterisk.',
+      'Piloter les équipements Hubitat et réagir aux événements de la maison depuis n8n, avec des outils pour les agents IA.',
     ],
   },
   journey: {

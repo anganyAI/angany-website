@@ -16,7 +16,7 @@ export default {
   },
   openSource: {
     label: '02 / Out in the open', title: 'Code worth sharing', intro: 'Personal projects and contributions. Ready to explore, use and build upon.',
-    filters: [['all', 'All'], ['ai', 'AI & automation'], ['telecom', 'Telecom']], filterLabel: 'Filter open source projects', result: 'projects shown', link: 'More on GitHub',
+    filters: [['all', 'All'], ['ai', 'AI & automation'], ['telecom', 'Telecom'], ['home', 'Smart home']], filterLabel: 'Filter open source projects', result: 'projects shown', link: 'More on GitHub',
     descriptions: [
       'An async Python client with a Rust core to connect agents to Buzz, Block’s collaborative workspace.',
       'Wazo telephony inside Node-RED’s visual workflows.',
@@ -25,6 +25,7 @@ export default {
       'A small SIP library connecting telephony with voice AI applications.',
       'A bridge between Open WebUI conversations and n8n automations.',
       'Consul service discovery for Asterisk infrastructure.',
+      'Control Hubitat devices and respond to smart home events from n8n, with tools for AI agents.',
     ],
   },
   journey: {

@@ -15,6 +15,7 @@ export const repositories = [
   { name: 'aiosipua', owner: 'anganyAI', repo: 'aiosipua', category: 'telecom', language: 'Python', symbol: 'a' },
   { name: 'Open WebUI × n8n', owner: 'sboily', repo: 'open-webui-n8n-pipe', category: 'ai', language: 'Python', symbol: 'n8n' },
   { name: 'Asterisk × Consul', owner: 'sboily', repo: 'asterisk-consul-module', category: 'telecom', language: 'C', symbol: 'A' },
+  { name: 'n8n × Hubitat', owner: 'sboily', repo: 'n8n-nodes-hubitat', category: 'home', language: 'TypeScript', symbol: 'H' },
 ];
 export const articleLinks = [
   'https://www.voiceaispace.com/industry-conversations/founder-interview-sylvain-boily',
