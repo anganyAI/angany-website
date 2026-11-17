@@ -11,7 +11,7 @@ export default {
   now: {
     label: '01 / Right now', title: 'What I’m building today', intro: 'New ways to work together. Open building blocks to make them happen.',
     luge: { type: 'Active project', title: 'Luge', subtitle: 'An AI colleague on the team', description: 'Memory, tools and the ability to act. I’m building Luge to make AI a participant in the everyday work of a company.', link: 'Let’s talk about Luge', tags: ['AI', 'Collaboration', 'Automation'], center: 'An objective', orbit: ['Memory', 'Tools', 'Actions'], graphicLabel: 'Luge connects an objective with memory, tools and actions.' },
-    roomkit: { type: 'Founder · Open source', title: 'RoomKit', subtitle: 'One conversation, every channel', description: 'A Python framework bringing voice, messages, people and AI agents into the same conversation space.', link: 'Explore RoomKit', tags: ['Python', 'Voice AI', 'MIT'], codeComment: 'One room. Every possibility.', graphicLabel: 'One conversation connects voice, messages and agents.', channels: ['Voice', 'Messages', 'Agents'] },
+    roomkit: { type: 'Founder · Open source', title: 'RoomKit', subtitle: 'One conversation, every channel', description: 'A Python and Rust framework bringing voice, messages, people and AI agents into the same conversation space.', link: 'Explore RoomKit', tags: ['Python', 'Rust', 'Voice AI', 'MIT'], codeComment: 'One room. Every possibility.', graphicLabel: 'One conversation connects voice, messages and agents.', channels: ['Voice', 'Messages', 'Agents'] },
     role: 'My day to day', roleText: 'CTO at Tchat N Sign', roleDetail: 'Communication, electronic signatures and AI for financial services.', roleLink: 'Meet the company',
   },
   openSource: {
