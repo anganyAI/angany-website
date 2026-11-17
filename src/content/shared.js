@@ -6,8 +6,9 @@ export const socials = [
   { name: 'X', icon: 'x-logo', url: 'https://x.com/quintana_' },
 ];
 
-// Public references verified on 2026-11-01. Never include private repositories.
+// Public references verified on 2026-11-01 (sealwax on 2026-11-16). Never include private repositories.
 export const repositories = [
+  { name: 'sealwax', owner: 'sealwax', repo: 'sealwax', category: 'docs', language: 'Rust / Python', symbol: 'S' },
   { name: 'BuzzKit', owner: 'sboily', repo: 'buzzkit', category: 'ai', language: 'Python / Rust', symbol: 'B' },
   { name: 'Wazo × Node-RED', owner: 'sboily', repo: 'node-red-contrib-wazo-platform', category: 'telecom', language: 'JavaScript', symbol: 'W' },
   { name: 'CallKeep', owner: 'react-native-webrtc', repo: 'react-native-callkeep', category: 'telecom', language: 'React Native', symbol: 'C' },

@@ -20,8 +20,9 @@ export default {
   },
   openSource: {
     label: '02 / En partage', title: 'Du code qui circule', intro: 'Des projets personnels et des contributions. À explorer, à utiliser, à faire évoluer.',
-    filters: [['all', 'Tout'], ['ai', 'IA & automatisation'], ['telecom', 'Télécoms'], ['home', 'Domotique']], filterLabel: 'Filtrer les projets open source', result: 'projets affichés', link: 'Tout mon GitHub',
+    filters: [['all', 'Tout'], ['ai', 'IA & automatisation'], ['telecom', 'Télécoms'], ['home', 'Domotique'], ['docs', 'PDF & signature']], filterLabel: 'Filtrer les projets open source', result: 'projets affichés', link: 'Tout mon GitHub',
     descriptions: [
+      'Une bibliothèque PDF en Rust pour les documents qu’on signe : archivage PDF/A-3, formulaires et signatures PAdES, pensée pour les fichiers non fiables.',
       'Un client Python asynchrone et un cœur Rust pour connecter les agents à Buzz, l’espace collaboratif de Block.',
       'La téléphonie Wazo dans les workflows visuels de Node-RED.',
       'Mes contributions aux appels natifs iOS et Android dans l’écosystème React Native WebRTC.',

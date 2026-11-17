@@ -16,8 +16,9 @@ export default {
   },
   openSource: {
     label: '02 / Out in the open', title: 'Code worth sharing', intro: 'Personal projects and contributions. Ready to explore, use and build upon.',
-    filters: [['all', 'All'], ['ai', 'AI & automation'], ['telecom', 'Telecom'], ['home', 'Smart home']], filterLabel: 'Filter open source projects', result: 'projects shown', link: 'More on GitHub',
+    filters: [['all', 'All'], ['ai', 'AI & automation'], ['telecom', 'Telecom'], ['home', 'Smart home'], ['docs', 'PDF & signing']], filterLabel: 'Filter open source projects', result: 'projects shown', link: 'More on GitHub',
     descriptions: [
+      'A Rust PDF library for the documents people sign: PDF/A-3 archiving, forms and PAdES signatures, built for untrusted files.',
       'An async Python client with a Rust core to connect agents to Buzz, Block’s collaborative workspace.',
       'Wazo telephony inside Node-RED’s visual workflows.',
       'My contributions to native iOS and Android calling in the React Native WebRTC ecosystem.',
