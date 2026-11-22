@@ -12,8 +12,8 @@ if (typeof HTMLDialogElement !== 'undefined' && menu instanceof HTMLDialogElemen
     document.body.classList.add('menu-is-open');
     if (!reducedMotion.matches) {
       menu.querySelectorAll('nav a').forEach((link, i) => link.animate(
-        [{ opacity: 0, transform: 'translateY(24px)' }, { opacity: 1, transform: 'translateY(0)' }],
-        { duration: 500, delay: Math.min(i * 60, 400), easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' },
+        [{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'translateY(0)' }],
+        { duration: 400, delay: Math.min(i * 50, 300), easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' },
       ));
     }
   });

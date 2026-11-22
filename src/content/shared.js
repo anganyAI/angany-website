@@ -8,13 +8,13 @@ export const socials = [
 
 // Public references verified on 2026-11-01 (sealwax on 2026-11-16). Never include private repositories.
 export const repositories = [
-  { name: 'sealwax', owner: 'sealwax', repo: 'sealwax', category: 'docs', language: 'Rust / Python', symbol: 'S' },
-  { name: 'BuzzKit', owner: 'sboily', repo: 'buzzkit', category: 'ai', language: 'Python / Rust', symbol: 'B' },
+  { name: 'sealwax', owner: 'sealwax', repo: 'sealwax', category: 'docs', language: 'Rust / Python', symbol: 'S', featured: true },
+  { name: 'BuzzKit', owner: 'sboily', repo: 'buzzkit', category: 'ai', language: 'Python / Rust', symbol: 'B', featured: true },
   { name: 'Wazo × Node-RED', owner: 'sboily', repo: 'node-red-contrib-wazo-platform', category: 'telecom', language: 'JavaScript', symbol: 'W' },
   { name: 'CallKeep', owner: 'react-native-webrtc', repo: 'react-native-callkeep', category: 'telecom', language: 'React Native', symbol: 'C' },
   { name: 'aiortp', owner: 'anganyAI', repo: 'aiortp', category: 'telecom', language: 'Python', symbol: 'a' },
   { name: 'aiosipua', owner: 'anganyAI', repo: 'aiosipua', category: 'telecom', language: 'Python', symbol: 'a' },
-  { name: 'Open WebUI × n8n', owner: 'sboily', repo: 'open-webui-n8n-pipe', category: 'ai', language: 'Python', symbol: 'n8n' },
+  { name: 'Open WebUI × n8n', owner: 'sboily', repo: 'open-webui-n8n-pipe', category: 'ai', language: 'Python', symbol: 'n' },
   { name: 'Asterisk × Consul', owner: 'sboily', repo: 'asterisk-consul-module', category: 'telecom', language: 'C', symbol: 'A' },
   { name: 'n8n × Hubitat', owner: 'sboily', repo: 'n8n-nodes-hubitat', category: 'home', language: 'TypeScript', symbol: 'H' },
 ];
